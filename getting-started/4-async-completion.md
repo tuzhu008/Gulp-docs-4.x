@@ -5,17 +5,19 @@ hide_title: true
 sidebar_label: Async Completion
 -->
 
-# Async Completion
+# 异步实现
 
-Node libraries handle asynchronicity in a variety of ways. The most common pattern is [error-first callbacks][node-api-error-first-callbacks], but you might also encounter [streams][stream-docs], [promises][promise-docs], [event emitters][event-emitter-docs], [child processes][child-process-docs], or [observables][observable-docs]. Gulp tasks normalize all these types of asynchronicity.
+Node 以多种方式处理异步性。最常见的模式是[错误优先回调][node-api-error-first-callbacks]，
+但也可能遇到 [streams][stream-docs]、[promises][promise-docs]、[event emitters][event-emitter-docs]、[child processes][child-process-docs]、
+或者[observables][observable-docs]。Gulp 任务将所有这些类型的异步性规范化。
 
-## Signal task completion
+## 单任务实现
 
-When a stream, promise, event emitter, child process, or observable is returned from a task, the success or error informs gulp whether to continue or end. If a task errors, gulp will end immediately and show that error.
+当任务返回一个 stream、promise、event emitter、child process、或者 observable 时，成功或错误提示 gulp 是继续还是结束。如果任务出错，gulp 将立即结束并显示该错误。
 
-When composing tasks with `series()`, an error will end the composition and no further tasks will be executed. When composing tasks with `parallel()`, an error will end the composition but the other parallel tasks may or may not complete.
+当使用 `series()` 组合任务时，错误将结束组合，不再执行其他任务。当使用 `parallel()` 组合任务时，一个错误将结束组合，但其他并行任务可能完成，也可能不完成。
 
-### Returning a stream
+### 返回 stream
 
 ```js
 const { src, dest } = require('gulp');
@@ -28,7 +30,7 @@ function streamTask() {
 exports.default = streamTask;
 ```
 
-### Returning a promise
+### 返回 promise
 
 ```js
 function promiseTask() {
@@ -38,7 +40,7 @@ function promiseTask() {
 exports.default = promiseTask;
 ```
 
-### Returning an event emitter
+### 返回 event emitter
 
 ```js
 const { EventEmitter } = require('events');
@@ -53,7 +55,7 @@ function eventEmitterTask() {
 exports.default = eventEmitterTask;
 ```
 
-### Returning a child process
+### 返回 child process
 
 ```js
 const { exec } = require('child_process');
@@ -65,7 +67,7 @@ function childProcessTask() {
 exports.default = childProcessTask;
 ```
 
-### Returning an observable
+### 返回 observable
 
 ```js
 const { Observable } = require('rxjs');
@@ -77,7 +79,7 @@ function observableTask() {
 exports.default = observableTask;
 ```
 
-### Using an error-first callback
+### 使用错误有限回调
 
 If nothing is returned from your task, you must use the error-first callback to signal completion. The callback will be passed to your task as the only argument - named `cb()` in the examples below.
 
