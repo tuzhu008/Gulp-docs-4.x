@@ -8,7 +8,7 @@
 
 * [Quick Start](/getting-started/1-quick-start.md)
 * [JavaScript and Gulpfiles](/getting-started/2-javascript-and-gulpfiles.md)
-* [Creating Tasks](/getting-started/3-creating-tasks.md)
+* [创建任务](/getting-started/3-creating-tasks.md)
 * [Async Completion](/getting-started/4-async-completion.md)
 * [Working with Files](/getting-started/5-working-with-files.md)
 * [Explaining Globs](/getting-started/6-explaining-globs.md)
@@ -19,7 +19,6 @@
 
 * [Concepts](/api/concepts.md)
 * [src\(\)](/api/src.md)
-
 * [dest\(\)](/api/dest.md)
 * [symlink\(\)](/api/symlink.md)
 * [lastRun\(\)](/api/last-run.md)
@@ -32,6 +31,4 @@
 * [Vinyl](/api/vinyl.md)
 * [Vinyl.isVinyl\(\)](/api/vinyl-isvinyl.md)
 * [Vinyl.isCustomProp\(\)](/api/vinyl-iscustomprop.md)
-
-
 
