@@ -79,10 +79,11 @@ exports.default = defaultTask
 ```sh
 gulp
 ```
-To run multiple tasks, you can use `gulp <task> <othertask>`.
+要运行多个任务，可以使用 `gulp <task> <othertask>`.
 
-## Result
-The default task will run and do nothing.
+## 结果
+
+这个默认任务什么都没做。
 ![Output: Starting default & Finished default][img-gulp-command]
 
 [sip-article]: https://medium.com/gulpjs/gulp-sips-command-line-interface-e53411d4467
