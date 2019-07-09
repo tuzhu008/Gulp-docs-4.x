@@ -5,31 +5,33 @@ hide_title: true
 sidebar_label: Creating Tasks
 -->
 
-# Creating Tasks
+# 创建任务
 
-Each gulp task is an asynchronous JavaScript function - a function that accepts an error-first callback or returns a stream, promise, event emitter, child process, or observable ([more on that later][async-completion-docs]). Due to some platform limitations, synchronous tasks aren't supported, though there is a pretty nifty [alternative][using-async-await-docs].
+gulp 的每个任务都是一个异步的 JavaScript 函数，这个函数接收错误回调作为其参数，或者返回一个 stream、promise、event emitter、child process、或者 observable ([more on that later][async-completion-docs])。
+由于一些平台的限制，不支持同步任务，尽管有一个相当不错的[选择](using-async-await-docs)
 
-## Exporting
+## 导出
 
-Tasks can be considered **public** or **private**.
+任务可以是 **public** 或 **private** 的。
 
-* **Public tasks** are exported from your gulpfile, which allows them to be run by the `gulp` command.
-* **Private tasks** are made to be used internally, usually used as part of `series()` or `parallel()` composition.
+* 从 gulpfile 导出的称为**公有任务**，可以使用 `gulp` 命令运行他们。
+* 只用于在内部使用的称为**私有任务**，通常作为 `series()` 或 `parallel()`组合的一部分使用。
 
-A private task looks and acts like any other task, but an end-user can't ever execute it independently. To register a task publicly, export it from your gulpfile.
+
+私有任务的外观和行为与任何其他任务一样，但是终端用户不能独立地执行它。要公开注册一个任务，请从 gulpfile 中导出它。
 
 ```js
 const { series } = require('gulp');
 
-// The `clean` function is not exported so it can be considered a private task.
-// It can still be used within the `series()` composition.
+// `clean` 没有被导出，因此可以将其视为私有任务。
+// 可以在 `series()` 组合中使用。
 function clean(cb) {
   // body omitted
   cb();
 }
 
-// The `build` function is exported so it is public and can be run with the `gulp` command.
-// It can also be used within the `series()` composition.
+// `build` 函数被导出，因此他是一个公有任务，可以使用 `gulp` 运行
+// 也可以在 `series()` 组合中使用
 function build(cb) {
   // body omitted
   cb();
@@ -41,13 +43,14 @@ exports.default = series(clean, build);
 
 ![ALT TEXT MISSING][img-gulp-tasks-command]
 
-<small>In the past, `task()` was used to register your functions as tasks. While that API is still available, exporting should be the primary registration mechanism, except in edge cases where exports won't work.</small>
+<small>在过去，`task()` 用于将函数注册为任务。虽然该 API 仍然可用，但导出应该是主要的注册机制，除非在导出不起作用的边缘情况下。</small>
 
-## Compose tasks
+## 组合任务
 
-Gulp provides two powerful composition methods, `series()` and `parallel()`, allowing individual tasks to be composed into larger operations. Both methods accept any number of task functions or composed operations.  `series()` and `parallel()` can be nested within themselves or each other to any depth.
+Gulp 提供了两种强大的组合方法，`series()` 和 `parallel()`，允许将单个任务组合成更大的操作。这两种方法都接受任意数量的任务函数或组合操作。`series()` 和 `parallel()` 可以嵌套在它们内部，也可以彼此嵌套到任意深度。
 
-To have your tasks execute in order, use the `series()` method.
+要按顺序执行任务，请使用 `series()` 方法。
+
 ```js
 const { series } = require('gulp');
 
@@ -64,7 +67,8 @@ function bundle(cb) {
 exports.build = series(transpile, bundle);
 ```
 
-For tasks to run at maximum concurrency, combine them with the `parallel()` method.
+要使任务以最大的并发性运行，请将它们与 `parallel()` 方法结合使用。
+
 ```js
 const { parallel } = require('gulp');
 
@@ -81,7 +85,7 @@ function css(cb) {
 exports.build = parallel(javascript, css);
 ```
 
-Tasks are composed immediately when either `series()` or `parallel()` is called.  This allows variation in the composition instead of conditional behavior inside individual tasks.
+当调用 `series()` 或 `parallel()` 时，任务立即组成。这允许有条件地改变组合，而不是在单个任务中区分行为。
 
 ```js
 const { series } = require('gulp');
@@ -109,7 +113,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 ```
 
-`series()` and `parallel()` can be nested to any arbitrary depth.
+`series()` 和 `parallel()` 可以嵌套到任意深度。
 
 ```js
 const { series, parallel } = require('gulp');
@@ -160,12 +164,12 @@ exports.build = series(
 );
 ```
 
-When a composed operation is run, each task will be executed every time it was referenced.  For example, a `clean` task referenced before two different tasks would be run twice and lead to undesired results.  Instead, refactor the `clean` task to be specified in the final composition.
+当运行组合操作时，每次引用的每个任务时都会被执行。例如，在两个不同任务之前引用的 `clean` 任务将运行两次，这不是期望的结果。因此，应该在最终的组合中指定 `clean`。
 
-If you have code like this:
+如果你有这样的代码:
 
 ```js
-// This is INCORRECT
+// 这是不正确的
 const { series, parallel } = require('gulp');
 
 const clean = function(cb) {
@@ -186,7 +190,7 @@ const javascript = series(clean, function(cb) {
 exports.build = parallel(css, javascript);
 ```
 
-Migrate to this:
+修改为：
 
 ```js
 const { series, parallel } = require('gulp');
