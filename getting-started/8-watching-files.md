@@ -5,11 +5,11 @@ hide_title: true
 sidebar_label: Watching Files
 -->
 
-# Watching Files
+# 监听文件
 
-The `watch()` API connects [globs][globs-docs] to [tasks][creating-tasks-docs] using a file system watcher. It watches for changes to files that match the globs and executes the task when a change occurs. If the task doesn't signal [Async Completion][async-completion-doc], it will never be run a second time.
+`watch()` API使用文件系统监听程序将 [globs][globs-docs] 连接到 [tasks][creating-tasks-docs]。它监听与 globs 匹配的文件的更改，并在发生更改时执行任务。如果任务没有发出 [Async Completion][async-completion-doc] 信号，它将永远不会第二次运行。
 
-This API provides built-in delay and queueing based on most-common-use defaults.
+这个 API 提供了内置的延迟和基于最常用默认值的排队（queueing）。
 
 ```js
 const { watch, series } = require('gulp');

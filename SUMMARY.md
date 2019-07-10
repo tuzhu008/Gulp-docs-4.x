@@ -11,9 +11,9 @@
 * [创建任务](/getting-started/3-creating-tasks.md)
 * [Async Completion](/getting-started/4-async-completion.md)
 * [处理文件](/getting-started/5-working-with-files.md)
-* [Explaining Globs](/getting-started/6-explaining-globs.md)
-* [Using Plugins](/getting-started/7-using-plugins.md)
-* [Watching Files](/getting-started/8-watching-files.md)
+* [解释 Globs](/getting-started/6-explaining-globs.md)
+* [使用插件](/getting-started/7-using-plugins.md)
+* [监听文件](/getting-started/8-watching-files.md)
 
 ## API
 
