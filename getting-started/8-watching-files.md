@@ -43,10 +43,11 @@ exports.default = function() {
 
 没有提供错误或警告消息，因为文件监视程序使您的 Node 进程保持运行。由于进程不退出，因此无法确定任务是完成了，还是仅仅运行了非常非常长的时间。
 
-## Watched events
+## 监听事件
 
-By default, the watcher executes tasks whenever a file is created, changed, or deleted.
-If you need to use different events, you can use the `events` option when calling `watch()`. The available events are `'add'`, `'addDir'`, `'change'`, `'unlink'`, `'unlinkDir'`, `'ready'`, `'error'`. Additionally `'all'` is available, which represents all events other than `'ready'` and `'error'`.
+默认情况下，每当创建、更改或删除文件时，监听器都会执行任务。
+
+如果需要使用不同的事件，可以在调用 `watch()` 时使用 `events` 选项。可用的事件有 `'add'`、`'addDir'`、`'change'`、`'unlink'`、`'unlinkDir'`、`'ready'`、`'error'`。此外，`'all'` 是可用的，它表示除了 `'ready'` ”和 `'error'` 之外的所有事件。
 
 ```js
 const { watch } = require('gulp');
@@ -60,11 +61,11 @@ exports.default = function() {
 };
 ```
 
-## Initial execution
+## 初始化执行
 
-Upon calling `watch()`, the tasks won't be executed, instead they'll wait for the first file change.
+调用 `watch()` 时，任务不会执行，而是等待第一个文件更改。
 
-To execute tasks before the first file change, set the `ignoreInitial` option to `false`.
+要在第一个文件更改之前执行任务，请将 `ignoreInitial` 选项设置为 `false`。
 
 ```js
 const { watch } = require('gulp');
@@ -78,7 +79,7 @@ exports.default = function() {
 };
 ```
 
-## Queueing
+## 队列
 
 Each `watch()` guarantees that its currently running task won't execute again concurrently. When a file change is made while a watcher task is running, another execution will queue up to run when the task finishes. Only one run can be queued up at a time.
 
