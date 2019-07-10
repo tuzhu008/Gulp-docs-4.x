@@ -115,16 +115,16 @@ exports.default = function() {
 };
 ```
 
-## Using the watcher instance
+## 使用监听器实例
 
-You likely won't use this feature, but if you need full control over changed files - like access to paths or metadata - use the [chokidar][chokidar-module-package] instance returned from `watch()`.
+您可能不会使用这个特性，但是如果您需要对更改后的文件进行完全控制(比如访问路径或元数据)，请使用从`watch()` 返回的 [chokidar][chokidar-module-package]实例。
 
-__Be careful:__ The returned chokidar instance doesn't have queueing, delay, or async completion features.
+__注意:__ 返回的 chokidar 实例没有队列、延迟或异步完成特性。
 
-## Optional dependency
+## 可选依赖
 
-Gulp has an optional dependency called [fsevents][fsevents-package], which is a Mac-specific file watcher. If you see an installation warning for fsevents - _"npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents"_ - it is not an issue.
-If fsevents installation is skipped, a fallback watcher will be used and any errors occurring in your gulpfile aren't related to this warning.
+Gulp有一个可选的依赖项 [fsevents][fsevents-package]，它是一个特定于 mac 的文件监听器。如果您看到 fsevents 的安装警告——_"npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents"_ ——这不是问题。
+如果跳过 fsevents 安装，将使用备用的监听器，gulpfile 中发生的任何错误都与此警告无关。
 
 [globs-docs]: ../getting-started/6-explaining-globs.md
 [creating-tasks-docs]: ../getting-started/3-creating-tasks.md
