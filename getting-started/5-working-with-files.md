@@ -22,7 +22,7 @@ exports.default = function() {
 }
 ```
 
-The main API of a stream is the `.pipe()` method for chaining Transform or Writable streams.
+流的主要 API 是 `.pipe()` 方法，用于链式转换流或可写流。
 
 ```js
 const { src, dest } = require('gulp');
@@ -34,6 +34,7 @@ exports.default = function() {
     .pipe(dest('output/'));
 }
 ```
+`dest()` 的参数为一个输出目录字符串，它生成一个 [Node 流][Node-streams-docs]，通常用作终止流。
 
 `dest()` is given an output directory string and also produces a [Node stream][node-streams-docs] which is generally used as a terminator stream. When it receives a file passed through the pipeline, it writes the contents and other details out to the filesystem at a given directory.  The `symlink()` method is also available and operates like `dest()`, but creates links instead of files (see [`symlink()`][symlink-api-docs] for details).
 
