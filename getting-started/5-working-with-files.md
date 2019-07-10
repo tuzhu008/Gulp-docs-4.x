@@ -34,17 +34,15 @@ exports.default = function() {
     .pipe(dest('output/'));
 }
 ```
-`dest()` 的参数为一个输出目录字符串，它生成一个 [Node 流][Node-streams-docs]，通常用作终止流。
+`dest()` 的参数为一个输出目录字符串，它生成一个 [Node 流][Node-streams-docs]，通常用作终止流。当它接收到通过管道传递的文件时，它将这些文件内容和其他细节写到给定目录下的文件系统中。`symlink()` 方法也是可用的，其操作类似于 `dest()`，但它创建的是链接而不是文件(详细信息请参阅 [`symlink()`][symlink-api-docs])。
 
-`dest()` is given an output directory string and also produces a [Node stream][node-streams-docs] which is generally used as a terminator stream. When it receives a file passed through the pipeline, it writes the contents and other details out to the filesystem at a given directory.  The `symlink()` method is also available and operates like `dest()`, but creates links instead of files (see [`symlink()`][symlink-api-docs] for details).
+大多数情况下，插件将被使用 `.pipe()` 方法放置在 `src()` 和 `dest()`之间，并转换流中的文件。
 
-Most often plugins will be placed between `src()` and `dest()` using the `.pipe()` method and will transform the files within the stream.
+## 向流中添加文件
 
-## Adding files to the stream
+还可以将 `src()` 放在管道中间，根据给定的 globs 向流添加文件。附加文件只对流中稍后的转换可用。如果 [globs 重叠][overlapping-globs-docs]，将再次添加文件。
 
-`src()` can also be placed in the middle of a pipeline to add files to the stream based on the given globs. The additional files will only be available to transformations later in the stream.  If [globs overlap][overlapping-globs-docs], the files will be added again.
-
-This can be useful for transpiling some files before adding plain JavaScript files to the pipeline and uglifying everything.
+在将纯 JavaScript 文件添加到管道并压缩（uglify）所有内容之前，这对于转换一些文件非常有用。
 
 ```js
 const { src, dest } = require('gulp');
@@ -60,11 +58,11 @@ exports.default = function() {
 }
 ```
 
-## Output in phases
+## 输出阶段
 
-`dest()` can be used in the middle of a pipeline to write intermediate states to the filesystem. When a file is received, the current state is written out to the filesystem, the path is updated to represent the new location of the output file, then that file continues down the pipeline.
+`dest()` 可以在管道的中间使用，将中间状态写入文件系统。当接收到一个文件时，将当前状态写入文件系统，更新路径以表示输出文件的新位置，然后该文件继续沿着管道运行。
 
-This feature can be useful to create unminified and minified files with the same pipeline.
+此特性对于创建具有相同管道的非缩小文件和缩小文件非常有用。
 
 ```js
 const { src, dest } = require('gulp');
