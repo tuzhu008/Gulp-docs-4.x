@@ -83,11 +83,11 @@ exports.default = function() {
 
 ## Modes: streaming, buffered, and empty
 
-`src()` can operate in three modes: buffering, streaming, and empty. These are configured with the `buffer` and `read` [options][src-options-api-docs] on `src()`.
+`src()` 可以在三种模式下运行：buffering、streaming 和空。这些文件在 `src()` 上配置了 `buffer`和 `read` [options][src-options-api-docs]。
 
-* Buffering mode is the default and loads the file contents into memory. Plugins usually operate in buffering mode and many don't support streaming mode.
-* Streaming mode exists mainly to operate on large files that can't fit in memory, like giant images or movies. The contents are streamed from the filesystem in small chunks instead of loaded all at once. If you need to use streaming mode, look for a plugin that supports it or write your own.
-* Empty mode contains no contents and is useful when only working with file metadata.
+* 缓冲模式为默认模式，将文件内容加载到内存中。插件通常在缓冲模式下运行，许多插件不支持流模式。
+* 流模式主要用于处理会不合适内存大文件，比如巨大的图片或电影。内容以小数据块的形式从文件系统中流出来，而不是一次性加载。如果您需要使用流模式，请寻找支持流模式的插件或编写自己的插件。
+* 空模式不包含任何内容，只在处理文件元数据时才有用。
 
 [explaining-globs-docs]: ../getting-started/6-explaining-globs.md
 [creating-tasks-docs]: ../getting-started/3-creating-tasks.md
