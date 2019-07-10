@@ -81,7 +81,7 @@ exports.default = observableTask;
 
 ### 使用错误有限回调
 
-If nothing is returned from your task, you must use the error-first callback to signal completion. The callback will be passed to your task as the only argument - named `cb()` in the examples below.
+如果任务没有返回任何内容，则必须使用错误优先回调函数来表示完成。在下面的示例中，回调函数将作为惟一的—名为 `cb()` 的参数传递给任务函数。
 
 ```js
 function callbackTask(cb) {
@@ -92,7 +92,7 @@ function callbackTask(cb) {
 exports.default = callbackTask;
 ```
 
-To indicate to gulp that an error occurred in a task using an error-first callback, call it with an `Error` as the only argument.
+要使用错误有限回调来指示 gulp 任务中发生了错误，请使用 `Error` 作为惟一参数调用它。
 
 ```js
 function callbackError(cb) {
@@ -101,9 +101,9 @@ function callbackError(cb) {
 }
 
 exports.default = callbackError;
-```
+``
 
-However, you'll often pass this callback to another API instead of calling it yourself.
+但是，经常将这个回调传递给另一个 API，而不是自己调用它。
 
 ```js
 const fs = require('fs');
@@ -115,15 +115,15 @@ function passingCallback(cb) {
 exports.default = passingCallback;
 ```
 
-## No synchronous tasks
+## 不再有同步任务
 
-Synchronous tasks are no longer supported. They often led to subtle mistakes that were hard to debug, like forgetting to return your streams from a task.
+不再支持同步任务。它们经常导致难以调试的细微错误，比如忘记从任务中返回流。
 
-When you see the _"Did you forget to signal async completion?"_ warning, none of the techniques mentioned above were used. You'll need to use the error-first callback or return a stream, promise, event emitter, child process, or observable to resolve the issue.
+当您看到 _"Did you forget to signal async completion?"_ 警告，证明上述技术均未使用。您将需要使用错误优先回调或返回流、promise、event emitter、child process 或 observable 来解决此问题。
 
-## Using async/await
+## 使用 async/await
 
-When not using any of the previous options, you can define your task as an [`async` function][async-await-docs], which wraps your task in a promise. This allows you to work with promises synchronously using `await` and use other synchronous code.
+当不使用前面的任何选项时，可以将任务定义为[`async` 函数][async-await-docs]，它将任务封装在一个 promise 中。这允许您使用 `await` 同步处理 promise，并使用其他同步代码。
 
 ```js
 const fs = require('fs');
