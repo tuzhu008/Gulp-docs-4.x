@@ -5,7 +5,7 @@ hide_title: true
 sidebar_label: Explaining Globs
 -->
 
-# Explaining Globs
+# 解释 Globs
 
 glob 是一串用于匹配文件路径的字符串和/或通配符。Globbing 是使用一个或多个 globs 在文件系统上定位文件的操作。
 
@@ -74,11 +74,12 @@ const invalidGlob = path.join(__dirname, 'src/*.js');
 
 ## Overlapping globs
 
-Two or more globs that (un)intentionally match the same file are considered overlapping. When overlapping globs are used within a single `src()`, gulp does its best to remove the duplicates, but doesn't attempt to deduplicate across separate `src()` calls.
+
+有意匹配同一文件的两个或多个 globs 被认为是重叠的。当在单个 `src()` 中使用重叠的 globs 时，gulp 会尽力删除重复项，但不会尝试跨单独的 `src()` 调用进行重复数据删除。
 
 ## Advanced resources
 
-Most of what you'll need to work with globs in gulp is covered here. If you'd like to get more in depth, here are a few resources.
+这里介绍了您在 gulp 中使用 globs 时所需的大部分内容。如果你想更深入地了解，这里有一些参考资料。
 
 * [Micromatch Documentation][micromatch-docs]
 * [node-glob's Glob Primer][glob-primer-docs]
