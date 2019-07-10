@@ -30,7 +30,7 @@ exports.default = function() {
 
 ## 是否需要插件吗?
 
-Not everything in gulp should use plugins. They are a quick way to get started, but many operations are improved by using a module or library instead.
+并不是 gulp 中的所有东西都应该使用插件。这是一种快速入门的方法，但是许多操作都通过使用模块或库进行了改进。
 
 ```js
 const { rollup } = require('rollup');
@@ -48,7 +48,7 @@ exports.default = async function() {
 }
 ```
 
-Plugins should always transform files. Use a (non-plugin) Node module or library for any other operations.
+插件应该总是转换文件。为任何其他操作使用(非插件) Node 模块或库。
 
 ```js
 const del = require('delete');
@@ -59,9 +59,9 @@ exports.default = function(cb) {
 }
 ```
 
-## Conditional plugins
+## 条件式插件
 
-Since plugin operations shouldn't be file-type-aware, you may need a plugin like [gulp-if][gulp-if-package] to transform subsets of files.
+由于插件操作不应该是文件类型敏感的，您可能需要一个类似 [gulp-if][gulp-if-package] 这样的插件来转换文件的子集。
 
 ```js
 const { src, dest } = require('gulp');
@@ -82,13 +82,13 @@ exports.default = function() {
 }
 ```
 
-## Inline plugins
+## 内联插件
 
-Inline plugins are one-off Transform Streams you define inside your gulpfile by writing the desired behavior.
+内联插件是通过在 gulpfile 中编写所需的行为定义的一次性转换流。
 
-There are two situations where creating an inline plugin is helpful:
-* Instead of creating and maintaining your own plugin.
-* Instead of forking a plugin that exists to add a feature you want.
+创建内联插件有两种情况:
+* 不用创建和维护你自己的插件。
+* 不用 fork 一个插件来添加你想要的功能。
 
 ```js
 const { src, dest } = require('gulp');
