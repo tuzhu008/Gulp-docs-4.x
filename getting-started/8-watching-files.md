@@ -81,9 +81,9 @@ exports.default = function() {
 
 ## 队列
 
-Each `watch()` guarantees that its currently running task won't execute again concurrently. When a file change is made while a watcher task is running, another execution will queue up to run when the task finishes. Only one run can be queued up at a time.
+每个 `watch()` 都保证当前运行的任务不会再次并发执行。当监听器任务正在运行时进行文件更改，另一个执行程序将排队等待任务完成后运行。一次只能排队运行一次。
 
-To disable queueing, set the `queue` option to `false`.
+若要禁用队列，请将 `queue` 选项设置为 `false`。
 
 ```js
 const { watch } = require('gulp');
