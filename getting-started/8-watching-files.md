@@ -37,11 +37,11 @@ exports.default = function() {
 };
 ```
 
-## Warning: avoid synchronous
+## 警告: 避免同步
 
-A watcher's task cannot be synchronous, like tasks registered into the task system. If you pass a sync task, the completion can't be determined and the task won't run again - it is assumed to still be running.
+监听器的任务不能是同步的，就像注册到任务系统中的任务。如果传递同步任务，则无法确定完成情况，任务将不会再次运行—该任务被假定仍在运行。
 
-There is no error or warning message provided because the file watcher keeps your Node process running. Since the process doesn't exit, it cannot be determined whether the task is done or just taking a really, really long time to run.
+没有提供错误或警告消息，因为文件监视程序使您的 Node 进程保持运行。由于进程不退出，因此无法确定任务是完成了，还是仅仅运行了非常非常长的时间。
 
 ## Watched events
 
