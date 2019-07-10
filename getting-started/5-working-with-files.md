@@ -81,9 +81,9 @@ exports.default = function() {
 }
 ```
 
-## Modes: streaming, buffered, and empty
+## 模式: 缓冲, 流, 和空
 
-`src()` 可以在三种模式下运行：buffering、streaming 和空。这些文件在 `src()` 上配置了 `buffer`和 `read` [options][src-options-api-docs]。
+`src()` 可以在三种模式下运行：缓冲（buffering）、流（streaming） 和空（empty）。这些文件在 `src()` 上配置了 `buffer`和 `read` [options][src-options-api-docs]。
 
 * 缓冲模式为默认模式，将文件内容加载到内存中。插件通常在缓冲模式下运行，许多插件不支持流模式。
 * 流模式主要用于处理会不合适内存大文件，比如巨大的图片或电影。内容以小数据块的形式从文件系统中流出来，而不是一次性加载。如果您需要使用流模式，请寻找支持流模式的插件或编写自己的插件。
