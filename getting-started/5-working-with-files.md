@@ -5,13 +5,13 @@ hide_title: true
 sidebar_label: Working with Files
 -->
 
-# Working with Files
+# 处理文件
 
-The `src()` and `dest()` methods are exposed by gulp to interact with files on your computer.
+gulp 提供了 `src()` 和 `dest()` 方法与计算机上的文件进行交互。
 
-`src()` is given a [glob][explaining-globs-docs] to read from the file system and produces a [Node stream][node-streams-docs]. It locates all matching files and reads them into memory to pass through the stream.
+`src()` 是一个 [glob][explaining-globs-docs] 用来从文件系统进行读取，并产生一个 [Node 流][node-streams-docs]。它定位所有匹配的文件并将它们通过流的方式读入内存以。
 
-The stream produced by `src()` should be returned from a task to signal async completion, as mentioned in [Creating Tasks][creating-tasks-docs].
+`src()` 生成的流应该从任务返回，以表示异步完成，如 [创建任务][创建任务-文档] 中所述。
 
 ```js
 const { src, dest } = require('gulp');

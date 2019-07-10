@@ -5,7 +5,7 @@ hide_title: true
 sidebar_label: Async Completion
 -->
 
-# 异步实现
+# 异步完成
 
 Node 以多种方式处理异步性。最常见的模式是[错误优先回调][node-api-error-first-callbacks]，
 但也可能遇到 [streams][stream-docs]、[promises][promise-docs]、[event emitters][event-emitter-docs]、[child processes][child-process-docs]、
