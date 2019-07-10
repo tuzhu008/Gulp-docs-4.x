@@ -97,11 +97,11 @@ exports.default = function() {
 };
 ```
 
-## Delay
+## 延迟
 
-Upon file change, a watcher task won't run until a 200ms delay has elapsed. This is to avoid starting a task too early when many files are being changed at once - like find-and-replace.
+在文件更改时，监听器任务要等到延迟了 200ms 才会运行。这是为了避免在许多文件同时被更改时过早地启动任务——比如查找和替换。
 
-To adjust the delay duration, set the `delay` option to a positive integer.
+若要调整延迟时间，请将 `delay` 选项设置为正整数。
 
 ```js
 const { watch } = require('gulp');
