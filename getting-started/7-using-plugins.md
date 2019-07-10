@@ -5,18 +5,18 @@ hide_title: true
 sidebar_label: Using Plugins
 -->
 
-# Using Plugins
+# 使用插件
 
-Gulp plugins are [Node Transform Streams][through2-docs] that encapsulate common behavior to transform files in a pipeline - often placed between `src()` and `dest()` using the `.pipe()` method. They can change the filename, metadata, or contents of every file that passes through the stream.
+Gulp 插件是 [Node Transform Streams][through2-docs]，它封装了在管道中转换文件的常见行为——通常使用 `.pipe()` 方法放在 `src()` 和`dest()` 之间。它们可以更改通过流传输的每个文件的文件名、元数据或内容。
 
-Plugins from npm - using the "gulpplugin" and "gulpfriendly" keywords - can be browsed and searched on the [plugin search page][gulp-plugin-site].
+来自 npm 的插件——使用 “gulpplugin” 和 “gulpfriendly” 关键字——可以在[插件搜索页面][gulp-plugin-site]上浏览和搜索。
 
-Each plugin should only do a small amount of work, so you can connect them like building blocks. You may need to combine a bunch of them to get the desired result.
+每个插件应该只做少量的工作，所以您可以像构建块一样连接它们。您可能需要将它们组合起来才能得到所需的结果。
 
 ```js
 const { src, dest } = require('gulp');
 const uglify = require('gulp-uglify');
-const rename = require('gulp-rename');
+  const rename = require('gulp-rename');
 
 exports.default = function() {
   return src('src/*.js')
@@ -28,7 +28,7 @@ exports.default = function() {
 }
 ```
 
-## Do you need a plugin?
+## 是否需要插件吗?
 
 Not everything in gulp should use plugins. They are a quick way to get started, but many operations are improved by using a module or library instead.
 
