@@ -2,11 +2,11 @@
 
 ## Gulp 中文
 
-* [Introduction](README.md)
+* [简介](README.md)
 
 ## Getting Started
 
-* [Quick Start](/getting-started/1-quick-start.md)
+* [快速入门](/getting-started/1-quick-start.md)
 * [JavaScript and Gulpfiles](/getting-started/2-javascript-and-gulpfiles.md)
 * [创建任务](/getting-started/3-creating-tasks.md)
 * [Async Completion](/getting-started/4-async-completion.md)
@@ -17,7 +17,7 @@
 
 ## API
 
-* [Concepts](/api/concepts.md)
+* [概念](/api/concepts.md)
 * [src\(\)](/api/src.md)
 * [dest\(\)](/api/dest.md)
 * [symlink\(\)](/api/symlink.md)
