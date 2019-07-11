@@ -5,11 +5,12 @@ hide_title: true
 sidebar_label: Concepts
 -->
 
-# Concepts
+# 概念
 
-The following concepts are prerequisites to understanding the API docs. They will be referenced throughout, refer back to this page for detailed explanations.
 
-If you're new here, begin with the [Getting Started Guide][quick-start-docs].
+以下概念是理解 API 文档的预备知识。它们将在整个过程中被引用，详细说明请参阅本页面。
+
+如果你是新手，就从 [入门指南][quick-start-docs] 开始。
 
 ## Vinyl
 
