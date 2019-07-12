@@ -7,9 +7,9 @@ sidebar_label: lastRun()
 
 # lastRun()
 
-Retrieves the last time a task was successfully completed during the current running process. Most useful on subsequent task runs while a watcher is running.
+检索在当前运行进程中成功完成任务的最后一次时间。最有用的后续任务运行时，监视程序正在运行。当监视程序正在运行时，对于后续的任务运行最有用。
 
-When combined with `src()`, enables incremental builds to speed up execution times by skipping files that haven't changed since the last successful task completion.
+当与 `src()` 组合时，通过跳过自上次成功完成任务以来没有更  改的文件，使增量构建能够加快执行时间。
 
 ## Usage
 
