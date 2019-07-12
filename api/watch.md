@@ -9,6 +9,9 @@ sidebar_label: watch()
 
 Allows watching globs and running a task when a change occurs. Tasks are handled uniformly with the rest of the task system.
 
+
+监听 globs 并在发生更改时运行任务。任务与任务系统的其余部分被统一处理。
+
 ## Usage
 
 ```js
