@@ -42,7 +42,7 @@ lastRun(task, [precision])
 | task<br>**(required)** | function<br>string | The task function or the string alias of a registered task. |
 | precision | number | Default: `1000` on Node v0.10, `0` on Node v0.12+. Detailed in [Timestamp precision][timestamp-precision-section] section below. |
 
-### Returns
+### 返回值
 
 A timestamp (in milliseconds), matching the last completion time of the task. If the task has not been run or has failed, returns `undefined`.
 
@@ -54,7 +54,7 @@ When called with a value other than a string or function, throws an error with t
 
 When called on a non-extensible function and Node is missing WeakMap, throws an error with the message, "Only extensible functions can check lastRun".
 
-## Timestamp precision
+## 时间戳精度
 
 While there are sensible defaults for the precision of timestamps, they can be rounded using the `precision` parameter. Useful if your file system or Node version has a lossy precision on file time attributes.
 
