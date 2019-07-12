@@ -7,7 +7,7 @@ sidebar_label: series()
 
 # series()
 
-Combines task functions and/or composed operations into larger operations that will be executed one after another, in sequential order. There are no imposed limits on the nesting depth of composed operations using `series()` and `parallel()`.
+将任务函数和/或组合操作组合成更大的操作，这些操作将按顺序依次执行。对于使用 `series()` 和 `parallel()` 组合操作的嵌套深度没有强制限制。
 
 ## Usage
 
