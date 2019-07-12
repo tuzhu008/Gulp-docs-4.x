@@ -11,7 +11,7 @@ sidebar_label: lastRun()
 
 当与 `src()` 组合时，通过跳过自上次成功完成任务以来没有更  改的文件，使增量构建能够加快执行时间。
 
-## Usage
+## 用法
 
 ```js
 const { src, dest, lastRun, watch } = require('gulp');
@@ -29,15 +29,15 @@ exports.default = function() {
 ```
 
 
-## Signature
+## 签名
 
 ```js
 lastRun(task, [precision])
 ```
 
-### Parameters
+### 参数
 
-| parameter | type | note |
+| 参数 | 类型 | 描述 |
 |:--------------:|:------:|-------|
 | task<br>**(required)** | function<br>string | The task function or the string alias of a registered task. |
 | precision | number | Default: `1000` on Node v0.10, `0` on Node v0.12+. Detailed in [Timestamp precision][timestamp-precision-section] section below. |
