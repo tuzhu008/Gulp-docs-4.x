@@ -67,7 +67,7 @@ When a string or array is passed as `task`, throws an error with the message, "w
 | ignorePermissionErrors | boolean | false | Set to true to watch files that don't have read permissions. Then, if watching fails due to EPERM or EACCES errors, they will be skipped silently.<br>_This option is passed directly to [chokidar][chokidar-external]._ |
 | atomic | number | 100 | Only active if `useFsEvents` and `usePolling` are false. Automatically filters out artifacts that occur from "atomic writes" by some editors. If a file is re-added within the specified milliseconds of being deleted, a change event - instead of unlink then add - will be emitted.<br>_This option is passed directly to [chokidar][chokidar-external]._ |
 
-## Chokidar instance
+## Chokidar 实例
 
 The `watch()` method returns the underlying instance of [chokidar][chokidar-external], providing fine-grained control over your watch setup. Most commonly used to register individual event handlers that provide the `path` or `stats` of the changed files.
 
