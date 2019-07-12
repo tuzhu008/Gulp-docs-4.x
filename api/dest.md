@@ -7,9 +7,9 @@ sidebar_label: dest()
 
 # dest()
 
-Creates a stream for writing [Vinyl][vinyl-concepts] objects to the file system.
+创建一个用于将 [Vinyl][vinyl-concepts] 对象写入到文件系统的流。
 
-## Usage
+## 用法
 
 ```js
 const { src, dest } = require('gulp');
@@ -22,20 +22,20 @@ function copy() {
 exports.copy = copy;
 ```
 
-## Signature
+## 签名
 
 ```js
 dest(directory, [options])
 ```
 
-### Parameters
+### 参数
 
-| parameter | type | note |
+| 参数 | 类型 | 描述 |
 |:--------------:|:-----:|--------|
 | directory<br>**(required)** | string<br>function | The path of the output directory where files will be written. If a function is used, the function will be called with each Vinyl object and must return a string directory path. |
 | options | object | Detailed in [Options][options-section] below. |
 
-### Returns
+### 返回值
 
 A stream that can be used in the middle or at the end of a pipeline to create files on the file system.
 Whenever a Vinyl object is passed through the stream, it writes the contents and other details out to the file system at the given directory. If the Vinyl object has a `symlink` property, a symbolic link will be created instead of writing the contents. After the file is created, its [metadata will be updated][metadata-updates-section] to match the Vinyl object.
