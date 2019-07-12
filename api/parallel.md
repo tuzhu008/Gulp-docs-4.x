@@ -9,7 +9,7 @@ sidebar_label: parallel()
 
 将任务功能和/或组合操作组合成同时执行的较大操作。对于使用 `series()` 和 `parallel()` 组合操作的嵌套深度没有强制限制。
 
-## Usage
+## 用法
 
 ```js
 const { parallel } = require('gulp');
@@ -27,19 +27,19 @@ function css(cb) {
 exports.build = parallel(javascript, css);
 ```
 
-## Signature
+## 签名
 
 ```js
 parallel(...tasks)
 ```
 
-### Parameters
+### 参数
 
 | parameter | type | note |
 |:--------------:|:------:|-------|
 | tasks<br>**(required)** | function<br>string | Any number of task functions can be passed as individual arguments. Strings can be used if you've registered tasks previously, but this is not recommended. |
 
-### Returns
+### 返回值
 
 A composed operation to be registered as a task or nested within other `series` and/or `parallel` compositions.
 
