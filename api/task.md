@@ -9,7 +9,6 @@ sidebar_label: task()
 
 **提醒**: 这个API不再是推荐的模式了 - [export your tasks][creating-tasks-docs].
 
-Defines a task within the task system. The task can then be accessed from the command line and the `series()`, `parallel()`, and `lastRun()` APIs.
 在任务系统中定义任务。然后可以从命令行和 `series()`、`parallel()` 和 `lastRun()` api 访问该任务。
 
 ## Usage
