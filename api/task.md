@@ -7,7 +7,7 @@ sidebar_label: task()
 
 # task()
 
-**Reminder**: This API isn't the recommended pattern anymore - [export your tasks][creating-tasks-docs].
+**提醒**: 这个API不再是推荐的模式了 - [export your tasks][creating-tasks-docs].
 
 Defines a task within the task system. The task can then be accessed from the command line and the `series()`, `parallel()`, and `lastRun()` APIs.
 
