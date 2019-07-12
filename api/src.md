@@ -7,11 +7,11 @@ sidebar_label: src()
 
 # src()
 
-Creates a stream for reading [Vinyl][vinyl-concepts] objects from the file system.
+创建一个流，用于从文件系统读取 [Vinyl][vinyl-concepts] 对象。
 
-**Note:** BOMs (byte order marks) have no purpose in UTF-8 and will be removed from UTF-8 files read by `src()`, unless disabled using the `removeBOM` option.
+**注：**BOMs(字节顺序标记)在 UTF-8 中没有任何作用，除非使用 `removeBOM` 选项禁用，否则 `src()` 将从读取的 UTF-8 文件中删除BOMs。
 
-## Usage
+## 用法
 
 ```javascript
 const { src, dest } = require('gulp');
@@ -25,22 +25,22 @@ exports.copy = copy;
 ```
 
 
-## Signature
+## 签名
 
 ```js
 src(globs, [options])
 ```
 
-### Parameters
+### 参数
 
-| parameter | type | note |
+| 参数 | 类型 | 描述 |
 |:--------------:|:------:|-------|
 | globs | string<br>array | [Globs][globs-concepts] to watch on the file system. |
-| options | object | Detailed in [Options][options-section] below. |
+| options | object |在下面的[选项][options-section]中详细说明。|
 
-### Returns
+### 返回值
 
-A stream that can be used at the beginning or in the middle of a pipeline to add files based on the given globs.
+返回一个可以在管道的开始或中间使用的流，用于根据给定的 globs 添加文件。
 
 ### Errors
 
