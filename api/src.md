@@ -89,11 +89,12 @@ src(globs, [options])
 | symlinks | object | | A previously generated cache of symbolic links - avoids some file system calls.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
 | nocomment | boolean | false | When false, treat a `#` character at the start of a glob as a comment.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
 
-## Sourcemaps
+## 资源映射
 
-Sourcemap support is built directly into `src()` and `dest()`, but is disabled by default. Enable it to produce inline or external sourcemaps.
+资源映射支持直接构建到 `src()` 和 `dest()` 中，但是默认情况下是禁用的。使其能够生成内联或外部资源映射。
 
-Inline sourcemaps:
+内联资源映射:
+
 ```js
 const { src, dest } = require('gulp');
 const uglify = require('gulp-uglify');
@@ -103,7 +104,8 @@ src('input/**/*.js', { sourcemaps: true })
   .pipe(dest('output/', { sourcemaps: true }));
 ```
 
-External sourcemaps:
+外部资源映射：
+
 ```js
 const { src, dest } = require('gulp');
 const uglify = require('gulp-uglify');
