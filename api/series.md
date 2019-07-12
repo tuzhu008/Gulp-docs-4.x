@@ -9,7 +9,7 @@ sidebar_label: series()
 
 将任务函数和/或组合操作组合成更大的操作，这些操作将按顺序依次执行。对于使用 `series()` 和 `parallel()` 组合操作的嵌套深度没有强制限制。
 
-## Usage
+## 用法
 
 ```js
 const { series } = require('gulp');
