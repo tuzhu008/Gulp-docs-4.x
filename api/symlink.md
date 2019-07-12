@@ -7,7 +7,7 @@ sidebar_label: symlink()
 
 # symlink()
 
-Creates a stream for linking [Vinyl][vinyl-concepts] objects to the file system.
+创建一个链接 [Vinyl][vinyl-concepts] 到文件系统的流。
 
 ## Usage
 
@@ -22,20 +22,20 @@ function link() {
 exports.link = link;
 ```
 
-## Signature
+## 签名
 
 ```js
 symlink(directory, [options])
 ```
 
-### Parameters
+### 参数
 
-| parameter | type | note |
+| 参数 | 类型 | 描述 |
 |:--------------:|:-----:|--------|
 | directory<br>**(required)** | string<br>function | The path of the output directory where symbolic links will be created. If a function is used, the function will be called with each Vinyl object and must return a string directory path. |
 | options | object | Detailed in [Options][options-section] below. |
 
-### Returns
+### 返回值
 
 A stream that can be used in the middle or at the end of a pipeline to create symbolic links on the file system.
 Whenever a Vinyl object is passed through the stream, it creates a symbolic link to the original file on the file system at the given directory.
@@ -57,7 +57,7 @@ When `directory` is not a string or function, throws an error with the message, 
 
 When `directory` is a function that returns an empty string or `undefined`, emits an error with the message, "Invalid output folder".
 
-### Options
+### 选项
 
 **For options that accept a function, the passed function will be called with each Vinyl object and must return a value of another listed type.**
 
