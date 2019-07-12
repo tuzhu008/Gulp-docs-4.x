@@ -27,19 +27,19 @@ function css(cb) {
 exports.build = series(javascript, css);
 ```
 
-## Signature
+## 签名
 
 ```js
 series(...tasks)
 ```
 
-### Parameters
+### 参数
 
 | parameter | type | note |
 |:--------------:|:------:|-------|
 | tasks<br>**(required)** | function<br>string | Any number of task functions can be passed as individual arguments. Strings can be used if you've registered tasks previously, but this is not recommended. |
 
-### Returns
+### 返回值
 
 A composed operation to be registered as a task or nested within other `series` and/or `parallel` compositions.
 
@@ -59,7 +59,7 @@ In newer versions, you'll get an error, with the message "Task never defined", i
 
 During migration, you may need to use the [forward reference registry][undertaker-forward-reference-external]. This will add an extra closure to every task reference and dramatically slow down your build. **Don't rely on this fix for very long**.
 
-## Avoid duplicating tasks
+## 避免重复任务
 
 When a composed operation is run, each task will be executed every time it was supplied.
 
