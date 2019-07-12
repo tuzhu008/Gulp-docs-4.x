@@ -51,10 +51,9 @@ src(globs, [options])
 
 ### 选项
 
-**For options that accept a function, the passed function will be called with each Vinyl object and must return a value of another listed type.**
+**选项可以是一个函数，这个函数将在每一个 Vinyl 对象上调用，并且必须返回另一个列出的类型的值**
 
-
-| name | type | default | note |
+| 名称 | 类型 | 默认值 | 描述 |
 |:--------:|:------:|------------|--------|
 | buffer | boolean<br>function | true | When true, file contents are buffered into memory. If false, the Vinyl object's `contents` property will be a paused stream. It may not be possible to buffer the contents of large files.<br>**Note:** Plugins may not implement support for streaming contents. |
 | read | boolean<br>function | true | If false, files will be not be read and their Vinyl objects won't be writable to disk via `.dest()`. |
