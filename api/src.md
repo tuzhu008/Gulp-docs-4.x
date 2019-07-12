@@ -44,11 +44,12 @@ src(globs, [options])
 
 ### Errors
 
-When the `globs` argument can only match one file (such as `foo/bar.js`) and no match is found, throws an error with the message, "File not found with singular glob". To suppress this error, set the `allowEmpty` option to `true`.
+当 `globs` 参数只能匹配一个文件(如 `foo/bar.js`)而且没有找到匹配时，会抛出一个错误，提示 "File not found with singular glob"。若要抑制此错误，请将 `allowEmpty` 选项设置为 `true`。
 
-When an invalid glob is given in `globs`, throws an error with the message, "Invalid glob argument".
+当在 `globs` 中给出一个无效的 glob 时，抛出一个错误，并显示 "Invalid glob argument"。
 
-### Options
+
+### 选项
 
 **For options that accept a function, the passed function will be called with each Vinyl object and must return a value of another listed type.**
 
