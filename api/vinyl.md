@@ -7,13 +7,13 @@ sidebar_label: Vinyl
 
 # Vinyl
 
-A virtual file format. When a file is read by `src()`, a Vinyl object is generated to represent the file - including the path, contents, and other metadata.
+虚拟的文件格式。当 `src()` 读取文件时，将生成一个 Vinyl 对象来表示文件——包括路径、内容和其他元数据。
 
-Vinyl objects can have transformations applied using [plugins][using-plugins-docs]. They may also be persisted to the file system using `dest()`.
+Vinyl 对象可以使用[插件][using-plugins-docs]进行转换。还可以使用 `dest()` 将它们持久化到文件系统。
 
-When creating your own Vinyl objects - instead of generating with `src()` - use the external `vinyl` module, as shown in Usage below.
+当创建您自己的 Vinyl 对象时——而不是使用 `src()` 生成——使用外部 `vinyl` 模块，如下面的用法所示。
 
-## Usage
+## 用法
 
 ```js
 const Vinyl = require('vinyl');
@@ -43,19 +43,19 @@ file.extname = '.js';
 file.path === '/specs/file.js';
 ```
 
-## Signature
+## 签名
 
 ```js
 new Vinyl([options])
 ```
 
-### Parameters
+### 参数
 
-| parameter | type | note |
+| 参数 | 类型 | 描述 |
 |:--------------:|:------:|-------|
 | options | object | Detailed in [Options][options-section] below. |
 
-### Returns
+### 返回值
 
 An instance of the Vinyl class representing a single virtual file, detailed in [Vinyl instance][vinyl-instance-section] below.
 
@@ -63,7 +63,7 @@ An instance of the Vinyl class representing a single virtual file, detailed in [
 
 When any passed options don't conform to the [instance property definitions][instance-properties-section] (like if `path` is set to a number) throws as defined in the table.
 
-### Options
+### 选项
 
 | name | type | default | note |
 |:-------:|:------:|-----------|--------|
@@ -83,11 +83,11 @@ const file = new Vinyl({ foo: 'bar' });
 file.foo === 'bar';
 ```
 
-## Vinyl instance
+## Vinyl 实例
 
 Each instance of a Vinyl object will have properties and methods to access and/or modify information about the virtual file.
 
-### Instance properties
+### 实例属性
 
 All internally managed paths - any instance property except `contents` and `stat` - are normalized and have trailing separators removed. See [Normalization and concatenation][normalization-and-concatenation-section] for more information.
 
@@ -106,7 +106,7 @@ All internally managed paths - any instance property except `contents` and `stat
 | basename | string | Gets and sets the filename (`stem + extname`) of the `path` instance property. | If accessed when `path` is not available. |
 | symlink | string | Gets and sets the reference path of a symbolic link. | If set to any non-string value. |
 
-### Instance methods
+### 实例方法
 
 | method | return type | returns |
 |:----------:|:--------------:|--------|
