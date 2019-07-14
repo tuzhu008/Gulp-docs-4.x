@@ -11,6 +11,10 @@ Determines if a property is internally managed by Vinyl. Used by Vinyl when sett
 
 This method is useful when extending the Vinyl class. Detailed in [Extending Vinyl][extending-vinyl-section] below.
 
+确定一个属性是否 Vinyl 内部管理。Vinyl 在构造函数中设置值或在 `clone()` 实例方法中复制属性时使用。
+
+这种方法在扩展 Vinyl 类时很有用。下面详细介绍扩展 Vinyl。
+
 ## Usage
 
 ```js
@@ -20,25 +24,25 @@ Vinyl.isCustomProp('sourceMap') === true;
 Vinyl.isCustomProp('path') === false;
 ```
 
-## Signature
+## 签名
 
 ```js
 Vinyl.isCustomProp(property)
 ```
 
-### Parameters
+### 参数
 
-| parameter | type | note |
+| 参数 | 类型 | 文本 |
 |:--------------:|:------:|-------|
 | property | string | The property name to check. |
 
-### Returns
+### 返回值
 
-True if the property is not internally managed.
+如果属性不是内部管理的，则为 True。
 
-## Extending Vinyl
+## 扩展 Vinyl
 
-When custom properties are managed internally, the static `isCustomProp` method must be extended and return false when one of the custom properties is queried.
+当在内部管理自定义属性时，必须扩展静态 `isCustomProp` 方法，并在查询其中一个自定义属性时返回 false。
 
 ```js
 const Vinyl = require('vinyl');
@@ -61,8 +65,9 @@ class SuperFile extends Vinyl {
 }
 ```
 
-In the example above, `foo` and `_foo` will not be assigned to the new object when cloning or passed in `options` to `new SuperFile(options)`.
+在上面的例子中，`foo` 和 `_foo`  在克隆或将 `options` 传递给 `new SuperFile(options)` 时不会分配给新对象。
 
-If your custom properties or logic require special handling during cloning, override the `clone` method while extending Vinyl.
+如果您的自定义属性或逻辑在克隆期间需要特殊处理，请在扩展 Vinyl 时覆盖 `clone` 方法。
+
 
 [extending-vinyl-section]: #extending-vinyl
