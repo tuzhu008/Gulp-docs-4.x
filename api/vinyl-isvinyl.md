@@ -7,11 +7,12 @@ sidebar_label: Vinyl.isVinyl()
 
 # Vinyl.isVinyl()
 
-Determines if an object is a Vinyl instance. Use this method instead of `instanceof`.
+使用这个方法而不是 `instanceof` 来确定对象是否是 Vinyl 实例。
 
-**Note**: This method uses an internal property that some older versions of Vinyl didn't expose resulting in a false negative if using an outdated version.
 
-## Usage
+**注意:**这个方法使用了一些旧版本 Vinyl 没有暴露的内部属性，如果使用过时的版本，会导致 false negative。
+
+## 用法
 
 ```js
 const Vinyl = require('vinyl');
@@ -23,19 +24,18 @@ Vinyl.isVinyl(file) === true;
 Vinyl.isVinyl(notAFile) === false;
 ```
 
-## Signature
+## 签名
 
 ```js
 Vinyl.isVinyl(file);
 ```
 
-### Parameters
+### 参数
 
-| parameter | type | note |
+| 参数 | 类型 | 描述 |
 |:--------------:|:------:|-------|
 | file | object | The object to check. |
 
-### Returns
+### 返回值
 
-True if the `file` object is a Vinyl instance.
-
+如果 `file` 对象是 Vinyl 实例，则为 True。
