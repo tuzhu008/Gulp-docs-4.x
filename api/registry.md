@@ -14,9 +14,15 @@ Allows custom registries to be plugged into the task system, which can provide s
 
 When assigning a new registry, each task from the current registry will be transferred and the current registry will be replaced with the new one. This allows for adding multiple custom registries in sequential order.
 
-See [Creating Custom Registries][creating-custom-registries] for details.
+允许将自定义注册中心插入任务系统，该系统可以提供共享任务或增强功能。
 
-## Usage
+**注意：**只有使用 `task()` 注册的任务才会提供给自定义 registry。将不提供直接传递给 `series()` 或 `parallel()` 的任务函数——如果需要自定义 registry 行为，请使用字符串引用组合任务。
+
+在分配新 registry 时，将传输当前 registry 中的每个任务，并将用新 registry 替换当前 registry。这允许按顺序添加多个自定义 registry。
+
+有关详细信息，请参见[创建自定义注册](creating-custom-registries)中心。
+
+## 用法
 
 ```js
 const { registry, task, series } = require('gulp');
@@ -32,19 +38,19 @@ task('forward-ref', function(cb) {
 });
 ```
 
-## Signature
+## 签名
 
 ```js
 registry([registryInstance])
 ```
 
-### Parameters
+### 参数
 
-| parameter | type | note |
+| 参数 | 类型 | 描述 |
 |:--------------:|:-----:|--------|
 | registryInstance | object | An instance - not the class - of a custom registry. |
 
-### Returns
+### 返回值
 
 If a `registryInstance` is passed, nothing will be returned. If no arguments are passed, returns the current registry instance.
 
