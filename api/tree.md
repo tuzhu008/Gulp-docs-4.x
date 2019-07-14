@@ -7,11 +7,11 @@ sidebar_label: tree()
 
 # tree()
 
-Fetches the current task dependency tree - in the rare case that it is needed.
+获取当前任务依赖关系树——在极少数情况下需要它。
 
-Generally, `tree()` won't be used by gulp consumers, but it is exposed so the CLI can show the dependency graph of the tasks defined in a gulpfile.
+通常，gulp 使用者不会使用 `tree()`，但它是公开的，因此 CLI 可以显示在 gulpfile 中定义的任务的依赖关系图。
 
-## Usage
+## 用法
 
 Example gulpfile:
 ```js
@@ -45,7 +45,7 @@ const five = series(four,
 module.exports = { one, two, three, four, five };
 ```
 
-Output for `tree()`:
+`tree()` 的输出:
 ```js
 {
   label: 'Tasks',
@@ -54,7 +54,8 @@ Output for `tree()`:
 ```
 
 
-Output for `tree({ deep: true })`:
+`tree({ deep: true })` 的输出:
+
 ```js
 {
   label: "Tasks",
@@ -148,19 +149,19 @@ Output for `tree({ deep: true })`:
 }
 ```
 
-## Signature
+## 签名
 
 ```js
 tree([options])
 ```
 
-### Parameters
+### 参数
 
-| parameter | type | note |
+| 参数 | 类型 | 描述 |
 |:--------------:|------:|--------|
 | options | object | Detailed in [Options][options-section] below. |
 
-### Returns
+### 返回值
 
 An object detailing the tree of registered tasks - containing nested objects with `'label'` and `'nodes'` properties (which is [archy][archy-external] compatible).
 
@@ -168,7 +169,7 @@ Each object may have a `type` property that can be used to determine if the node
 
 Each object may have a `branch` property that, when `true`, indicates the node was created using `series()` or `parallel()`.
 
-### Options
+### 选项
 
 | name | type | default | note |
 |:-------:|:-------:|------------|--------|
