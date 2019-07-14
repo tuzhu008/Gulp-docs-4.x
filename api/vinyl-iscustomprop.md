@@ -11,7 +11,7 @@ Determines if a property is internally managed by Vinyl. Used by Vinyl when sett
 
 This method is useful when extending the Vinyl class. Detailed in [Extending Vinyl][extending-vinyl-section] below.
 
-确定一个属性是否 Vinyl 内部管理。Vinyl 在构造函数中设置值或在 `clone()` 实例方法中复制属性时使用。
+确定一个属性是否由 Vinyl 在内部进行管理。Vinyl 在构造函数中设置值或在 `clone()` 实例方法中复制属性时使用。
 
 这种方法在扩展 Vinyl 类时很有用。下面详细介绍扩展 Vinyl。
 
