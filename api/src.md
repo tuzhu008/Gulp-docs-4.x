@@ -87,7 +87,7 @@ src(globs, [options])
 | cache | object | | A previously generated cache object - avoids some file system calls.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | statCache | object | | A previously generated cache of `fs.Stat` results - avoids some file system calls.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | symlinks | object | | A previously generated cache of symbolic links - avoids some file system calls.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
-| nocomment | boolean | false | When false, treat a `#` character at the start of a glob as a comment.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
+| nocomment | boolean | false | 当为 false 时，将 glob 开头的 `#` 字符视为注释。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 
 ## 资源映射
 
