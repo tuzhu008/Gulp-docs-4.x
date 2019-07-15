@@ -43,7 +43,9 @@ series(...tasks)
 
 A composed operation to be registered as a task or nested within other `series` and/or `parallel` compositions.
 
-When the composed operation is executed, all tasks will be run sequentially. If an error occurs in one task, no subsequent tasks will be run.
+返回一个组合操作，它将注册为任务或嵌套在其他 `series` 和/或 `parallel` 组合中。
+
+当执行组合操作时，所有任务将按顺序运行。如果一个任务中发生错误，则不会运行后续任务。
 
 ### Errors
 
