@@ -32,26 +32,27 @@ dest(directory, [options])
 
 | 参数 | 类型 | 描述 |
 |:--------------:|:-----:|--------|
-| directory<br>**(required)** | string<br>function | The path of the output directory where files will be written. If a function is used, the function will be called with each Vinyl object and must return a string directory path. |
-| options | object | Detailed in [Options][options-section] below. |
+| directory<br>**(required)** | string<br>function | 将写入文件的输出目录的路径。如果使用一个函数，该函数将与每个 Vinyl 对象一起调用，并且必须返回一个字符串目录路径。|
+| options | object | 详情见下文[选项][options-section]]。|
 
 ### 返回值
 
-A stream that can be used in the middle or at the end of a pipeline to create files on the file system.
-Whenever a Vinyl object is passed through the stream, it writes the contents and other details out to the file system at the given directory. If the Vinyl object has a `symlink` property, a symbolic link will be created instead of writing the contents. After the file is created, its [metadata will be updated][metadata-updates-section] to match the Vinyl object.
+返回一个可以在管道的中间或末尾使用的流，用于在文件系统上创建文件。
 
-Whenever a file is created on the file system, the Vinyl object will be modified.
-* The `cwd`, `base`, and `path` properties will be updated to match the created file.
-* The `stat` property will be updated to match the file on the file system.
-* If the `contents` property is a stream, it will be reset so it can be read again.
+每当 Vinyl 对象通过流被传递时，它将内容和其他细节写到给定目录下的文件系统。如果 Vinyl 对象具有 `symlink` 属性，将创建符号链接（symbolic link）而不是写入内容。创建文件后，将[更新其元数据][metadata-updates-section]以匹配 Vinyl 对象。
+
+在文件系统上创建文件时，Vinyl 对象将被修改。
+* `cwd`、`base` 和 `path` 属性将被更新以匹配创建的文件。
+* `stat` 属性将被更新，以匹配文件系统上的文件。
+* 如果 `contents` 属性是一个流，它将被重置，以便可以再次读取。
 
 ### Errors
 
-When `directory` is an empty string, throws an error with the message, "Invalid dest() folder argument. Please specify a non-empty string or a function."
+当目录为空字符串时，将抛出一个错误，并提示 "Invalid dest() folder argument. Please specify a non-empty string or a function."（无效的 dest() 文件夹参数。请指定非空字符串或函数。）
 
-When `directory` is not a string or function, throws an error with the message, "Invalid dest() folder argument. Please specify a non-empty string or a function."
+当目录不是字符串或函数时，将抛出一个错误，并提示 "Invalid dest() folder argument. Please specify a non-empty string or a function."
 
-When `directory` is a function that returns an empty string or `undefined`, emits an error with the message, "Invalid output folder".
+当 `directory` 是一个返回空字符串或 `undefined` 的函数时，将发出一条错误消息 “Invalid output folder”。
 
 ### Options
 
