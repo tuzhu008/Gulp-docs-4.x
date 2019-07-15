@@ -76,7 +76,7 @@ src(globs, [options])
 | nounique | boolean | false | 当为 false 时，可以防止结果集中出现重复的文件。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | debug | boolean | false | 如果为 true，调试信息将被记录到命令行。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | nobrace | boolean | false | 如果为 true，避免扩大大括号集合 - 例如 `{a,b}` 或 `{1..3}`.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
-| noglobstar | boolean | false | 如果为 true，treats double-star glob character as single-star glob character.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
+| noglobstar | boolean | false | 如果为 true，将双星（`**`） glob 字符视为单星(`*`) glob 字符<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | noext | boolean | false | 如果为 true，avoids matching [extglob][extglob-docs] patterns - e.g. `+(ab)`.<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
 | nocase | boolean | false | 如果为 true，则执行不区分大小写的匹配。<br>**注意:** 在不区分大小写的文件系统上，默认情况下，non-magic 模式将被匹配。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | matchBase | boolean | false | 如果true 并且 globs 不包含任何 `/` 字符，遍历所有目录并匹配该 glob ——  `*.js` 将被视为等同于 `**/*.js`。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
