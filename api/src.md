@@ -74,7 +74,7 @@ src(globs, [options])
 | stat | boolean | false | 如果为 true， `fs.stat()` 在所有的结果上被调用。这增加了额外的开销，通常不应该使用。<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
 | strict | boolean | false | 如果为 true，如果在尝试读取目录时遇到意外问题，将抛出错误。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | nounique | boolean | false | 当为 false 时，可以防止结果集中出现重复的文件。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
-| debug | boolean | false | If true, debugging information will be logged to the command line.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
+| debug | boolean | false | 如果为 true，调试信息将被记录到命令行。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | nobrace | boolean | false | 如果为 true， avoids expanding brace sets - e.g. `{a,b}` or `{1..3}`.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | noglobstar | boolean | false | 如果为 true，treats double-star glob character as single-star glob character.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | noext | boolean | false | 如果为 true，avoids matching [extglob][extglob-docs] patterns - e.g. `+(ab)`.<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
