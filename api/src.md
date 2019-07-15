@@ -67,8 +67,8 @@ src(globs, [options])
 | root | string | | 解析 `globs` 的根路径.<br>_此选项直接传递给 [glob-stream][glob-stream-external]。_|
 | allowEmpty | boolean | false | 当为 false 时，只能匹配一个文件的 `globs` (如 `foo/bar.js`)如果没有找到匹配的文件，就会引发一个错误。如果为 true 的，则不会报错。<br>_此选项直接传递给 [glob-stream][glob-stream-external]。_ |
 | uniqueBy | string<br>function | `'path'` | 通过比较字符串属性名或函数的结果，从流中删除重复项。<br>**注意：**当使用函数时，函数接收流数据(对象包含 `cwd`、`base`、`path` 属性)。|
-| dot | boolean | false | 如果为 true，请将 globs 与 `.gitignore` 等点文件进行比较。_<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
-| silent | boolean | true | When true, suppresses warnings from printing on `stderr`.<br>**Note:** This option is passed directly to [node-glob][node-glob-external] but defaulted to `true` instead of `false`. |
+| dot | boolean | false | 如果为 true，请将 globs 与 `.gitignore` 等点文件进行比较。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
+| silent | boolean | true |如果为 true，则禁止在 `stderr` 上打印警告。<br>**注意:**  此选项直接传递给 [node-glob][node-glob-external]，但默认为 `true` 而不是 `false`。|
 | mark | boolean | false | If true, a `/` character will be appended to directory matches. Generally not needed because paths are normalized within the pipeline.<br>_此选项直接传递给 [node-glob][node-glob-external]。_  |
 | nosort | boolean | false | If true, disables sorting the glob results.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
 | stat | boolean | false | If true, `fs.stat()` is called on all results. This adds extra overhead and generally should not be used.<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
