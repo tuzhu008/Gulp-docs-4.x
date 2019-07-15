@@ -118,6 +118,6 @@ For dangling links created via `dest()`, the incoming Vinyl object represents th
 
 [sourcemaps-section]: #sourcemaps
 [symbolic-links-section]: #symbolic-links-on-windows
-[options-section]: #options
+[options-section]: #选项
 [metadata-updates-section]: #metadata-updates
 [vinyl-concepts]: ../api/concepts.md#vinyl
