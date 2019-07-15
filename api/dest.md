@@ -61,7 +61,7 @@ dest(directory, [options])
 | name | type | default | note |
 |:-------:|:------:|-----------|-------|
 | cwd | string<br>function | `process.cwd()` | 这个目录将与任何相对路径相结合以形成绝对路径。对于绝对路径忽略。用于避免将 `directory` 与 `path.join()` 相结合。|
-| mode | number<br>function | `stat.mode` of the Vinyl object | The mode used when creating files. If not set and `stat.mode` is missing, the process' mode will be used instead. |
+| mode | number<br>function | `stat.mode` of the Vinyl object | 创建文件时使用的模式。如果没有设置，并且缺少 `stat.mode`，则使用 process' 模式。 |
 | dirMode | number<br>function | | The mode used when creating directories. If not set, the process' mode will be used. |
 | overwrite | boolean<br>function | true | When true, overwrites existing files with the same path. |
 | append | boolean<br>function | false | If true, adds contents to the end of the file, instead of replacing existing contents. |
