@@ -79,7 +79,7 @@ dest(directory, [options])
 
 ## Sourcemaps
 
-Sourcemap support is built directly into `src()` and `dest()`, but it is disabled by default. Enable it to produce inline or external sourcemaps.
+Sourcemap 支持直接构建到 `src()` 和 `dest()` 中，但默认情况下是禁用的。使其能够生成内联或外部 sourcemaps。
 
 Inline sourcemaps:
 ```js
