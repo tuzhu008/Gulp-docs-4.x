@@ -81,8 +81,8 @@ src(globs, [options])
 | nocase | boolean | false | If true, performs a case-insensitive match.<br>**Note:** On case-insensitive file systems, non-magic patterns will match by default.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | matchBase | boolean | false | If true and globs don't contain any `/` characters, traverses all directories and matches that glob - e.g. `*.js` would be treated as equivalent to `**/*.js`.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | nodir | boolean | false | If true, only matches files, not directories.<br>**Note:** To match only directories, end your glob with a `/`.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
-| ignore | string<br>array | | Globs to exclude from matches. This option is combined with negated `globs`.<br>**注意:** These globs are always matched against dot files, regardless of any other settings.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
-| follow | boolean | false | If true, symlinked directories will be traversed when expanding `**` globs.<br>**注意:** 这可能导致循环链接出现问题。<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
+| ignore | string<br>array | | 从匹配中排除。这个选项与否定的(negated) `globs` 组合在一起。<br>**注意:** 无论其他设置如何，这些 `globs` 总是与点文件匹配。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
+| follow | boolean | false | 如果为 true，在展开 `**` globs 时将遍历符号链接目录。<br>**注意:** 这可能导致循环链接出现问题。<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
 | realpath | boolean | false | 如果为 true，`fs.realpath()` 在所有的结果上调用。这可能导致悬挂式（dangling）链接。<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
 | cache | object | | 之前生成的缓存对象——避免了一些文件系统调用。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | statCache | object |  | 之前生成的 `fs.Stat` 缓存——避免了一些文件系统调用。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
