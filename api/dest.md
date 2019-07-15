@@ -65,9 +65,9 @@ dest(directory, [options])
 | dirMode | number<br>function | | 创建目录时使用的模式。如果没有设置，将使用 process' 模式。 |
 | overwrite | boolean<br>function | true | 如果为 true，则用相同的路径覆盖现有文件。 |
 | append | boolean<br>function | false |  如果为 true，则将内容添加到文件末尾，而不是替换现有内容。|
-| sourcemaps | boolean<br>string<br>function | false | If true, writes inline sourcemaps to the output file. Specifying a `string` path will write external [sourcemaps][sourcemaps-section] at the given path. |
-| relativeSymlinks | boolean<br>function | false | When false, any symbolic links created will be absolute.<br>**Note**: Ignored if a junction is being created, as they must be absolute. |
-| useJunctions | boolean<br>function | true | This option is only relevant on Windows and ignored elsewhere. When true, creates directory symbolic link as a junction. Detailed in [Symbolic links on Windows][symbolic-links-section] below. |
+| sourcemaps | boolean<br>string<br>function | false | 如果为 true，则将内联 sourcemaps 写入输出文件。指定一个 `string` 路径将在给定路径上写入外部 [sourcemaps][sourcemaps-section] 。 |
+| relativeSymlinks | boolean<br>function | false | 当为false 时，创建的任何符号链接将是绝对的。<br>**注意**: 如果正在创建连接，则忽略它们，因为它们必须是绝对的。 |
+| useJunctions | boolean<br>function | true | 此选项仅适用于 Windows，在其他地方被忽略。当为 true 时，创建目录符号链接作为连接（junction）。详情请见下文 [Symbolic links on Windows][symbolic-links-section] |
 
 ## Metadata updates
 
