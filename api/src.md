@@ -72,7 +72,7 @@ src(globs, [options])
 | mark | boolean | false | 如果为 true，将向目录匹配项追加一个 `/` 字符。通常不需要，因为路径是在管道中规范化的<br>_此选项直接传递给 [node-glob][node-glob-external]。_  |
 | nosort | boolean | false | If true, disables sorting the glob results.<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
 | stat | boolean | false | If true, `fs.stat()` is called on all results. This adds extra overhead and generally should not be used.<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
-| strict | boolean | false | If true, an error will be thrown if an unexpected problem is encountered while attempting to read a directory.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
+| strict | boolean | false | If true, an error will be thrown if an unexpected problem is encountered while attempting to read a directory.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | nounique | boolean | false | When false, prevents duplicate files in the result set.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | debug | boolean | false | If true, debugging information will be logged to the command line.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | nobrace | boolean | false | If true, avoids expanding brace sets - e.g. `{a,b}` or `{1..3}`.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
