@@ -35,9 +35,9 @@ series(...tasks)
 
 ### 参数
 
-| parameter | type | note |
+| 参数 | 类型 | 描述 |
 |:--------------:|:------:|-------|
-| tasks<br>**(required)** | function<br>string | Any number of task functions can be passed as individual arguments. Strings can be used if you've registered tasks previously, but this is not recommended. |
+| tasks<br>**(required)** | function<br>string | 任意数量的任务函数都可以作为单独的参数传递。如果您以前注册过任务，可以使用字符串，但不建议这样做。|
 
 ### 返回值
 
