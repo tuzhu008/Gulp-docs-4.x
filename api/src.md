@@ -70,14 +70,14 @@ src(globs, [options])
 | dot | boolean | false | 如果为 true，请将 globs 与 `.gitignore` 等点文件进行比较。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | silent | boolean | true |如果为 true，则禁止在 `stderr` 上打印警告。<br>**注意:**  此选项直接传递给 [node-glob][node-glob-external]，但默认为 `true` 而不是 `false`。|
 | mark | boolean | false | 如果为 true，将向目录匹配项追加一个 `/` 字符。通常不需要，因为路径是在管道中规范化的<br>_此选项直接传递给 [node-glob][node-glob-external]。_  |
-| nosort | boolean | false | If true, disables sorting the glob results.<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
-| stat | boolean | false | If true, `fs.stat()` is called on all results. This adds extra overhead and generally should not be used.<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
-| strict | boolean | false | If true, an error will be thrown if an unexpected problem is encountered while attempting to read a directory.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
+| nosort | boolean | false | 如果为 true，禁用对 glob 结果排序。<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
+| stat | boolean | false | 如果为 true， `fs.stat()` is called on all results. This adds extra overhead and generally should not be used.<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
+| strict | boolean | false | 如果为 true， an error will be thrown if an unexpected problem is encountered while attempting to read a directory.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | nounique | boolean | false | When false, prevents duplicate files in the result set.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | debug | boolean | false | If true, debugging information will be logged to the command line.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
-| nobrace | boolean | false | If true, avoids expanding brace sets - e.g. `{a,b}` or `{1..3}`.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
-| noglobstar | boolean | false | If true, treats double-star glob character as single-star glob character.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
-| noext | boolean | false | If true, avoids matching [extglob][extglob-docs] patterns - e.g. `+(ab)`.<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
+| nobrace | boolean | false | 如果为 true， avoids expanding brace sets - e.g. `{a,b}` or `{1..3}`.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
+| noglobstar | boolean | false | 如果为 true，treats double-star glob character as single-star glob character.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
+| noext | boolean | false | 如果为 true，avoids matching [extglob][extglob-docs] patterns - e.g. `+(ab)`.<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
 | nocase | boolean | false | 如果为 true，则执行不区分大小写的匹配。<br>**注意:** 在不区分大小写的文件系统上，默认情况下，non-magic 模式将被匹配。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | matchBase | boolean | false | 如果true 并且 globs 不包含任何 `/` 字符，遍历所有目录并匹配该 glob ——  `*.js` 将被视为等同于 `**/*.js`。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | nodir | boolean | false | 若要仅匹配目录，glob 请以 `/` 结束。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
