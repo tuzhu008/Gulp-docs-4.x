@@ -55,39 +55,39 @@ src(globs, [options])
 
 | 名称 | 类型 | 默认值 | 描述 |
 |:--------:|:------:|------------|--------|
-| buffer | boolean<br>function | true | When true, file contents are buffered into memory. If false, the Vinyl object's `contents` property will be a paused stream. It may not be possible to buffer the contents of large files.<br>**Note:** Plugins may not implement support for streaming contents. |
-| read | boolean<br>function | true | If false, files will be not be read and their Vinyl objects won't be writable to disk via `.dest()`. |
-| since | date<br>timestamp<br>function | | When set, only creates Vinyl objects for files modified since the specified time. |
-| removeBOM | boolean<br>function | true | When true, removes the BOM from UTF-8 encoded files. If false, ignores a BOM. |
-| sourcemaps | boolean<br>function | false | If true, enables [sourcemaps][sourcemaps-section] support on Vinyl objects created. Loads inline sourcemaps and resolves external sourcemap links. |
-| resolveSymlinks | boolean<br>function | true | When true, recursively resolves symbolic links to their targets. If false, preserves the symbolic links and sets the Vinyl object's `symlink` property to the original file's path. |
-| cwd | string | `process.cwd()` | The directory that will be combined with any relative path to form an absolute path. Is ignored for absolute paths. Use to avoid combining `globs` with `path.join()`.<br>_This option is passed directly to [glob-stream][glob-stream-external]._ |
-| base | string | | Explicitly set the `base` property on created Vinyl objects. Detailed in [API Concepts][glob-base-concepts].<br>_This option is passed directly to [glob-stream][glob-stream-external]._ |
-| cwdbase | boolean | false | If true, `cwd` and `base` options should be aligned.<br>_This option is passed directly to [glob-stream][glob-stream-external]._ |
-| root | string | | The root path that `globs` are resolved against.<br>_This option is passed directly to [glob-stream][glob-stream-external]._ |
-| allowEmpty | boolean | false | When false, `globs` which can only match one file (such as `foo/bar.js`) causes an error to be thrown if they don't find a match. If true, suppresses glob failures.<br>_This option is passed directly to [glob-stream][glob-stream-external]._ |
+| buffer | boolean<br>function | true | 当为 true 时，文件内容被缓冲到内存中。如果为false，Vinyl 对象的 `contents` 属性将是一个暂停流。可能无法缓冲大文件的内容。<br>**注意:**插件可能不支持流媒体内容。|
+| read | boolean<br>function | true | 如果为 false，文件将不会被读取，并且它们的 Vinyl 对象将不能通过 `.dest()` 写入磁盘。|
+| since | date<br>timestamp<br>function | | 设置时，仅为自指定时间以来修改过的文件创建 Vinyl 对象。 |
+| removeBOM | boolean<br>function | true | 如果为 true，则从 UTF-8 编码的文件中删除 BOM。如果为 false，则忽略 BOM。|
+| sourcemaps | boolean<br>function | false | 如果为 true，则在创建的 Vinyl 对象上启用 [sourcemaps][sourcemaps-section]。加载内联 sourcemaps 并解析外部 sourcemap 链接。 |
+| resolveSymlinks | boolean<br>function | true | true 时，递归地解析链接到目标的符号(symbolic)链接。如果为 false，则保留符号链接并将 Vinyl 对象的 `symlink` 属性设置为原始文件的路径。|
+| cwd | string | `process.cwd()` | 将与任何相对路径相结合以形成绝对路径的目录。对于绝对路径忽略。用于避免将 globs 与 `path.join()` 相结合。<br>_此选项直接传递给 [glob-stream][glob-stream-external]。_|
+| base | string | | 显式地在创建的 Vinyl 对象上设置 `base` 属性。详情请参见 [API Concepts][glob-base-concepts].<br>_此选项直接传递给 [glob-stream][glob-stream-external]。_|
+| cwdbase | boolean | false | 如果为 true，`cwd` 和 `base` 选项应该对应起来。<br>_此选项直接传递给 [glob-stream][glob-stream-external]。_|
+| root | string | | 解析 `globs` 的根路径.<br>_此选项直接传递给 [glob-stream][glob-stream-external]。_|
+| allowEmpty | boolean | false | When false, `globs` which can only match one file (such as `foo/bar.js`) causes an error to be thrown if they don't find a match. If true, suppresses glob failures.<br>_此选项直接传递给 [glob-stream][glob-stream-external]。_ |
 | uniqueBy | string<br>function | `'path'` | Remove duplicates from the stream by comparing the string property name or the result of the function.<br>**Note:** When using a function, the function receives the streamed data (objects containing `cwd`, `base`, `path` properties). |
-| dot | boolean | false | If true, compare globs against dot files, like `.gitignore`.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
+| dot | boolean | false | If true, compare globs against dot files, like `.gitignore`._<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | silent | boolean | true | When true, suppresses warnings from printing on `stderr`.<br>**Note:** This option is passed directly to [node-glob][node-glob-external] but defaulted to `true` instead of `false`. |
-| mark | boolean | false | If true, a `/` character will be appended to directory matches. Generally not needed because paths are normalized within the pipeline.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
+| mark | boolean | false | If true, a `/` character will be appended to directory matches. Generally not needed because paths are normalized within the pipeline.<br>_此选项直接传递给 [node-glob][node-glob-external]。_  |
 | nosort | boolean | false | If true, disables sorting the glob results.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
-| stat | boolean | false | If true, `fs.stat()` is called on all results. This adds extra overhead and generally should not be used.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
+| stat | boolean | false | If true, `fs.stat()` is called on all results. This adds extra overhead and generally should not be used.<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
 | strict | boolean | false | If true, an error will be thrown if an unexpected problem is encountered while attempting to read a directory.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
-| nounique | boolean | false | When false, prevents duplicate files in the result set.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
-| debug | boolean | false | If true, debugging information will be logged to the command line.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
-| nobrace | boolean | false | If true, avoids expanding brace sets - e.g. `{a,b}` or `{1..3}`.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
-| noglobstar | boolean | false | If true, treats double-star glob character as single-star glob character.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
-| noext | boolean | false | If true, avoids matching [extglob][extglob-docs] patterns - e.g. `+(ab)`.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
-| nocase | boolean | false | If true, performs a case-insensitive match.<br>**Note:** On case-insensitive file systems, non-magic patterns will match by default.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
-| matchBase | boolean | false | If true and globs don't contain any `/` characters, traverses all directories and matches that glob - e.g. `*.js` would be treated as equivalent to `**/*.js`.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
+| nounique | boolean | false | When false, prevents duplicate files in the result set.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
+| debug | boolean | false | If true, debugging information will be logged to the command line.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
+| nobrace | boolean | false | If true, avoids expanding brace sets - e.g. `{a,b}` or `{1..3}`.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
+| noglobstar | boolean | false | If true, treats double-star glob character as single-star glob character.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
+| noext | boolean | false | If true, avoids matching [extglob][extglob-docs] patterns - e.g. `+(ab)`.<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
+| nocase | boolean | false | If true, performs a case-insensitive match.<br>**Note:** On case-insensitive file systems, non-magic patterns will match by default.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
+| matchBase | boolean | false | If true and globs don't contain any `/` characters, traverses all directories and matches that glob - e.g. `*.js` would be treated as equivalent to `**/*.js`.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | nodir | boolean | false | If true, only matches files, not directories.<br>**Note:** To match only directories, end your glob with a `/`.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
-| ignore | string<br>array | | Globs to exclude from matches. This option is combined with negated `globs`.<br>**Note:** These globs are always matched against dot files, regardless of any other settings.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
-| follow | boolean | false | If true, symlinked directories will be traversed when expanding `**` globs.<br>**Note:** This can cause problems with cyclical links.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
-| realpath | boolean | false | If true, `fs.realpath()` is called on all results. This may result in dangling links.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
-| cache | object | | A previously generated cache object - avoids some file system calls.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
-| statCache | object | | A previously generated cache of `fs.Stat` results - avoids some file system calls.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
-| symlinks | object | | A previously generated cache of symbolic links - avoids some file system calls.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
-| nocomment | boolean | false | When false, treat a `#` character at the start of a glob as a comment.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
+| ignore | string<br>array | | Globs to exclude from matches. This option is combined with negated `globs`.<br>**Note:** These globs are always matched against dot files, regardless of any other settings.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
+| follow | boolean | false | If true, symlinked directories will be traversed when expanding `**` globs.<br>**Note:** This can cause problems with cyclical links.<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
+| realpath | boolean | false | If true, `fs.realpath()` is called on all results. This may result in dangling links.<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
+| cache | object | | A previously generated cache object - avoids some file system calls.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
+| statCache | object | | A previously generated cache of `fs.Stat` results - avoids some file system calls.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
+| symlinks | object | | A previously generated cache of symbolic links - avoids some file system calls.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
+| nocomment | boolean | false | When false, treat a `#` character at the start of a glob as a comment.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 
 ## 资源映射
 
