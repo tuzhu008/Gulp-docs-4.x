@@ -54,7 +54,7 @@ dest(directory, [options])
 
 当 `directory` 是一个返回空字符串或 `undefined` 的函数时，将发出一条错误消息 “Invalid output folder”。
 
-### Options
+### 选项
 
 
 **For options that accept a function, the passed function will be called with each Vinyl object and must return a value of another listed type.**
