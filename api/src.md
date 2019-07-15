@@ -83,7 +83,7 @@ src(globs, [options])
 | nodir | boolean | false | If true, only matches files, not directories.<br>**Note:** To match only directories, end your glob with a `/`.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
 | ignore | string<br>array | | Globs to exclude from matches. This option is combined with negated `globs`.<br>**Note:** These globs are always matched against dot files, regardless of any other settings.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | follow | boolean | false | If true, symlinked directories will be traversed when expanding `**` globs.<br>**Note:** This can cause problems with cyclical links.<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
-| realpath | boolean | false | If true, `fs.realpath()` is called on all results. This may result in dangling links.<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
+| realpath | boolean | false | 如果为 true，`fs.realpath()` 在所有的结果上调用。这可能导致悬挂式（dangling）链接。<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
 | cache | object | | A previously generated cache object - avoids some file system calls.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | statCache | object |  |之前生成的 `fs.Stat` 缓存——避免了一些文件系统调用.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | symlinks | object | | 之前生成的符号链接缓存——避免了一些文件系统调用。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
