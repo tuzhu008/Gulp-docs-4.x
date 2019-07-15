@@ -81,7 +81,8 @@ dest(directory, [options])
 
 Sourcemap 支持直接构建到 `src()` 和 `dest()` 中，但默认情况下是禁用的。使其能够生成内联或外部 sourcemaps。
 
-Inline sourcemaps:
+内联 sourcemaps:
+
 ```js
 const { src, dest } = require('gulp');
 const uglify = require('gulp-uglify');
@@ -91,7 +92,8 @@ src('input/**/*.js', { sourcemaps: true })
   .pipe(dest('output/', { sourcemaps: true }));
 ```
 
-External sourcemaps:
+外部 sourcemaps:
+
 ```js
 const { src, dest } = require('gulp');
 const uglify = require('gulp-uglify');
@@ -103,10 +105,11 @@ src('input/**/*.js', { sourcemaps: true })
 
 ## Symbolic links on Windows
 
-When creating symbolic links on Windows, a `type` argument is passed to Node's `fs.symlink()` method which specifies the kind of target being linked. The link type is set to:
-* `'file'` when the target is a regular file
-* `'junction'` when the target is a directory
-* `'dir'` when the target is a directory and the user disables the `useJunctions` option
+在 Windows 上创建符号链接时，`type` 参数被传递给 Node 的 `fs.symlink()` 方法，该方法指定被链接的目标的类型。链接类型设置为:
+
+* `'file'`，当目标是一个常规文件时
+* `'junction'`， 当目标是一个目录时
+* `'dir'`， 当目标是一个目录并且用户禁用了 `useJunctions` 选项时
 
 
 If you try to create a dangling (pointing to a non-existent target) link, the link type can't be determined automatically. In these cases, behavior will vary depending on whether the dangling link is being created via `symlink()` or via `dest()`.
