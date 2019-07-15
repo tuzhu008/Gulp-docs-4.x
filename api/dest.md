@@ -69,7 +69,7 @@ dest(directory, [options])
 | relativeSymlinks | boolean<br>function | false | 当为false 时，创建的任何符号链接将是绝对的。<br>**注意**: 如果正在创建连接，则忽略它们，因为它们必须是绝对的。 |
 | useJunctions | boolean<br>function | true | 此选项仅适用于 Windows，在其他地方被忽略。当为 true 时，创建目录符号链接作为连接（junction）。详情请见下文 [Symbolic links on Windows][symbolic-links-section] |
 
-## Metadata updates
+## 元数据更新
 
 Whenever the `dest()` stream creates a file, the Vinyl object's `mode`, `mtime`, and `atime` are compared to the created file. If they differ, the created file will be updated to reflect the Vinyl object's metadata. If those properties are the same, or gulp doesn't have permissions to make changes, the attempt is skipped silently.
 
