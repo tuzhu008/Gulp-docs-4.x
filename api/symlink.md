@@ -59,7 +59,9 @@ When `directory` is a function that returns an empty string or `undefined`, emit
 
 ### 选项
 
-**For options that accept a function, the passed function will be called with each Vinyl object and must return a value of another listed type.**
+**对于接受函数的选项，传递的函数将与每个 Vinyl 对象一起调用，并且必须返回另一个列出类型的值。**
+
+
 
 | name | type | default | note |
 |:-------:|:------:|-----------|-------|
