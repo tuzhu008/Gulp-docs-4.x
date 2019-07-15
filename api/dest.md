@@ -75,7 +75,7 @@ Whenever the `dest()` stream creates a file, the Vinyl object's `mode`, `mtime`,
 
 This functionality is disabled on Windows or other operating systems that don't support Node's `process.getuid()` or `process.geteuid()` methods. This is due to Windows having unexpected results through usage of `fs.fchmod()` and `fs.futimes()`.
 
-**Note**: The `fs.futimes()` method internally converts `mtime` and `atime` timestamps to seconds. This division by 1000 may cause some loss of precision on 32-bit operating systems.
+**注意**: The `fs.futimes()` method internally converts `mtime` and `atime` timestamps to seconds. This division by 1000 may cause some loss of precision on 32-bit operating systems.
 
 ## Sourcemaps
 
