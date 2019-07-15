@@ -86,7 +86,7 @@ src(globs, [options])
 | realpath | boolean | false | If true, `fs.realpath()` is called on all results. This may result in dangling links.<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
 | cache | object | | A previously generated cache object - avoids some file system calls.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | statCache | object | | A previously generated cache of `fs.Stat` results - avoids some file system calls.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
-| symlinks | object | | A previously generated cache of symbolic links - avoids some file system calls.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
+| symlinks | object | | 以前生成的符号链接缓存——避免了一些文件系统调用。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | nocomment | boolean | false | 当为 false 时，将 glob 开头的 `#` 字符视为注释。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 
 ## 资源映射
