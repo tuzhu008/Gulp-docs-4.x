@@ -71,9 +71,9 @@ dest(directory, [options])
 
 ## 元数据更新
 
-Whenever the `dest()` stream creates a file, the Vinyl object's `mode`, `mtime`, and `atime` are compared to the created file. If they differ, the created file will be updated to reflect the Vinyl object's metadata. If those properties are the same, or gulp doesn't have permissions to make changes, the attempt is skipped silently.
+每当 `dest()` 流创建一个文件时，就会将 Vinyl 对象的 `mode`、`mtime` 和 `atime` 与创建的文件进行比较。如果它们不同，创建的文件将被更新以反映 Vinyl 对象的元数据。如果这些属性相同，或者 gulp 没有更改的权限，则会跳过该尝试。
 
-This functionality is disabled on Windows or other operating systems that don't support Node's `process.getuid()` or `process.geteuid()` methods. This is due to Windows having unexpected results through usage of `fs.fchmod()` and `fs.futimes()`.
+在不支持 Node 的 `process.getuid()`或 `process.geteuid()` 方法的 Windows 或其他操作系统上禁用此功能。这是因为Windows通过使用 `fs.fchmod()` 和 `fs.futimes() 会产生意想不到的结果。
 
 **注意**: The `fs.futimes()` method internally converts `mtime` and `atime` timestamps to seconds. This division by 1000 may cause some loss of precision on 32-bit operating systems.
 
