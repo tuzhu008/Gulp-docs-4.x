@@ -71,7 +71,7 @@ src(globs, [options])
 | silent | boolean | true |如果为 true，则禁止在 `stderr` 上打印警告。<br>**注意:**  此选项直接传递给 [node-glob][node-glob-external]，但默认为 `true` 而不是 `false`。|
 | mark | boolean | false | 如果为 true，将向目录匹配项追加一个 `/` 字符。通常不需要，因为路径是在管道中规范化的<br>_此选项直接传递给 [node-glob][node-glob-external]。_  |
 | nosort | boolean | false | 如果为 true，禁用对 glob 结果排序。<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
-| stat | boolean | false | 如果为 true， `fs.stat()` is called on all results. This adds extra overhead and generally should not be used.<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
+| stat | boolean | false | 如果为 true， `fs.stat()` 在所有的结果上被调用。这增加了额外的开销，通常不应该使用。<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
 | strict | boolean | false | 如果为 true， an error will be thrown if an unexpected problem is encountered while attempting to read a directory.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | nounique | boolean | false | When false, prevents duplicate files in the result set.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | debug | boolean | false | If true, debugging information will be logged to the command line.<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
