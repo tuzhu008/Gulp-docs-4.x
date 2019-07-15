@@ -112,11 +112,11 @@ src('input/**/*.js', { sourcemaps: true })
 * `'dir'`， 当目标是一个目录并且用户禁用了 `useJunctions` 选项时
 
 
-If you try to create a dangling (pointing to a non-existent target) link, the link type can't be determined automatically. In these cases, behavior will vary depending on whether the dangling link is being created via `symlink()` or via `dest()`.
+如果试图创建 dangling (指向不存在的目标)链接，则无法自动确定链接类型。在这些情况下，根据 dangling 链接是通过 `symlink()` 创建的还是通过 `dest()` 创建的，行为会有所不同。
 
-For dangling links created via `symlink()`, the incoming Vinyl object represents the target, so its stats will determine the desired link type. If `isDirectory()` returns false then a `'file'` link is created, otherwise a `'junction'` or a `'dir'` link is created depending on the value of the `useJunctions` option.
+对于通过 `symlink()` 创建的 dangling 链接，传入的 Vinyl 对象表示目标，因此其 stats 将确定所需的链接类型。如果 `isDirectory()`  返回 false，则创建一个 `'file'` 链接，否则根据 `useJunctions` 选项的值创建一个 `'junction'` 或 `'dir'` 链接。
 
-For dangling links created via `dest()`, the incoming Vinyl object represents the link - typically loaded from disk via `src(..., { resolveSymlinks: false })`. In this case, the link type can't be reasonably determined and defaults to using `'file'`. This may cause unexpected behavior if you are creating a dangling link to a directory. **Avoid this scenario.**
+对于通过 `dest()` 创建的 dangling 链接，传入的 Vinyl 对象表示链接——通常通过 `src(..., { resolveSymlinks: false })` 从磁盘加载。在这种情况下，无法合理地确定链接类型，默认使用 `'file'`。如果正在创建指向目录的 dangling 链接，这可能会导致意外行为。**避免这种情况。**
 
 [sourcemaps-section]: #sourcemaps
 [symbolic-links-section]: #symbolic-links-on-windows
