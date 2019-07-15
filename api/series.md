@@ -49,9 +49,9 @@ A composed operation to be registered as a task or nested within other `series` 
 
 ### Errors
 
-When no tasks are passed, throws an error with the message, "One or more tasks should be combined using series or parallel".
+当没有传递任何任务时，抛出一个错误，并提示 "One or more tasks should be combined using series or parallel"。（一个或多个应该使用 series 或 parallel 组合的任务”。）
 
-When invalid tasks or unregistered tasks are passed, throws an error with the message, "Task never defined".
+当传递无效的任务或未注册的任务时，将抛出一个错误，显示 "Task never defined"（任务从未定义）。
 
 ## Forward references
 
