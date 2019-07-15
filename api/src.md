@@ -69,7 +69,7 @@ src(globs, [options])
 | uniqueBy | string<br>function | `'path'` | 通过比较字符串属性名或函数的结果，从流中删除重复项。<br>**注意：**当使用函数时，函数接收流数据(对象包含 `cwd`、`base`、`path` 属性)。|
 | dot | boolean | false | 如果为 true，请将 globs 与 `.gitignore` 等点文件进行比较。<br>_此选项直接传递给 [node-glob][node-glob-external]。_ |
 | silent | boolean | true |如果为 true，则禁止在 `stderr` 上打印警告。<br>**注意:**  此选项直接传递给 [node-glob][node-glob-external]，但默认为 `true` 而不是 `false`。|
-| mark | boolean | false | If true, a `/` character will be appended to directory matches. Generally not needed because paths are normalized within the pipeline.<br>_此选项直接传递给 [node-glob][node-glob-external]。_  |
+| mark | boolean | false | 如果为 true，将向目录匹配项追加一个 `/` 字符。通常不需要，因为路径是在管道中规范化的<br>_此选项直接传递给 [node-glob][node-glob-external]。_  |
 | nosort | boolean | false | If true, disables sorting the glob results.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
 | stat | boolean | false | If true, `fs.stat()` is called on all results. This adds extra overhead and generally should not be used.<br>_此选项直接传递给 [node-glob][node-glob-external]。_|
 | strict | boolean | false | If true, an error will be thrown if an unexpected problem is encountered while attempting to read a directory.<br>_This option is passed directly to [node-glob][node-glob-external]._ |
