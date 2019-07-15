@@ -75,7 +75,7 @@ dest(directory, [options])
 
 在不支持 Node 的 `process.getuid()`或 `process.geteuid()` 方法的 Windows 或其他操作系统上禁用此功能。这是因为Windows通过使用 `fs.fchmod()` 和 `fs.futimes() 会产生意想不到的结果。
 
-**注意**: The `fs.futimes()` method internally converts `mtime` and `atime` timestamps to seconds. This division by 1000 may cause some loss of precision on 32-bit operating systems.
+**注意**: `fs.futimes()` 在内部将 `mtime` 和 `atime` 时间戳转换为秒。这种除以 1000 的方法可能会导致 32 位操作系统的精度有所下降。
 
 ## Sourcemaps
 
