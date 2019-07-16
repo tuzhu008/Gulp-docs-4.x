@@ -65,7 +65,7 @@ watch(globs, [options], [task])
 | depth | number |  | 指示将监听多少级嵌套目录。<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | awaitWriteFinish | boolean | false | 不要使用这个选项，而是使用 `delay`。<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | ignorePermissionErrors | boolean | false | 设置为 true 以监听没有读取权限的文件。然而，如果由于 EPERM 或 EACCES 错误导致监听失败，则会自动跳过。<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
-| atomic | number | 100 | Only active if `useFsEvents` and `usePolling` are false. Automatically filters out artifacts that occur from "atomic writes" by some editors. If a file is re-added within the specified milliseconds of being deleted, a change event - instead of unlink then add - will be emitted.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
+| atomic | number | 100 | 只有在 `useFsEvents` 和 `usePolling` 为 false 时才激活。自动过滤掉一些编辑器从 "atomic writes" 中产生的工件。如果文件在删除后的指定毫秒内重新添加，则会发出一个更改事件(而不是取消链接然后添加)。<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 
 ## Chokidar 实例
 
