@@ -173,7 +173,7 @@ tree([options])
 
 | name | type | default | note |
 |:-------:|:-------:|------------|--------|
-| deep | boolean | false | If true, the entire tree will be returned. When false, only top level tasks will be returned. |
+| deep | boolean | false | 如果为 true，则返回整个树。如果为 false，则只返回顶级任务。|
 
 [options-section]: #options
 [archy-external]: https://www.npmjs.com/package/archy
