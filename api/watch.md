@@ -60,7 +60,7 @@ watch(globs, [options], [task])
 | usePolling | boolean | false | 当为 false 时，监听器将使用 `fs.watch()`（或 Mac 上的 [fsevents][fsevents-external]）(或[fsevents][fsevents-external])进行监听。如果为 true，则使用 `fs.watchFile()` 轮询代替——这是通过网络或其他非标准情况成功监听文件所必需的。覆盖 `useFsEvents` 默认值。<br>_此选项被直接传递给 [chokidar][chokidar-external]._|
 | interval | number | 100 |与 `usePolling: true` 配套使用。表示文件系统轮询的间隔。<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | binaryInterval | number | 300 | 与 `usePolling: true` 配套使用。表示文件系统轮询二进制文件的间隔。<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
-| useFsEvents | boolean | true | When true, uses fsevents for watching if available. If explicitly set to true, supersedes the `usePolling` option. If set to false, automatically sets `usePolling` to true.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
+| useFsEvents | boolean | true | 如果为 true 且 fsevents 可用， 则使用 fsevents 进行监听。如果显式设置为 true，则替代 `usePolling` 选项。如果设置为 false，则自动将 `usePolling` 设置为 true。<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | alwaysStat | boolean | false | If true, always calls `fs.stat()` on changed files - will slow down file watcher. The `fs.Stat` object is only available if you are using the chokidar instance directly.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | depth | number |  | Indicates how many nested levels of directories will be watched.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | awaitWriteFinish | boolean | false | Do not use this option, use `delay` instead.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
