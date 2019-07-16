@@ -69,13 +69,9 @@ watch(globs, [options], [task])
 
 ## Chokidar 实例
 
-The `watch()` method returns the underlying instance of [chokidar][chokidar-external], providing fine-grained control over your watch setup. Most commonly used to register individual event handlers that provide the `path` or `stats` of the changed files.
-
-**When using the chokidar instance directly, you will not have access to the task system integrations, including async completion, queueing, and delay.**
-
 `watch()` 方法返回 [chokidar][chokidar-external] 的底层实例，提供对监听设置的细粒度控制。最常用来注册提供更改文件的 `path`  或 `stats` 的单个事件处理程序。
 
-**当直接使用chokidar实例时，您将无法访问任务系统集成，包括异步完成、排队和延迟**
+**当直接使用 chokidar 实例时，您将无法访问任务系统集成，包括异步完成、队列和延迟**
 
 ```js
 const { watch } = require('gulp');
