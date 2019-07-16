@@ -122,7 +122,7 @@ watcher.close();
 
 `watcher.unwatch(globs)`
 
-Removes globs that are being watched, while the watcher continues with the remaining paths.
+删除正在被监听的 globs，而监视程序继续使用剩余的路径。
 
 | parameter | type | note |
 |:-------------:|:-----:|--------|
