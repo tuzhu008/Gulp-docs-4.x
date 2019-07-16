@@ -52,7 +52,6 @@ parallel(...tasks)
 
 当传递无效的任务或未注册的任务时，将抛出一个错误，显示 "Task never defined"（任务从未定义）。
 
-
 ## Forward references
 
 A forward reference is when you compose tasks, using string references, that haven't been registered yet. This was a common practice in older versions, but this feature was removed to achieve faster task runtime and promote the use of named functions.
