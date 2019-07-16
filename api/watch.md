@@ -105,7 +105,7 @@ watcher.close();
 
 | 参数 | 类型 | 描述 |
 |:-------------:|:-----:|--------|
-| path | string | The path of the file that changed. If the `cwd` option was set, the path will be made relative by removing the `cwd`. |
+| path | string | 已更改的文件的路径。如果设置了 `cwd` 选项，则是通过删除 `cwd` 的相对路径。 |
 | stats | object | An [fs.Stat][fs-stats-concepts] object, but could be `undefined`. If the `alwaysStat` option was set to `true`, `stats` will always be provided. |
 
 `watcher.close()`
