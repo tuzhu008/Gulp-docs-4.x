@@ -36,7 +36,7 @@ watch(globs, [options], [task])
 
 ### 返回值
 
-An instance of [chokidar][chokidar-instance-section] for fine-grained control over your watch setup.
+[chokidar][chokidar-instance-section] 的一个实例，用于对监听设置进行细粒度控制。
 
 ### Errors
 
