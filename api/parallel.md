@@ -91,7 +91,8 @@ const javascript = series(clean, function(cb) {
 exports.build = parallel(css, javascript);
 ```
 
-Migrate to this:
+重构他们：
+
 ```js
 const { series, parallel } = require('gulp');
 
