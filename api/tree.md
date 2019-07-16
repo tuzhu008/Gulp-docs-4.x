@@ -159,7 +159,7 @@ tree([options])
 
 | 参数 | 类型 | 描述 |
 |:--------------:|------:|--------|
-| options | object | Detailed in [Options][options-section] below. |
+| options | object |详情请见下文 [选项][options-section] 。 |
 
 ### 返回值
 
