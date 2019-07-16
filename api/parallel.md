@@ -60,13 +60,15 @@ parallel(...tasks)
 
 在迁移期间，您可能需要使用 [forward reference registry][undertaker-forward-reference-external]。这将为每个任务引用添加一个额外的闭包，并显著降低构建速度。**不要太长时间依赖这个修复程序**。
 
-## Avoid duplicating tasks
+## 避免重复任务
 
-When a composed operation is run, each task will be executed every time it was supplied.
+当运行组合操作时，每个任务将在每次提供时执行。
 
-A `clean` task referenced in two different compositions would be run twice and lead to undesired results. Instead, refactor the `clean` task to be specified in the final composition.
+在两个不同的组合中引用的 `clean` 任务将运行两次，将导致不期望的结果。相反，在最终组合中指定的 `clean` 任务。
 
-If you have code like this:
+
+如果有这样的代码:
+
 ```js
 // This is INCORRECT
 const { series, parallel } = require('gulp');
