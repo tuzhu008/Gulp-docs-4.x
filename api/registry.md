@@ -41,7 +41,7 @@ registry([registryInstance])
 
 | 参数 | 类型 | 描述 |
 |:--------------:|:-----:|--------|
-| registryInstance | object | An instance - not the class - of a custom registry. |
+| registryInstance | object |自定义注册表的实例(而不是类)。|
 
 ### 返回值
 
