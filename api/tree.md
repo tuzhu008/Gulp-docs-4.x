@@ -163,15 +163,11 @@ tree([options])
 
 ### 返回值
 
-Each object may have a `type` property that can be used to determine if the node is a `task` or `function`.
-
-Each object may have a `branch` property that, when `true`, indicates the node was created using `series()` or `parallel()`.
-
 返回一个详细描述已注册的任务树的对象——包含具有 `'label'` 和 `'nodes'` 属性的嵌套对象(与 [archy][archy-external] 兼容)。
 
 每个对象可能有一个 `type` 属性，用于确定节点是 `task` 还是 `function`。
 
-每个对象可能有一个“branch”属性，当“true”时，该属性指示节点是使用“series()”或“parallel()”创建的。
+每个对象可能有一个 `branch` 属性，当 `true` 时，该属性指示节点是使用 `series()` 还是 `parallel()` 创建的。
 
 ### 选项
 
