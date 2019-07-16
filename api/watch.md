@@ -124,9 +124,9 @@ watcher.close();
 
 删除正在被监听的 globs，而监视程序继续使用剩余的路径。
 
-| parameter | type | note |
+| 参数 | 类型 | 描述 |
 |:-------------:|:-----:|--------|
-| globs | string<br>array | The globs to be removed. |
+| globs | string<br>array | 要删除的 globs。|
 
 [chokidar-instance-section]: #chokidar-instance
 [options-section]: #options
