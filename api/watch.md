@@ -96,14 +96,14 @@ watcher.close();
 
 `watcher.on(eventName, eventHandler)`
 
-Registers `eventHandler` functions to be called when the specified event occurs.
+注册 `eventHandler` 函数，当指定的事件发生时调用该函数。
 
-| parameter | type | note |
+| 参数 | 类型 | 描述 |
 |:--------------:|:-----:|--------|
 | eventName | string | The events that may be watched are `'add'`, `'addDir'`, `'change'`, `'unlink'`, `'unlinkDir'`, `'ready'`, `'error'`, or `'all'`. |
 | eventHandler | function | Function to be called when the specified event occurs. Arguments detailed in the table below. |
 
-| argument | type | note |
+| 参数 | 类型 | 描述 |
 |:-------------:|:-----:|--------|
 | path | string | The path of the file that changed. If the `cwd` option was set, the path will be made relative by removing the `cwd`. |
 | stats | object | An [fs.Stat][fs-stats-concepts] object, but could be `undefined`. If the `alwaysStat` option was set to `true`, `stats` will always be provided. |
