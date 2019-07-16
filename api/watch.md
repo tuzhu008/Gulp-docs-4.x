@@ -58,7 +58,7 @@ watch(globs, [options], [task])
 | cwd | string |  | 将与任何相对路径相结合以形成绝对路径的目录。对于绝对路径忽略。用于避免将 `globs` 与 `path.join()` 组合使用。<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | disableGlobbing | boolean | false | 如果为 true，所有 `globs` 都被视为字面路径名称，即使它们具有特殊字符。<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | usePolling | boolean | false | 当为 false 时，监听器将使用 `fs.watch()`（或 Mac 上的 [fsevents][fsevents-external]）(或[fsevents][fsevents-external])进行监听。如果为 true，则使用 `fs.watchFile()` 轮询代替——这是通过网络或其他非标准情况成功监听文件所必需的。覆盖 `useFsEvents` 默认值。<br>_此选项被直接传递给 [chokidar][chokidar-external]._|
-| interval | number | 100 | Combine with `usePolling: true`. Interval of file system polling.<br>_This option is passed directly to [chokidar][chokidar-external]._ |
+| interval | number | 100 | Combine with `usePolling: true`. Interval of file system polling.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | binaryInterval | number | 300 | Combine with `usePolling: true`. Interval of file system polling for binary files.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | useFsEvents | boolean | true | When true, uses fsevents for watching if available. If explicitly set to true, supersedes the `usePolling` option. If set to false, automatically sets `usePolling` to true.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | alwaysStat | boolean | false | If true, always calls `fs.stat()` on changed files - will slow down file watcher. The `fs.Stat` object is only available if you are using the chokidar instance directly.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
