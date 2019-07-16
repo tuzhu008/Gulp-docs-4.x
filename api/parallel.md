@@ -35,7 +35,7 @@ parallel(...tasks)
 
 ### 参数
 
-| parameter | type | note |
+| 参数 | 类型 | 描述 |
 |:--------------:|:------:|-------|
 | tasks<br>**(required)** | function<br>string | Any number of task functions can be passed as individual arguments. Strings can be used if you've registered tasks previously, but this is not recommended. |
 
