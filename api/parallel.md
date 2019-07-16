@@ -41,9 +41,10 @@ parallel(...tasks)
 
 ### 返回值
 
-A composed operation to be registered as a task or nested within other `series` and/or `parallel` compositions.
+返回一个组合操作，它将注册为任务或嵌套在其他 `series` 和/或 `parallel` 组合中。
 
-When the composed operation is executed, all tasks will be run at maximum concurrency. If an error occurs in one task, other tasks nondeterministically may or may not complete.
+
+当执行组合操作时，所有任务将以最大并发性运行。如果一个任务发生错误，其他任务可能不确定地完成，也可能不完成。
 
 ### Errors
 
