@@ -7,18 +7,11 @@ sidebar_label: registry()
 
 # registry()
 
+允许将自定义注册表插入任务系统，这可以提供共享任务或增强功能。
 
-Allows custom registries to be plugged into the task system, which can provide shared tasks or augmented functionality.
+**注意：** 只有使用 `task()` 注册的任务才会提供给自定义的注册。将不提供直接传递给 `series()` 或 `parallel()` 的任务**函数**——如果需要自定义的注册表的行为，请使用字符串来组合任务。
 
-**Note:** Only tasks registered with `task()` will be provided to the custom registry. The task functions passed directly to `series()` or `parallel()` will not be provided - if you need to customize the registry behavior, compose tasks with string references.
-
-When assigning a new registry, each task from the current registry will be transferred and the current registry will be replaced with the new one. This allows for adding multiple custom registries in sequential order.
-
-允许将自定义注册中心插入任务系统，该系统可以提供共享任务或增强功能。
-
-**注意：**只有使用 `task()` 注册的任务才会提供给自定义 registry。将不提供直接传递给 `series()` 或 `parallel()` 的任务函数——如果需要自定义 registry 行为，请使用字符串引用组合任务。
-
-在分配新 registry 时，将传输当前 registry 中的每个任务，并将用新 registry 替换当前 registry。这允许按顺序添加多个自定义 registry。
+在分配新注册表时，将传输当前注册表中的每个任务，并将用新注册表替换当前注册表。这允许按顺序添加多个自定义注册表。
 
 有关详细信息，请参见[创建自定义注册](creating-custom-registries)中心。
 
