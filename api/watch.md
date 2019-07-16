@@ -51,7 +51,7 @@ watch(globs, [options], [task])
 | ignoreInitial | boolean | true | false，则在实例化过程中调用该任务，以发现文件路径。用于在启动期间触发任务。<br>**注意:** 这个选项被传递给 [chokidar][chokidar-external]，但默认为 `true` 而不是 `false`。|
 | delay | number | 200 | 文件更改和任务执行之间的毫秒延迟。允许在执行任务之前等待许多更改，例如查找和替换许多文件。|
 | queue | boolean | true | 当为 true 且任务已经运行时，任何文件更改都将对单个任务执行进行排队。避免长时间运行的任务重叠。 |
-| events | string<br>array | [ 'add',<br>'change',<br>'unlink' ] |  The events being watched to trigger task execution. Can be `'add'`, `'addDir'`, `'change'`, `'unlink'`, `'unlinkDir'`, `'ready'`, and/or `'error'`. Additionally `'all'` is available, which represents all events other than `'ready'` and `'error'`.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
+| events | string<br>array | [ 'add',<br>'change',<br>'unlink' ] |  正在监听的事件，以触发任务执行。可以是 `'add'`、`'addDir'`、`'change'`、`'unlink'`、`'unlinkDir'`, `'ready'`、和/或 `'error'`。 另外 `'all'` 也是可用的，它表示除 `'ready'` 和 `'error'` 之外的所有事件。<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | persistent | boolean | true | If false, the watcher will not keep the Node process running. Disabling this option is not recommended.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | ignored | array<br>string<br>RegExp<br>function |  | Defines globs to be ignored. If a function is provided, it will be called twice per path - once with just the path, then with the path and the `fs.Stats` object of that file.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | followSymlinks | boolean | true | When true, changes to both symbolic links and the linked files trigger events. If false, only changes to the symbolic links trigger events.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
