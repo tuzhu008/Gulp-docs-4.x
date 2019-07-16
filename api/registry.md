@@ -49,14 +49,14 @@ registry([registryInstance])
 
 ### Errors
 
-When a constructor (instead of an instance) is passed as `registryInstance`, throws an error with the message, "Custom registries must be instantiated, but it looks like you passed a constructor".
+当一个构造函数(而不是一个实例)作为 `registryInstance` 传递时，抛出一个错误，并提示 "Custom registries must be instantiated, but it looks like you passed a constructor"（必须实例化自定义注册表，但它看起来像您传递了一个构造函数）。
 
-When a registry without a `get` method is passed as `registryInstance`, throws an error with the message, "Custom registry must have `get` function".
+当传入的 `registryInstance` 没有 `get` 方法时，将抛出一个错误，提示 "Custom registry must have `get` function"。
 
-When a registry without a `set` method is passed as `registryInstance`, throws an error with the message, "Custom registry must have `set` function".
+当传入的 `registryInstance` 没有 `set` 方法时，将抛出一个错误，提示 "Custom registry must have `set` function"。
 
-When a registry without an `init` method is passed as `registryInstance`, throws an error with the message, "Custom registry must have `init` function"
+当传入的 `registryInstance` 没有 `init` 方法时，将抛出一个错误，提示 "Custom registry must have `init` function"。
 
-When a registry without a `tasks` method is passed as `registryInstance`, throws an error with the message, "Custom registry must have `tasks` function".
+当传入的 `registryInstance` 没有 `tasks` 方法时，将抛出一个错误，提示 "Custom registry must have `tasks` function"。
 
 [creating-custom-registries]: ../documentation-missing.md
