@@ -118,7 +118,7 @@ watcher.close();
 
 | 参数 | 类型 | 描述 |
 |:-------------:|:-----:|--------|
-| globs | string<br>array | The additional globs to be watched. |
+| globs | string<br>array | 额外的要监听的 globs |
 
 `watcher.unwatch(globs)`
 
