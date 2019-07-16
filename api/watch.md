@@ -106,7 +106,7 @@ watcher.close();
 | 参数 | 类型 | 描述 |
 |:-------------:|:-----:|--------|
 | path | string | 已更改的文件的路径。如果设置了 `cwd` 选项，则是通过删除 `cwd` 的相对路径。 |
-| stats | object | An [fs.Stat][fs-stats-concepts] object, but could be `undefined`. If the `alwaysStat` option was set to `true`, `stats` will always be provided. |
+| stats | object | 一个 [fs.Stat][fs-stats-concepts] 对象，但可以是 `undefined`。如果  `alwaysStat` 选项被设置为 `true`，`stats` 将始终被提供。|
 
 `watcher.close()`
 
