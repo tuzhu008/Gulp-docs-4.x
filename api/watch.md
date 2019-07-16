@@ -56,7 +56,7 @@ watch(globs, [options], [task])
 | ignored | array<br>string<br>RegExp<br>function |  | Defines globs to be ignored. If a function is provided, it will be called twice per path - once with just the path, then with the path and the `fs.Stats` object of that file.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | followSymlinks | boolean | true | 如果为 true，对符号链接和链接的文件的更改都将触发事件。如果为 false，则只有对符号链接的更改才触发事件。<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | cwd | string |  | 将与任何相对路径相结合以形成绝对路径的目录。对于绝对路径忽略。用于避免将 `globs` 与 `path.join()` 组合使用。<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
-| disableGlobbing | boolean | false | If true, all `globs` are treated as literal path names, even if they have special characters.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
+| disableGlobbing | boolean | false | 如果为 true，所有 `globs` 都被视为字面路径名称，即使它们具有特殊字符。<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | usePolling | boolean | false | When false, the watcher will use `fs.watch()` (or [fsevents][fsevents-external] on Mac) for watching. If true, use `fs.watchFile()` polling instead - needed for successfully watching files over a network or other non-standard situations. Overrides the `useFsEvents` default.<br>_此选项被直接传递给 [chokidar][chokidar-external]._|
 | interval | number | 100 | Combine with `usePolling: true`. Interval of file system polling.<br>_This option is passed directly to [chokidar][chokidar-external]._ |
 | binaryInterval | number | 300 | Combine with `usePolling: true`. Interval of file system polling for binary files.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
