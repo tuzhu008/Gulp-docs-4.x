@@ -116,7 +116,7 @@ watcher.close();
 
 向已经运行的监听器实例添加额外的 globs。
 
-| parameter | type | note |
+| 参数 | 类型 | 描述 |
 |:-------------:|:-----:|--------|
 | globs | string<br>array | The additional globs to be watched. |
 
