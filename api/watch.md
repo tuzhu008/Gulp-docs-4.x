@@ -52,7 +52,7 @@ watch(globs, [options], [task])
 | delay | number | 200 | 文件更改和任务执行之间的毫秒延迟。允许在执行任务之前等待许多更改，例如查找和替换许多文件。|
 | queue | boolean | true | 当为 true 且任务已经运行时，任何文件更改都将对单个任务执行进行排队。避免长时间运行的任务重叠。 |
 | events | string<br>array | [ 'add',<br>'change',<br>'unlink' ] |  正在监听的事件，以触发任务执行。可以是 `'add'`、`'addDir'`、`'change'`、`'unlink'`、`'unlinkDir'`, `'ready'`、和/或 `'error'`。 另外 `'all'` 也是可用的，它表示除 `'ready'` 和 `'error'` 之外的所有事件。<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
-| persistent | boolean | true | If false, the watcher will not keep the Node process running. Disabling this option is not recommended.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
+| persistent | boolean | true | 如果为 false，监听器将不会保持 Node 进程的运行。不建议禁用此选项。<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | ignored | array<br>string<br>RegExp<br>function |  | Defines globs to be ignored. If a function is provided, it will be called twice per path - once with just the path, then with the path and the `fs.Stats` object of that file.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | followSymlinks | boolean | true | When true, changes to both symbolic links and the linked files trigger events. If false, only changes to the symbolic links trigger events.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | cwd | string |  | The directory that will be combined with any relative path to form an absolute path. Is ignored for absolute paths. Use to avoid combining `globs` with `path.join()`.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
