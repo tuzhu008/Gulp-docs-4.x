@@ -100,8 +100,8 @@ watcher.close();
 
 | 参数 | 类型 | 描述 |
 |:--------------:|:-----:|--------|
-| eventName | string | The events that may be watched are `'add'`, `'addDir'`, `'change'`, `'unlink'`, `'unlinkDir'`, `'ready'`, `'error'`, or `'all'`. |
-| eventHandler | function | Function to be called when the specified event occurs. Arguments detailed in the table below. |
+| eventName | string | 可以观察到的事件有 `'add'`、`'addDir'`、`'change'`、`'unlink'`、`'unlinkDir'`、`'ready'`、`'error'`、 或 `'all'`. |
+| eventHandler | function | 当指定的事件发生时调用的函数。参数详见下表。 |
 
 | 参数 | 类型 | 描述 |
 |:-------------:|:-----:|--------|
