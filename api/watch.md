@@ -61,7 +61,7 @@ watch(globs, [options], [task])
 | interval | number | 100 |与 `usePolling: true` 配套使用。表示文件系统轮询的间隔。<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | binaryInterval | number | 300 | 与 `usePolling: true` 配套使用。表示文件系统轮询二进制文件的间隔。<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | useFsEvents | boolean | true | 如果为 true 且 fsevents 可用， 则使用 fsevents 进行监听。如果显式设置为 true，则替代 `usePolling` 选项。如果设置为 false，则自动将 `usePolling` 设置为 true。<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
-| alwaysStat | boolean | false | If true, always calls `fs.stat()` on changed files - will slow down file watcher. The `fs.Stat` object is only available if you are using the chokidar instance directly.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
+| alwaysStat | boolean | false | 如果为 true，总是调用 `fs.stat()` 对已更改的文件——将减慢文件监听器。只有在直接使用chokidar 实例时，`fs.Stat` 的对象才可用。<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | depth | number |  | Indicates how many nested levels of directories will be watched.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | awaitWriteFinish | boolean | false | Do not use this option, use `delay` instead.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
 | ignorePermissionErrors | boolean | false | Set to true to watch files that don't have read permissions. Then, if watching fails due to EPERM or EACCES errors, they will be skipped silently.<br>_此选项被直接传递给 [chokidar][chokidar-external]._ |
