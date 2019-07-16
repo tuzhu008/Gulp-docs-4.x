@@ -110,7 +110,7 @@ watcher.close();
 
 `watcher.close()`
 
-Shuts down the file watcher. Once shut down, no more events will be emitted.
+关闭文件监听器。一旦关闭，就不会再发出任何事件。
 
 `watcher.add(globs)`
 
