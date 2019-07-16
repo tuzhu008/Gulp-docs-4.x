@@ -54,11 +54,11 @@ parallel(...tasks)
 
 ## Forward references
 
-A forward reference is when you compose tasks, using string references, that haven't been registered yet. This was a common practice in older versions, but this feature was removed to achieve faster task runtime and promote the use of named functions.
+向前引用是指使用尚未注册的字符串引用组合任务。在旧版本中，这是一种常见的实践，但是为了实现更快的任务运行时间和促进使用命名函数，删除了该特性。
 
-In newer versions, you'll get an error, with the message "Task never defined", if you try to use forward references. You may experience this when trying to use `exports` for task registration _and_ composing tasks by string. In this situation, use named functions instead of string references.
+在较新的版本中，如果尝试使用向前引用，将会得到一个错误，消息为 “Task never defined”。当您尝试为您的任务注册*和*按字符串组合任务使用 `exports` 时，可能会遇到这种情况。在这种情况下，使用命名函数而不是字符串引用。
 
-During migration, you may need the [forward reference registry][undertaker-forward-reference-external]. This will add an extra closure to every task reference and dramatically slow down your build. **Don't rely on this fix for very long**.
+在迁移期间，您可能需要使用 [forward reference registry][undertaker-forward-reference-external]。这将为每个任务引用添加一个额外的闭包，并显著降低构建速度。**不要太长时间依赖这个修复程序**。
 
 ## Avoid duplicating tasks
 
