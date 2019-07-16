@@ -45,7 +45,7 @@ registry([registryInstance])
 
 ### 返回值
 
-If a `registryInstance` is passed, nothing will be returned. If no arguments are passed, returns the current registry instance.
+如果传递了 `registryInstance`，则不会返回任何内容。如果没有传递参数，则返回当前注册表实例。
 
 ### Errors
 
