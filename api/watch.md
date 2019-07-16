@@ -114,7 +114,7 @@ watcher.close();
 
 `watcher.add(globs)`
 
-Adds additional globs to an already-running watcher instance.
+向已经运行的监听器实例添加额外的 globs。
 
 | parameter | type | note |
 |:-------------:|:-----:|--------|
