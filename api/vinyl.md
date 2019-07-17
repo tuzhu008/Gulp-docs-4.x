@@ -120,7 +120,7 @@ file.foo === 'bar';
 
 ## Normalization and concatenation
 
-All path properties are normalized by their setters. Concatenate paths with `/`, instead of using `path.join()`, and normalization will occur properly on all platforms. Never concatenate with `\` - it  is a valid filename character on POSIX system.
+所有路径属性都由它们的 setter 进行规范化。使用 `/` 连接路径，而不是使用 `path.join()`，这样就可以在所有平台上正确地进行规范化。永远不要使用 `\` 连接。（ `\` 是 POSIX 系统上的一个有效文件名字符。）
 
 ```js
 const file = new File();
