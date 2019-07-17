@@ -68,7 +68,7 @@ new Vinyl([options])
 | name | type | default | note |
 |:-------:|:------:|-----------|--------|
 | cwd | string | `process.cwd()` | 将从中推导相对路径的目录。将被[规范化](normalization-and-concatenation-section)，并删除尾随分隔符。|
-| base | string | | Used to calculate the `relative` instance property. Falls back to the value of `cwd` if not set. Typically set to the [glob base][glob-base-concepts]. Will be [normalized][normalization-and-concatenation-section] and have trailing separators removed.|
+| base | string | | Used to calculate the `relative` instance property. Falls back to the value of `cwd` if not set. Typically set to the [glob base][glob-base-concepts]. 将被[规范化](normalization-and-concatenation-section)，并删除尾随分隔符。|
 | path | string | | The full, absolute file path. Will be [normalized][normalization-and-concatenation-section] and have trailing separators removed. |
 | history | array | `[ ]` | An array of paths to pre-populate the `history` of a Vinyl instance. Usually comes from deriving a new Vinyl object from a previous Vinyl object. If `path` and `history` are both passed, `path` is appended to `history`. Each item will be [normalized][normalization-and-concatenation-section] and have trailing separators removed. |
 | stat | object | | An instance of `fs.Stats`, usually the result of calling `fs.stat()` on a file. Used to determine if a Vinyl object represents a directory or symbolic link. |
