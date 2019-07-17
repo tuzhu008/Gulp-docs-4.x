@@ -110,9 +110,9 @@ file.foo === 'bar';
 
 | 方法 | 返回值类型 | 返回值 |
 |:----------:|:--------------:|--------|
-| `isBuffer()` | boolean | If the `contents` instance property is a Buffer, returns true. |
-| `isStream()` | boolean | If the `contents` instance property is a Stream, returns true. |
-| `isNull()` | boolean | If the `contents` instance property is `null`, returns true. |
+| `isBuffer()` | boolean | 如果 `contents` 实例属性是一个 Buffer，则返回 true。|
+| `isStream()` | boolean |  如果 `contents` 实例属性是一个 Stream，则返回 true。|
+| `isNull()` | boolean | 如果 `contents` 实例属性为 `null`，则返回 true。|
 | `isDirectory()` | boolean | If the instance represents a directory, returns true. An instance is considered a directory when `isNull()` returns true, the `stat` instance property is an object, and `stat.isDirectory()` returns true. This assumes a Vinyl object was constructed with a valid (or properly mocked) `fs.Stats` object. |
 | `isSymbolic()` | boolean | If the instance represents a symbolic link, returns true. An instance is considered symbolic when `isNull()` returns true, the `stat` instance property is an object, and `stat.isSymbolicLink()` returns true. This assumes a Vinyl object was constructed with a valid (or properly mocked) `fs.Stats` object. |
 | `clone([options])` | object | A new Vinyl object with all properties cloned. By default custom properties are deep cloned. If the `deep` option is false, custom attributes will be shallow cloned. If the `contents` option is false and the `contents` instance property is a Buffer, the Buffer will be reused instead of cloned. |
