@@ -100,11 +100,11 @@ file.foo === 'bar';
 | path | string | 获取和设置完整的绝对文件路径。设置为与当前 `path` 不同的值会将新路径附加到 `history` 实例属性中。 | 如果设置为任何非字符串值。 |
 | history | array | 已分配的 Vinyl 对象的所有 `path` 值的数组。第一个元素是原始路径，最后一个元素是当前路径。此属性及其元素应被视为只读，仅通过设置 `path`实例属性间接更改。| | |
 | relative | string | 获取 `base` 和 `path` 实例属性之间的相对路径段。| 如果设置为任何值。如果在 `path` 不可用时访问。 |
-| dirname | string | Gets and sets the directory of the `path` instance property. | If accessed when `path` is not available. |
-| stem | string | Gets and sets the stem (filename without extension) of the `path` instance property. | If accessed when `path` is not available. |
-| extname | string | Gets and sets the extension of the `path` instance property. | If accessed when `path` is not available. |
-| basename | string | Gets and sets the filename (`stem + extname`) of the `path` instance property. | If accessed when `path` is not available. |
-| symlink | string | Gets and sets the reference path of a symbolic link. | If set to any non-string value. |
+| dirname | string | 获取和设置 `path` 实例属性的目录。 | 如果在 `path` 不可用时访问 |
+| stem | string | Gets and sets the stem (filename without extension) of the `path` instance property. | 如果在 `path` 不可用时访问 |
+| extname | string | Gets and sets the extension of the `path` instance property. | 如果在 `path` 不可用时访问 |
+| basename | string | 获取和设置 `path` 实例属性的文件名(`stem + extname`)。 | 如果在 `path` 不可用时访问 |
+| symlink | string | 获取和设置符号链接的引用路径。 | 如果设置为任何非字符串值。 |
 
 ### 实例方法
 
