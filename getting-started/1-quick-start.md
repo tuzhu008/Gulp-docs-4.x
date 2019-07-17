@@ -75,7 +75,7 @@ exports.default = defaultTask
 
 ## 测试
 
-在项目目录中运行gulp命令:
+在项目目录中运行 gulp 命令:
 ```sh
 gulp
 ```
