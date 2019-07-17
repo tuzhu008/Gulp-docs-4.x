@@ -108,7 +108,7 @@ file.foo === 'bar';
 
 ### 实例方法
 
-| method | return type | returns |
+| 方法 | 返回值类型 | 返回值 |
 |:----------:|:--------------:|--------|
 | `isBuffer()` | boolean | If the `contents` instance property is a Buffer, returns true. |
 | `isStream()` | boolean | If the `contents` instance property is a Stream, returns true. |
