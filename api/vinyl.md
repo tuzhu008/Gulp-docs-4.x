@@ -74,7 +74,7 @@ new Vinyl([options])
 | stat | object | | 一个 `fs.Stats` 实例，通常是对文件调用 `fs.stat()` 的结果。用于确定 Vinyl 对象是否表示目录或符号链接。 |
 | contents | ReadableStream<br>Buffer<br>`null` | `null` | 文件的内容。如果 `contents` 是一个 ReadableStream，它被包装在一个 [可克隆可读的][cloneable-readable-external] 流中。|
 
-Any other properties on `options` will be directly assigned to the Vinyl instance.
+`options` 上的任何其他属性都将直接分配给 Vinyl 实例。
 
 ```js
 const Vinyl = require('vinyl');
