@@ -34,7 +34,7 @@ Vinyl.isVinyl(file);
 
 | 参数 | 类型 | 描述 |
 |:--------------:|:------:|-------|
-| file | object | The object to check. |
+| file | object | 需要检查的对象 |
 
 ### 返回值
 
