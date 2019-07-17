@@ -7,7 +7,7 @@ sidebar_label: Creating Tasks
 
 # 创建任务
 
-gulp 的每个任务都是一个异步的 JavaScript 函数，这个函数接收错误回调作为其参数，或者返回一个 stream、promise、event emitter、child process、或者 observable ([more on that later][async-completion-docs])。
+gulp 的每个任务都是一个异步的 JavaScript 函数，这个函数接收错误回调作为其参数，或者返回一个 stream、promise、event emitter、child process、或者 observable ([稍后会详细介绍][async-completion-docs])。
 由于一些平台的限制，不支持同步任务，尽管有一个相当不错的[选择](using-async-await-docs)
 
 ## 导出
