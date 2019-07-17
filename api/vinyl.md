@@ -97,7 +97,7 @@ file.foo === 'bar';
 | stat | object | 获取或设置 [`fs.Stats`][fs-stats-concepts] 的实例。当确定 Vinyl 对象是否表示目录或符号链接时使用。 | |
 | cwd | string | 获取并设置当前工作目录。用于推导相对路径。 | 如果设置为空字符串或任何非字符串值。 |
 | base | string | 获取和设置基目录。用于计算 `relative` 实例属性。 在由 `src()` 生成的 Vinyl 对象上，将设置为 [glob base][global -base-concepts]。如果设置为 `null` 或 `undefined`，则会退到 `cwd` 实例属性的值。 |如果设置为空字符串或任何非字符串值(`null` 或 `undefined` 除外)。|
-| path | string | Gets and sets the full, absolute file path. Setting to a value different from the current `path` appends the new path to the `history` instance property. | If set to any non-string value. |
+| path | string | 获取和设置完整的绝对文件路径。设置为与当前 `path` 不同的值会将新路径附加到 `history` 实例属性中。 | 如果设置为任何非字符串值。 |
 | history | array | Array of all `path` values the Vinyl object has been assigned. The first element is the original path and the last element is the current path. This property and its elements should be treated as read-only and only altered indirectly by setting the `path` instance property. | |
 | relative | string | Gets the relative path segment between the `base` and the `path` instance properties. | If set to any value. If accessed when `path` is not available. |
 | dirname | string | Gets and sets the directory of the `path` instance property. | If accessed when `path` is not available. |
