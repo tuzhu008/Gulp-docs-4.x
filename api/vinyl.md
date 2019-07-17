@@ -61,7 +61,7 @@ new Vinyl([options])
 
 ### Errors
 
-When any passed options don't conform to the [instance property definitions][instance-properties-section] (like if `path` is set to a number) throws as defined in the table.
+当传递的任何选项都不符合表中定义的[实例属性定义][instance-properties-section](如 `path` 被设置为一个数字)时抛出错误。
 
 ### 选项
 
