@@ -114,8 +114,8 @@ file.foo === 'bar';
 | `isStream()` | boolean |  如果 `contents` 实例属性是一个 Stream，则返回 true。|
 | `isNull()` | boolean | 如果 `contents` 实例属性为 `null`，则返回 true。|
 | `isDirectory()` | boolean | 如果实例表示一个目录，则返回 true。当 `isNull()` 返回 true，`stat` 实例属性是一个对象，并且  `stat.isDirectory()` 返回 true 时，实例被认为是一个目录。这假设 Vinyl 对象是用一个有效的（或适当模拟的） `fs.Stats` 对象构造的。
-| `isSymbolic()` | boolean | 如果实例表示符号链接，则返回 true。 当 An instance is considered symbolic when `isNull()` returns true, the `stat` instance property is an object, and `stat.isSymbolicLink()` returns true. This assumes a Vinyl object was constructed with a valid (or properly mocked) `fs.Stats` object. |
-| `clone([options])` | object | A new Vinyl object with all properties cloned. By default custom properties are deep cloned. If the `deep` option is false, custom attributes will be shallow cloned. If the `contents` option is false and the `contents` instance property is a Buffer, the Buffer will be reused instead of cloned. |
+| `isSymbolic()` | boolean | 如果实例表示符号链接，则返回 true。 当 `isNull()` 返回 true，`stat` 实例属性是一个对象，并且 `stat.isSymbolicLink()` 返回 true 时， 实例被认为是 symbolic。 这假设 Vinyl 对象是用一个有效的（或适当模拟的） `fs.Stats` 对象构造的。|
+| `clone([options])` | object | A new Vinyl object with all properties cloned. 一个使用所有属性克隆出的新的 Vinyl 对象。 默认情况下，自定义属性是深拷贝。如果 `deep` 选项为 false，自定义属性将被浅拷贝。如果 `contents` 选项设置为 fasle 并且 `contents` 属性是一个 Buffer，那么这个 Buffer 将被复用，而不是克隆。 |
 | `inspect()` | string | 返回 Vinyl 对象的格式化说明。由 Node 的 console.log 自动调用。 |
 
 ## Normalization and concatenation
