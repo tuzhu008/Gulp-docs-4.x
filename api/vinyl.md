@@ -116,7 +116,7 @@ file.foo === 'bar';
 | `isDirectory()` | boolean | If the instance represents a directory, returns true. An instance is considered a directory when `isNull()` returns true, the `stat` instance property is an object, and `stat.isDirectory()` returns true. This assumes a Vinyl object was constructed with a valid (or properly mocked) `fs.Stats` object. |
 | `isSymbolic()` | boolean | If the instance represents a symbolic link, returns true. An instance is considered symbolic when `isNull()` returns true, the `stat` instance property is an object, and `stat.isSymbolicLink()` returns true. This assumes a Vinyl object was constructed with a valid (or properly mocked) `fs.Stats` object. |
 | `clone([options])` | object | A new Vinyl object with all properties cloned. By default custom properties are deep cloned. If the `deep` option is false, custom attributes will be shallow cloned. If the `contents` option is false and the `contents` instance property is a Buffer, the Buffer will be reused instead of cloned. |
-| `inspect()` | string | Returns a formatted interpretation of the Vinyl object. Automatically called by Node's console.log. |
+| `inspect()` | string | 返回 Vinyl 对象的格式化说明。由 Node 的 console.log 自动调用。 |
 
 ## Normalization and concatenation
 
