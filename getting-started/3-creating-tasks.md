@@ -85,7 +85,7 @@ function css(cb) {
 exports.build = parallel(javascript, css);
 ```
 
-当调用 `series()` 或 `parallel()` 时，任务立即组成。这允许有条件地改变组合，而不是在单个任务中区分行为。
+当调用 `series()` 或 `parallel()` 时，所有任务会立即进行组合。这允许有条件地改变组合，而不是在单个任务中区分行为。
 
 ```js
 const { series } = require('gulp');
