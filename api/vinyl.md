@@ -89,9 +89,9 @@ file.foo === 'bar';
 
 ### 实例属性
 
-All internally managed paths - any instance property except `contents` and `stat` - are normalized and have trailing separators removed. See [Normalization and concatenation][normalization-and-concatenation-section] for more information.
+所有内部管理的路径——除了 `contents` 和 `stat` 之外的任何实例属性——都被规范化，并删除了末尾分隔符。有关更多信息，请参见[规范化和连接][normalization-and-concatenation-section]。
 
-| property | type | description | throws |
+| 属性 | 类型 | 描述 | throws |
 |:-----------:|:------:|----------------|----------|
 | contents | ReadableStream<br>Buffer<br>`null` | Gets and sets the contents of the virtual file. If set to a ReadableStream, it is wrapped in a [cloneable-readable][cloneable-readable-external] stream. | If set to any value other than a ReadableStream, a Buffer, or `null`. |
 | stat | object | Gets and sets an instance of [`fs.Stats`][fs-stats-concepts]. Used when determining if a Vinyl object represents a directory or symbolic link. | |
