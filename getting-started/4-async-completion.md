@@ -79,7 +79,7 @@ function observableTask() {
 exports.default = observableTask;
 ```
 
-### 使用错误有限回调
+### 使用错误优先回调
 
 如果任务没有返回任何内容，则必须使用错误优先回调函数来表示完成。在下面的示例中，回调函数将作为惟一的—名为 `cb()` 的参数传递给任务函数。
 
