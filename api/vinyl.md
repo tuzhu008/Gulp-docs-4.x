@@ -99,7 +99,7 @@ file.foo === 'bar';
 | base | string | 获取和设置基目录。用于计算 `relative` 实例属性。 在由 `src()` 生成的 Vinyl 对象上，将设置为 [glob base][global -base-concepts]。如果设置为 `null` 或 `undefined`，则会退到 `cwd` 实例属性的值。 |如果设置为空字符串或任何非字符串值(`null` 或 `undefined` 除外)。|
 | path | string | 获取和设置完整的绝对文件路径。设置为与当前 `path` 不同的值会将新路径附加到 `history` 实例属性中。 | 如果设置为任何非字符串值。 |
 | history | array | 已分配的 Vinyl 对象的所有 `path` 值的数组。第一个元素是原始路径，最后一个元素是当前路径。此属性及其元素应被视为只读，仅通过设置 `path`实例属性间接更改。| | |
-| relative | string | Gets the relative path segment between the `base` and the `path` instance properties. | If set to any value. If accessed when `path` is not available. |
+| relative | string | 获取 `base` 和 `path` 实例属性之间的相对路径段。| 如果设置为任何值。如果在 `path` 不可用时访问。 |
 | dirname | string | Gets and sets the directory of the `path` instance property. | If accessed when `path` is not available. |
 | stem | string | Gets and sets the stem (filename without extension) of the `path` instance property. | If accessed when `path` is not available. |
 | extname | string | Gets and sets the extension of the `path` instance property. | If accessed when `path` is not available. |
