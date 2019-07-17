@@ -70,7 +70,7 @@ new Vinyl([options])
 | cwd | string | `process.cwd()` | 将从中推导相对路径的目录。将被[规范化](normalization-and-concatenation-section)，并删除尾随分隔符。|
 | base | string | | 用于计算 `relative` 实例属性。 如果没有设置，则回退到 `cwd` 的值。通常设置为 [glob base][glob-base-concepts]。将被[规范化](normalization-and-concatenation-section)，并删除尾随分隔符。|
 | path | string | | 完整的绝对文件路径。将被[规范化](normalization-and-concatenation-section)，并删除尾随分隔符。 |
-| history | array | `[ ]` | An array of paths to pre-populate the `history` of a Vinyl instance. Usually comes from deriving a new Vinyl object from a previous Vinyl object. If `path` and `history` are both passed, `path` is appended to `history`. 每一项都将被[规范化](normalization-and-concatenation-section)，并删除尾随分隔符。  |
+| history | array | `[ ]` | 预先填充 Vinyl 实例的 `history` 的路径数组。通常来自于从以前的 Vinyl 对象派生出一个新的 Vinyl 对象。如果 `path` 和 `history` 都被传递，`path` 将被附加到 `history` 中。每一项都将被[规范化](normalization-and-concatenation-section)，并删除尾随分隔符。  |
 | stat | object | | An instance of `fs.Stats`, usually the result of calling `fs.stat()` on a file. Used to determine if a Vinyl object represents a directory or symbolic link. |
 | contents | ReadableStream<br>Buffer<br>`null` | `null` | The contents of the file. If `contents` is a ReadableStream, it is wrapped in a [cloneable-readable][cloneable-readable-external] stream. |
 
