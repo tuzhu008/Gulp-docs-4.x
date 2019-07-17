@@ -57,7 +57,7 @@ new Vinyl([options])
 
 ### 返回值
 
-An instance of the Vinyl class representing a single virtual file, detailed in [Vinyl instance][vinyl-instance-section] below.
+返回一个 Vinyl 类的实例，表示一个单独的虚拟文件，详见下面的 [Vinyl 实例][vinyl-instance-section]。
 
 ### Errors
 
