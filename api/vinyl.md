@@ -85,7 +85,7 @@ file.foo === 'bar';
 
 ## Vinyl 实例
 
-Each instance of a Vinyl object will have properties and methods to access and/or modify information about the virtual file.
+每个 Vinyl 对象实例都具有访问和/或修改虚拟文件信息的属性和方法。
 
 ### 实例属性
 
