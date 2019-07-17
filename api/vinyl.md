@@ -71,7 +71,7 @@ new Vinyl([options])
 | base | string | | 用于计算 `relative` 实例属性。 如果没有设置，则回退到 `cwd` 的值。通常设置为 [glob base][glob-base-concepts]。将被[规范化](normalization-and-concatenation-section)，并删除尾随分隔符。|
 | path | string | | 完整的绝对文件路径。将被[规范化](normalization-and-concatenation-section)，并删除尾随分隔符。 |
 | history | array | `[ ]` | 预先填充 Vinyl 实例的 `history` 的路径数组。通常来自于从以前的 Vinyl 对象派生出一个新的 Vinyl 对象。如果 `path` 和 `history` 都被传递，`path` 将被附加到 `history` 中。每一项都将被[规范化](normalization-and-concatenation-section)，并删除尾随分隔符。  |
-| stat | object | | An instance of `fs.Stats`, usually the result of calling `fs.stat()` on a file. Used to determine if a Vinyl object represents a directory or symbolic link. |
+| stat | object | | 一个 `fs.Stats` 实例，通常是对文件调用 `fs.stat()` 的结果。用于确定 Vinyl 对象是否表示目录或符号链接。 |
 | contents | ReadableStream<br>Buffer<br>`null` | `null` | The contents of the file. If `contents` is a ReadableStream, it is wrapped in a [cloneable-readable][cloneable-readable-external] stream. |
 
 Any other properties on `options` will be directly assigned to the Vinyl instance.
