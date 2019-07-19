@@ -32,3 +32,44 @@
 * [Vinyl.isVinyl\(\)](/api/vinyl-isvinyl.md)
 * [Vinyl.isCustomProp\(\)](/api/vinyl-iscustomprop.md)
 
+## 用法
+
+* 拷贝文件
+* 删除文件
+
+## 插件
+
+* gulp-less
+* gulp-imagemin
+* gulp-sass
+* gulp-babel
+* gulp-uglify
+* gulp-rename
+* gulp-clean-css
+* gulp-util
+* yargs
+* gulp-filter
+* gulp-flatten
+* wiredep
+* gulp-inject
+* gulp-useref
+* gulp-rev
+* gulp-rev-replace
+* gulp-rev-format
+* gulp-concat
+* gulp-autoprefixer
+* gulp-minify-css
+* gulp-jshint
+* gulp-notify
+* gulp-connect
+* gulp-livereload
+* gulp-cache
+* imagemin-pngquant
+* gulp-reactify
+* react-tools
+* browser-sync
+* gulp-clean
+* gulp-load-plugins
+
+
+
