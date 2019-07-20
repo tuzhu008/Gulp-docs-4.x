@@ -2,7 +2,7 @@
 
 Gulp 的插件，用于删除指定的文件或者文件夹。
 
-[github 地址](https://github.com/scniro/gulp-clean-css#readme)
+[github 地址](https://github.com/peter-vilja/gulp-clean)
 
 ## 安装
 
