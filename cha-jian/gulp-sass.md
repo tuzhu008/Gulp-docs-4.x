@@ -121,13 +121,13 @@ function sassTask() {
 ```js
 var sourcemaps = require('gulp-sourcemaps');
 
-function lessTask() {
-  return gulp.src('./less/**/*.less')
-    .pipe(sourcemaps.init())
-    .pipe(less())
-    .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./public/css'));
-}
+function sassTask() {
+ return gulp.src('./sass/**/*.scss')
+  .pipe(sourcemaps.init())
+  .pipe(sass().on('error', sass.logError))
+  .pipe(sourcemaps.write('./maps'))
+  .pipe(gulp.dest('./css'));
+};
 ```
 
 ## 错误处理
