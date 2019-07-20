@@ -150,17 +150,16 @@ function defaultTask() {
 
 有关如何将 `gulp-rev` 集成到应用程序中的更多信息，请参阅[集成指南](https://github.com/sindresorhus/gulp-rev/blob/master/integration.md) 。
 
-## ss
+## 将 gulp-rev 与一种或多种混合使用
 
+与其他包一起使用 `gulp-rev` 来完成任务可能是有用的，也是必要的。
 
-It may be useful - and necessary - to use `gulp-rev` with other packages to complete the task.
-
-- [gulp-rev-rewrite](https://github.com/TheDancingCode/gulp-rev-rewrite) - Rewrite occurrences of filenames which have been renamed
-- [gulp-rev-css-url](https://github.com/galkinrost/gulp-rev-css-url) - Override URLs in CSS files with the revved ones
-- [gulp-rev-outdated](https://github.com/shonny-ua/gulp-rev-outdated) - Old static asset revision files filter
-- [gulp-rev-collector](https://github.com/shonny-ua/gulp-rev-collector) - Static asset revision data collector
-- [rev-del](https://github.com/callumacrae/rev-del) - Delete old unused assets
-- [gulp-rev-delete-original](https://github.com/nib-health-funds/gulp-rev-delete-original) - Delete original files after rev
-- [gulp-rev-loader](https://github.com/adjavaherian/gulp-rev-loader) - Use rev-manifest with webpack
-- [gulp-rev-format](https://github.com/atamas101/gulp-rev-format) - Provide hash formatting options for static assets (prefix, suffix, last-extension)
+- [gulp-rev-rewrite](https://github.com/TheDancingCode/gulp-rev-rewrite) - 已重命名的文件名出现重写的情况
+- [gulp-rev-css-url](https://github.com/galkinrost/gulp-rev-css-url) - 用修改后的 URL 覆盖 CSS 文件中的 URL
+- [gulp-rev-outdated](https://github.com/shonny-ua/gulp-rev-outdated) - 旧的静态资源修订文件过滤器
+- [gulp-rev-collector](https://github.com/shonny-ua/gulp-rev-collector) - 静态资源修订数据收集器
+- [rev-del](https://github.com/callumacrae/rev-del) - 删除旧的未使用资源
+- [gulp-rev-delete-original](https://github.com/nib-health-funds/gulp-rev-delete-original) - 在 rev 后删除原始文件
+- [gulp-rev-loader](https://github.com/adjavaherian/gulp-rev-loader) - 在 webpack 中使用 rev-manifest
+- [gulp-rev-format](https://github.com/atamas101/gulp-rev-format) - 为静态资源(前缀、后缀、扩展名)提供哈希格式选项
 
