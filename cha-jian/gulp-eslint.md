@@ -194,7 +194,7 @@ gulp.src(['**/*.js','!node_modules/**'])
 
 ### eslint.failOnError\(\)
 
-Stop a task/stream if an ESLint error has been reported for any file.
+如果为任何文件报告了 ESLint 错误，则停止任务/流。
 
 ```js
 // Cause the stream to stop(/fail) before copying an invalid JS file to the output directory
@@ -205,7 +205,7 @@ gulp.src(['**/*.js','!node_modules/**'])
 
 ### eslint.failAfterError\(\)
 
-Stop a task/stream if an ESLint error has been reported for any file, but wait for all of them to be processed first.
+如果为任何文件报告了 ESLint 错误，则停止任务/流，但首先要等待所有这些错误都被处理。
 
 ```js
 // Cause the stream to stop(/fail) when the stream ends if any ESLint error(s) occurred.
@@ -216,9 +216,15 @@ gulp.src(['**/*.js','!node_modules/**'])
 
 ### eslint.format\(formatter, output\)
 
-Format all linted files once. This should be used in the stream after piping through`eslint`; otherwise, this will find no ESLint results to format.
+格式化所有 linted 文件一次。这应该用在管道通过 `eslint`后的流体中；否则，将找不到要格式化的 ESLint 结果。
 
-The`formatter`argument may be a`String`,`Function`, or`undefined`. As a`String`, a formatter module by that name or path will be resolved as a module, relative to`process.cwd()`, or as one of the[ESLint-provided formatters](https://github.com/eslint/eslint/tree/master/lib/formatters). If`undefined`, the ESLint “stylish” formatter will be resolved. A`Function`will be called with an`Array`of file linting results to format.
+`formatter`参数可以是 `String`、`Function`、或 `undefined` 。
+
+* 当为 `String` 时，使用该名称或路径的格式化器模块将被解析为模块\(相对于 `process.cwd()`\)，或者作为 [Eslint 提供的格式化器](https://github.com/eslint/eslint/tree/master/lib/formatters)之一。
+* 如果为  `undefined` ，将解析 ESLint “stylish” 格式化器。
+* 如果是一个函数，此函数将使用要格式化的 linting 结果数组进行调用。
+
+
 
 ```js
 // use the default "stylish" ESLint formatter
@@ -232,7 +238,13 @@ eslint.format('checkstyle')
 eslint.format('node_modules/eslint-path-formatter')
 ```
 
-The`output`argument may be a`WritableStream`,`Function`, or`undefined`. As a`WritableStream`, the formatter results will be written to the stream. If`undefined`, the formatter results will be written to[gulp’s log](https://github.com/gulpjs/gulp-util#logmsg). A`Function`will be called with the formatter results as the only parameter.
+The`output`argument may be a`WritableStream`,`Function`, or`undefined`. As a`WritableStream`, the formatter results will be written to the stream. If`undefined`, the formatter results will be written to[ ](https://github.com/gulpjs/gulp-util#logmsg). A`Function`will be called with the formatter results as the only parameter.
+
+`output` 参数可以是 `WritableStream`、`Function`、`undefined`。
+
+* 如果是 `WritableStream` ，格式化器的结果将被写入流。
+* 如果是 `undefined` ，格式化器的结果将被写入 [gulp’s log](https://github.com/gulpjs/gulp-util#logmsg)。
+* 如果是 `Function` ，将使用格式化器的结果作为唯一的参数调用该函数。
 
 ```js
 // write to gulp's log (default)
