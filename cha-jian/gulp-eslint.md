@@ -177,79 +177,16 @@ Call a function once for all ESLint file results before a stream finishes. No re
 
 The results list has a "warningCount" property that is the sum of warnings in all results; likewise, an "errorCount" property is set to the sum of errors in all results.
 
-    gulp
-    .
-    src
-    ([
-    '
-    **/*.js
-    '
-    ,
-    '
-    !node_modules/**
-    '
-    ])
-        .
-    pipe
-    (
-    eslint
-    ())
-        .
-    pipe
-    (
-    eslint
-    .
-    results
-    (
-    results
-    =
-    >
-     {
-
-    //
-     Called once for all ESLint results.
-    console
-    .
-    log
-    (
-    `
-    Total Results: 
-    ${
-    results
-    .
-    length
-    }
-    `
-    );
-
-    console
-    .
-    log
-    (
-    `
-    Total Warnings: 
-    ${
-    results
-    .
-    warningCount
-    }
-    `
-    );
-
-    console
-    .
-    log
-    (
-    `
-    Total Errors: 
-    ${
-    results
-    .
-    errorCount
-    }
-    `
-    );
-        }));
+```js
+gulp.src(['**/*.js','!node_modules/**'])
+  .pipe(eslint())
+  .pipe(eslint.results(results => {
+      // Called once for all ESLint results.
+      console.log(`Total Results: ${results.length}`);
+      console.log(`Total Warnings: ${results.warningCount}`);
+      console.log(`Total Errors: ${results.errorCount}`);
+  }));
+```
 
 类型：`function (results, callback) { callback(error); }`
 
@@ -259,66 +196,22 @@ Call an asynchronous function once for all ESLint file results before a stream f
 
 Stop a task/stream if an ESLint error has been reported for any file.
 
-```
-//
- Cause the stream to stop(/fail) before copying an invalid JS file to the output directory
-gulp
-.
-src
-([
-'
-**/*.js
-'
-,
-'
-!node_modules/**
-'
-])
-    .
-pipe
-(
-eslint
-())
-    .
-pipe
-(
-eslint
-.
-failOnError
-());
+```js
+// Cause the stream to stop(/fail) before copying an invalid JS file to the output directory
+gulp.src(['**/*.js','!node_modules/**'])
+  .pipe(eslint())
+  .pipe(eslint.failOnError());
 ```
 
 ### eslint.failAfterError\(\)
 
 Stop a task/stream if an ESLint error has been reported for any file, but wait for all of them to be processed first.
 
-```
-//
- Cause the stream to stop(/fail) when the stream ends if any ESLint error(s) occurred.
-gulp
-.
-src
-([
-'
-**/*.js
-'
-,
-'
-!node_modules/**
-'
-])
-    .
-pipe
-(
-eslint
-())
-    .
-pipe
-(
-eslint
-.
-failAfterError
-());
+```js
+// Cause the stream to stop(/fail) when the stream ends if any ESLint error(s) occurred.
+gulp.src(['**/*.js','!node_modules/**'])
+  .pipe(eslint())
+  .pipe(eslint.failAfterError());
 ```
 
 ### eslint.format\(formatter, output\)
@@ -327,66 +220,26 @@ Format all linted files once. This should be used in the stream after piping thr
 
 The`formatter`argument may be a`String`,`Function`, or`undefined`. As a`String`, a formatter module by that name or path will be resolved as a module, relative to`process.cwd()`, or as one of the[ESLint-provided formatters](https://github.com/eslint/eslint/tree/master/lib/formatters). If`undefined`, the ESLint “stylish” formatter will be resolved. A`Function`will be called with an`Array`of file linting results to format.
 
-```
-//
- use the default "stylish" ESLint formatter
-eslint
-.
-format
-()
+```js
+// use the default "stylish" ESLint formatter
+eslint.format()
 
+// use the "checkstyle" ESLint formatter
+eslint.format('checkstyle')
 
-//
- use the "checkstyle" ESLint formatter
-eslint
-.
-format
-(
-'
-checkstyle
-'
-)
-
-
-//
- use the "eslint-path-formatter" module formatter
-//
- (@see https://github.com/Bartvds/eslint-path-formatter)
-eslint
-.
-format
-(
-'
-node_modules/eslint-path-formatter
-'
-)
+// use the "eslint-path-formatter" module formatter
+// (@see https://github.com/Bartvds/eslint-path-formatter)
+eslint.format('node_modules/eslint-path-formatter')
 ```
 
 The`output`argument may be a`WritableStream`,`Function`, or`undefined`. As a`WritableStream`, the formatter results will be written to the stream. If`undefined`, the formatter results will be written to[gulp’s log](https://github.com/gulpjs/gulp-util#logmsg). A`Function`will be called with the formatter results as the only parameter.
 
-```
-//
- write to gulp's log (default)
-eslint
-.
-format
-();
+```js
+// write to gulp's log (default)
+eslint.format();
 
-
-//
- write messages to stdout
-eslint
-.
-format
-(
-'
-junit
-'
-, 
-process
-.
-stdout
-)
+// write messages to stdout
+eslint.format('junit', process.stdout)
 ```
 
 ### eslint.formatEach\(formatter, output\)
