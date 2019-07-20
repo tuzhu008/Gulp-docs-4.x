@@ -38,6 +38,7 @@
 * 删除文件
 
 ## 插件
+
 * [gulp-htmlmin](cha-jian/gulp-htmlmin.md)
 * [gulp-uglify](cha-jian/gulp-uglify.md)
 * [gulp-less](cha-jian/gulp-less.md)
@@ -45,7 +46,7 @@
 * [gulp-clean-css](cha-jian/gulp-clean-css.md)
 * [gulp-autoprefixer](cha-jian/gulp-autoprefixer.md)
 * [gulp-jshint](cha-jian/gulp-jshint.md)
-* gulp-eslint
+* [gulp-eslint](cha-jian/gulp-eslint.md)
 * [gulp-rename](cha-jian/gulp-rename.md)
 * [gulp-concat](cha-jian/gulp-concat.md)
 * [gulp-clean](cha-jian/gulp-clean.md)
