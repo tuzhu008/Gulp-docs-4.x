@@ -52,6 +52,30 @@ function watchSass() {
 };
 ```
 
+通过设置 `sass.compiler` 属性，可以选择使用 [Dart Sass](http://sass-lang.com/dart-sass) 还是 [Node Sass](https://github.com/sass/node-sass)。默认情况下将使用 Node Sass，但强烈建议您显式地将其设置为向前兼容，以防默认值发生更改。
+
+注意，在使用 Dart Sass 时，由于异步回调的开销，默认情况下同步编译的速度是异步编译的两倍。为了避免这种开销，可以使用  [`fibers`](https://www.npmjs.com/package/fibers) 包从同步代码路径调用异步导入器。要启用此功能，请将 `Fiber` 类传递给 `fiber` 选项:
+
+```js
+'use strict';
+
+var Fiber = require('fibers');
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+
+sass.compiler = require('sass');
+
+function sassTask () {
+  return gulp.src('./sass/**/*.scss')
+    .pipe(sass({fiber: Fiber}).on('error', sass.logError))
+    .pipe(gulp.dest('./css'));
+};
+
+function watchSass() {
+  gulp.watch('./sass/**/*.scss', ['sass']);
+};
+```
+
 ## 选项
 
 全部可用的选项请参见 [LESS 官网 ](http://lesscss.org/#using-less-configuration)。以下是有效的选项列表：
