@@ -78,13 +78,7 @@ function watchSass() {
 
 ## 选项
 
-全部可用的选项请参见 [LESS 官网 ](http://lesscss.org/#using-less-configuration)。以下是有效的选项列表：
-
-* `paths`：用于 `@import` 指令的路径数组
-
-* `plugins`：less 插件的数组\(详细信息\)
-
-`filename` 选项是不必要的，它由本插件自动处理。`compress` 选项不受支持——如果您试图缩小您的 css，请使用 css 压缩器。不支持 `sourceMap` 选项——如果您试图生成 sourceMap，请使用 [gulp-sourcemaps](/cha-jian/gulp-sourcemaps.md)。
+像传递给 [Node Sass](https://github.com/sass/node-sass#options) 选项 一样传递选项；它们将像在使用 Node Sass 一样被传递。除了 gulp-sass 内部使用的 `data` 选项。使用 `file` 选项也是不受支持的，并且会导致未知的行为，这些行为可能在没有通知的情况下发生更改。
 
 ## 使用插件
 
