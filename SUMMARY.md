@@ -41,11 +41,11 @@
 
 * [gulp-uglify](cha-jian/gulp-uglify.md)
 * [gulp-less](cha-jian/gulp-less.md)
-* [gulp-imagemin](cha-jian/gulp-imagemin.md)
 * [gulp-sass](cha-jian/gulp-sass.md)
+* [gulp-clean-css](cha-jian/gulp-clean-css.md)
+* [gulp-imagemin](cha-jian/gulp-imagemin.md)
 * [gulp-babel](cha-jian/gulp-babel.md)
 * [gulp-rename](cha-jian/gulp-rename.md)
-* [gulp-clean-css](cha-jian/gulp-clean-css.md)
 * [gulp-util](cha-jian/gulp-util.md)
 * [yargs](cha-jian/yargs.md)
 * [gulp-filter](cha-jian/gulp-filter.md)
