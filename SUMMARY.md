@@ -43,17 +43,13 @@
 * [gulp-less](cha-jian/gulp-less.md)
 * [gulp-sass](cha-jian/gulp-sass.md)
 * [gulp-clean-css](cha-jian/gulp-clean-css.md)
+* [gulp-autoprefixer](cha-jian/gulp-autoprefixer.md)
 * [gulp-rename](cha-jian/gulp-rename.md)
 * [gulp-concat](cha-jian/gulp-concat.md)
 * [gulp-clean](cha-jian/gulp-clean.md)
-
 * [gulp-imagemin](cha-jian/gulp-imagemin.md)
-* [gulp-babel](cha-jian/gulp-babel.md)
-
 * [gulp-autoprefixer](cha-jian/gulp-autoprefixer.md)
-
 * [wiredep](cha-jian/wiredep.md)
-
 * [gulp-inject](cha-jian/gulp-inject.md)
 * [gulp-useref](cha-jian/gulp-useref.md)
 * [gulp-rev](cha-jian/gulp-rev.md)
@@ -70,6 +66,4 @@
 * [browser-sync](cha-jian/browser-sync.md)
 * [gulp-load-plugins](cha-jian/gulp-load-plugins.md)
 * [gulp-sourcemaps](cha-jian/gulp-sourcemaps.md)
-
-
 
