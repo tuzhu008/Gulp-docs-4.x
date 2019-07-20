@@ -1,28 +1,34 @@
 ## 简介
 
-Gulp 的 [LESS](http://lesscss.org/) 插件，用于解析 `.less` 文件。
+Gulp 的 [Sass](https://www.sass.hk/) 插件，用于解析 `.sass` 文件。
 
-[github 地址](https://github.com/gulp-community/gulp-less)
+[github 地址](https://github.com/dlmanning/gulp-sass)
 
 ## 安装
 
 ```
-npm install --save-dev gulp-less
+npm install node-sass gulp-sass --save-dev
 ```
 
 ## 用法
 
 ```js
-var less = require('gulp-less');
-var path = require('path');
+'use strict';
 
-function lessTask() {
-  return gulp.src('./less/**/*.less')
-    .pipe(less({
-      paths: [ path.join(__dirname, 'less', 'includes') ]
-    }))
-    .pipe(gulp.dest('./public/css'));
-});
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+
+sass.compiler = require('node-sass');
+
+function sassTask() {
+  return gulp.src('./sass/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./css'));
+};
+
+function watchSass() {
+  gulp.watch('./sass/**/*.scss', ['sass']);
+};
 ```
 
 ## 选项
