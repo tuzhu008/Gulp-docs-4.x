@@ -44,6 +44,8 @@
 * [gulp-sass](cha-jian/gulp-sass.md)
 * [gulp-clean-css](cha-jian/gulp-clean-css.md)
 * [gulp-autoprefixer](cha-jian/gulp-autoprefixer.md)
+* [gulp-jshint](cha-jian/gulp-jshint.md)
+* gulp-eslint
 * [gulp-rename](cha-jian/gulp-rename.md)
 * [gulp-concat](cha-jian/gulp-concat.md)
 * [gulp-clean](cha-jian/gulp-clean.md)
@@ -53,7 +55,6 @@
 * [gulp-inject](cha-jian/gulp-inject.md)
 * [gulp-useref](cha-jian/gulp-useref.md)
 * [gulp-connect](cha-jian/gulp-connect.md)
-* [gulp-jshint](cha-jian/gulp-jshint.md)
 * [gulp-notify](cha-jian/gulp-notify.md)
 * [gulp-livereload](cha-jian/gulp-livereload.md)
 * [gulp-cache](cha-jian/gulp-cache.md)
