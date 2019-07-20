@@ -68,7 +68,5 @@
 * [gulp-sourcemaps](cha-jian/gulp-sourcemaps.md)
 * [gulp-htmlmin](cha-jian/gulp-htmlmin.md)
 * [gulp-unchanged](cha-jian/gulp-unchanged.md)
-* gulp-buffer
-
-
+* [gulp-buffer](cha-jian/gulp-buffer.md)
 
