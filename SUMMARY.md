@@ -38,7 +38,7 @@
 * 删除文件
 
 ## 插件
-
+* [gulp-htmlmin](cha-jian/gulp-htmlmin.md)
 * [gulp-uglify](cha-jian/gulp-uglify.md)
 * [gulp-less](cha-jian/gulp-less.md)
 * [gulp-sass](cha-jian/gulp-sass.md)
@@ -63,7 +63,6 @@
 * [browser-sync](cha-jian/browser-sync.md)
 * [gulp-load-plugins](cha-jian/gulp-load-plugins.md)
 * [gulp-sourcemaps](cha-jian/gulp-sourcemaps.md)
-* [gulp-htmlmin](cha-jian/gulp-htmlmin.md)
 * [gulp-unchanged](cha-jian/gulp-unchanged.md)
 * [gulp-buffer](cha-jian/gulp-buffer.md)
 * [gulp-rev](cha-jian/gulp-rev.md)
