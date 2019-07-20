@@ -244,13 +244,13 @@ eslint.format('junit', process.stdout)
 
 ### eslint.formatEach\(formatter, output\)
 
-Format each linted file individually. This should be used in the stream after piping through`eslint`; otherwise, this will find no ESLint results to format.
+将每个 linted 文件单独格式化。这应该在管道通过 eslint 后用于流体中；否则，将找不到要格式化的 ESLint 结果。
 
-The arguments for`formatEach`are the same as the arguments for`format`.
+`formatEach` 的参数与 `format` 的参数相同。
 
 ## 配置
 
-ESLint may be configured explicity by using any of the following plugin options:`config`,`rules`,`globals`, or`env`. If the[useEslintrc option](https://github.com/adametry/gulp-eslint#useEslintrc)is not set to`false`, ESLint will attempt to resolve a file by the name of`.eslintrc`within the same directory as the file to be linted. If not found there, parent directories will be searched until`.eslintrc`is found or the directory root is reached.
+ESLint 可以通过使用以下插件选项中的任何一个来明确配置：`config`、`rules`、`globals`、或 `env`。如果 [useEslintrc ](https://github.com/adametry/gulp-eslint#useEslintrc)选项没有设置为 `false`，ESLint 将尝试在与要链接的文件相同的目录中解析名为 `.eslintrc `的文件。如果没有找到，将搜索父目录，直到找到 `.eslintrc `或到达根目录为止。
 
 ## 忽略文件
 
