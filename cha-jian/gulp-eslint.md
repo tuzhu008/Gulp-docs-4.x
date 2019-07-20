@@ -64,7 +64,7 @@ gulp.src(['**/*.js','!node_modules/**'])
 
 #### options.rules
 
-Type:`Object`
+类型：`Object`
 
 设置[规则](https://eslint.org/docs/rules/)的[配置](https://eslint.org/docs/user-guide/configuring#configuring-rules)。
 
@@ -95,7 +95,7 @@ Type:`Object`
 
 #### options.fix
 
-Type:`Boolean`
+类型：`Boolean`
 
 This option instructs ESLint to try to fix as many issues as possible. The fixes are applied to the gulp stream. The fixed content can be saved to file using`gulp.dest`\(See[example/fix.js](https://github.com/adametry/gulp-eslint/blob/master/example/fix.js)\). Rules that are fixable can be found in ESLint's[rules list](https://eslint.org/docs/rules/).
 
@@ -103,41 +103,41 @@ When fixes are applied, a "fixed" property is set to`true`on the fixed file's ES
 
 #### options.quiet
 
-Type:`Boolean`
+类型：`Boolean`
 
 When`true`, this option will filter warning messages from ESLint results. This mimics the ESLint CLI[quiet option](https://eslint.org/docs/user-guide/command-line-interface#quiet).
 
-Type:`function (message, index, list) { return Boolean(); }`
+类型：`function (message, index, list) { return Boolean(); }`
 
 When provided a function, it will be used to filter ESLint result messages, removing any messages that do not return a`true`\(or truthy\) value.
 
 #### options.envs
 
-Type:`Array`
+类型：`Array`
 
 Specify a list of[environments](https://eslint.org/docs/user-guide/configuring#specifying-environments)to be applied.
 
 #### options.rulePaths
 
-Type:`Array`
+类型：`Array`
 
 This option allows you to specify additional directories from which to load rules files. This is useful when you have custom rules that aren't suitable for being bundled with ESLint. This option works much like the ESLint CLI's[rulesdir option](https://eslint.org/docs/user-guide/command-line-interface#rulesdir).
 
 #### options.configFile
 
-Type:`String`
+类型：`String`
 
 Path to the ESLint rules configuration file. For more information, see the ESLint CLI[config option](https://eslint.org/docs/user-guide/command-line-interface#c-config)and[Using Configuration Files](https://eslint.org/docs/user-guide/configuring#using-configuration-files).
 
 #### options.warnFileIgnored
 
-Type:`Boolean`
+类型：`Boolean`
 
 When`true`, add a result warning when ESLint ignores a file. This can be used to file files that are needlessly being loaded by`gulp.src`. For example, since ESLint automatically ignores "node\_modules" file paths and gulp.src does not, a gulp task may take seconds longer just reading files from the "node\_modules" directory.
 
 #### options.useEslintrc
 
-Type:`Boolean`
+类型：`Boolean`
 
 When`false`, ESLint will not load[.eslintrc files](https://eslint.org/docs/user-guide/configuring#using-configuration-files).
 
@@ -145,13 +145,13 @@ When`false`, ESLint will not load[.eslintrc files](https://eslint.org/docs/user-
 
 ### eslint\(configFilePath\)
 
-Type:`String`
+类型：`String`
 
 Shorthand for defining`options.configFile`.
 
 ### eslint.result\(action\)
 
-Type:`function (result) {}`
+类型：`function (result) {}`
 
 Call a function for each ESLint file result. No returned value is expected. If an error is thrown, it will be wrapped in a Gulp PluginError and emitted from the stream.
 
@@ -245,13 +245,13 @@ Call a function for each ESLint file result. No returned value is expected. If a
     );
     	}));
 
-Type:`function (result, callback) { callback(error); }`
+类型：`function (result, callback) { callback(error); }`
 
 Call an asynchronous function for each ESLint file result. The callback must be called for the stream to finish. If a value is passed to the callback, it will be wrapped in a Gulp PluginError and emitted from the stream.
 
 ### eslint.results\(action\)
 
-Type:`function (results) {}`
+类型：`function (results) {}`
 
 Call a function once for all ESLint file results before a stream finishes. No returned value is expected. If an error is thrown, it will be wrapped in a Gulp PluginError and emitted from the stream.
 
@@ -331,7 +331,7 @@ The results list has a "warningCount" property that is the sum of warnings in al
     );
     	}));
 
-Type:`function (results, callback) { callback(error); }`
+类型：`function (results, callback) { callback(error); }`
 
 Call an asynchronous function once for all ESLint file results before a stream finishes. The callback must be called for the stream to finish. If a value is passed to the callback, it will be wrapped in a Gulp PluginError and emitted from the stream.
 
