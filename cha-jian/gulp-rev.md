@@ -154,12 +154,14 @@ function defaultTask() {
 
 与其他包一起使用 `gulp-rev` 来完成任务可能是有用的，也是必要的。
 
-- [gulp-rev-rewrite](https://github.com/TheDancingCode/gulp-rev-rewrite) - 已重命名的文件名出现重写的情况
-- [gulp-rev-css-url](https://github.com/galkinrost/gulp-rev-css-url) - 用修改后的 URL 覆盖 CSS 文件中的 URL
-- [gulp-rev-outdated](https://github.com/shonny-ua/gulp-rev-outdated) - 旧的静态资源修订文件过滤器
-- [gulp-rev-collector](https://github.com/shonny-ua/gulp-rev-collector) - 静态资源修订数据收集器
-- [rev-del](https://github.com/callumacrae/rev-del) - 删除旧的未使用资源
-- [gulp-rev-delete-original](https://github.com/nib-health-funds/gulp-rev-delete-original) - 在 rev 后删除原始文件
-- [gulp-rev-loader](https://github.com/adjavaherian/gulp-rev-loader) - 在 webpack 中使用 rev-manifest
-- [gulp-rev-format](https://github.com/atamas101/gulp-rev-format) - 为静态资源(前缀、后缀、扩展名)提供哈希格式选项
+* [gulp-rev-rewrite](/cha-jian/gulp-rev-rewrite.md) - 已重命名的文件名出现重写的情况
+* [gulp-rev-css-url](/cha-jian/gulp-rev-css-url.md) - 用修改后的 URL 覆盖 CSS 文件中的 URL
+* [gulp-rev-outdated](/gulp-rev-outdated) - 旧的静态资源修订文件过滤器
+* [gulp-rev-collector](/cha-jian/gulp-rev-collector.md) - 静态资源修订数据收集器
+* [rev-del](https://github.com/callumacrae/rev-del) - 删除旧的未使用资源
+* [gulp-rev-delete-original](/cha-jian/gulp-rev-delete-original.md) - 在 rev 后删除原始文件
+* [gulp-rev-loader](/cha-jian/gulp-rev-loader.md) - 在 webpack 中使用 rev-manifest
+* [gulp-rev-format](/cha-jian/gulp-rev-format.md) - 为静态资源\(前缀、后缀、扩展名\)提供哈希格式选项
+
+
 
