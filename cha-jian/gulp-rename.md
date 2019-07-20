@@ -48,7 +48,7 @@ gulp.src("./src/main/text/hello.txt", { base: process.cwd() })
 
 * `dirname` 是由 `gulp.src` 设置的从基础目录到文件名的相对路径。
 
-  * `gulp.src()` 使用 glob-stream，它将第一个目录glob\(`*`、`**`、`[]` 或 extglob\)的基设置为父目录。`dirname` 是剩余的目录，或者 `./` 如果没有。glob-stream 版本 &gt;= 3.1.0 \(由 gulp &gt;= 3.2.2 使用\)接受一个 `base` 选项，该选项可用于显式设置 base。
+  * `gulp.src()` 使用 glob-stream，它将第一个目录glob\(`*`、`**`、`[]` 或 extglob\)的 base 设置为父目录。`dirname` 是剩余的目录，或者 `./` 如果没有。glob-stream 版本 &gt;= 3.1.0 \(由 gulp &gt;= 3.2.2 使用\)接受一个 `base` 选项，该选项可用于显式设置 base。
   * `gulp.dest()` 重命名 `process.cwd()` 和 `dirname`\(即相对于 CWD 的基\)之间的目录。使用 `dirname` 重命名与 base 选项的 glob 或派生项匹配的目录。
     basename是没有类似路径扩展名的文件名
 
