@@ -23,7 +23,5 @@ function lintTask()  {
 }
 ```
 
-更多请参考 [github 地址](#)
-
-
+更多请参考 [github](#)
 
