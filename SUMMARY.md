@@ -3,6 +3,7 @@
 ## Gulp 中文
 
 * [简介](README.md)
+* gulp-sort
 
 ## Getting Started
 
