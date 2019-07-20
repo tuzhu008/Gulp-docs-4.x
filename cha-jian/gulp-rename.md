@@ -17,12 +17,12 @@ npm install --save-dev gulp-rename
 ```js
 var rename = require("gulp-rename");
 
-// rename via string
+// 通过字符串重命名
 gulp.src("./src/main/text/hello.txt")
   .pipe(rename("main/text/ciao/goodbye.md"))
   .pipe(gulp.dest("./dist")); // ./dist/main/text/ciao/goodbye.md
 
-// rename via function
+// 通过函数重命名
 gulp.src("./src/**/hello.txt")
   .pipe(rename(function (path) {
     path.dirname += "/ciao";
@@ -30,8 +30,8 @@ gulp.src("./src/**/hello.txt")
     path.extname = ".md";
   }))
   .pipe(gulp.dest("./dist")); // ./dist/main/text/ciao/hello-goodbye.md
-
-// rename via hash
+  
+// 通过 hash 重命名
 gulp.src("./src/main/text/hello.txt", { base: process.cwd() })
   .pipe(rename({
     dirname: "main/text/ciao",
@@ -45,8 +45,6 @@ gulp.src("./src/main/text/hello.txt", { base: process.cwd() })
 ```
 
 ## 注意
-
-
 
 
 
