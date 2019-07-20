@@ -43,14 +43,13 @@
 * [gulp-less](cha-jian/gulp-less.md)
 * [gulp-sass](cha-jian/gulp-sass.md)
 * [gulp-clean-css](cha-jian/gulp-clean-css.md)
-
+* [gulp-rename](cha-jian/gulp-rename.md)
 * [gulp-imagemin](cha-jian/gulp-imagemin.md)
 * [gulp-babel](cha-jian/gulp-babel.md)
-* [gulp-rename](cha-jian/gulp-rename.md)
+* [gulp-clean](cha-jian/gulp-clean.md)
 * [gulp-util](cha-jian/gulp-util.md)
 * [yargs](cha-jian/yargs.md)
-
-* [gulp-flatten](cha-jian/gulp-flatten.md)
+* [gulp-clean](cha-jian/gulp-clean.md)
 * [gulp-autoprefixer](cha-jian/gulp-autoprefixer.md)
 * [wiredep](cha-jian/wiredep.md)
 * [gulp-inject](cha-jian/gulp-inject.md)
@@ -59,7 +58,6 @@
 * [gulp-rev-replace](cha-jian/gulp-rev-replace.md)
 * [gulp-rev-format](cha-jian/gulp-rev-format.md)
 * [gulp-concat](cha-jian/gulp-concat.md)
-* [gulp-clean](cha-jian/gulp-clean.md)
 * [gulp-jshint](cha-jian/gulp-jshint.md)
 * [gulp-notify](cha-jian/gulp-notify.md)
 * [gulp-connect](cha-jian/gulp-connect.md)
@@ -71,6 +69,4 @@
 * [browser-sync](cha-jian/browser-sync.md)
 * [gulp-load-plugins](cha-jian/gulp-load-plugins.md)
 * [gulp-sourcemaps](cha-jian/gulp-sourcemaps.md)
-
-
 
