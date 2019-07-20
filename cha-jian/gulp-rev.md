@@ -153,4 +153,14 @@ function defaultTask() {
 ## ss
 
 
+It may be useful - and necessary - to use `gulp-rev` with other packages to complete the task.
+
+- [gulp-rev-rewrite](https://github.com/TheDancingCode/gulp-rev-rewrite) - Rewrite occurrences of filenames which have been renamed
+- [gulp-rev-css-url](https://github.com/galkinrost/gulp-rev-css-url) - Override URLs in CSS files with the revved ones
+- [gulp-rev-outdated](https://github.com/shonny-ua/gulp-rev-outdated) - Old static asset revision files filter
+- [gulp-rev-collector](https://github.com/shonny-ua/gulp-rev-collector) - Static asset revision data collector
+- [rev-del](https://github.com/callumacrae/rev-del) - Delete old unused assets
+- [gulp-rev-delete-original](https://github.com/nib-health-funds/gulp-rev-delete-original) - Delete original files after rev
+- [gulp-rev-loader](https://github.com/adjavaherian/gulp-rev-loader) - Use rev-manifest with webpack
+- [gulp-rev-format](https://github.com/atamas101/gulp-rev-format) - Provide hash formatting options for static assets (prefix, suffix, last-extension)
 
