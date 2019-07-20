@@ -165,12 +165,6 @@ gulp.src(['**/*.js','!node_modules/**'])
   }));
 ```
 
-```
-
-类型：function (result, callback) { callback(error); }
-
-```
-
 类型：function \(result, callback\) { callback\(error\); }
 
 Call an asynchronous function for each ESLint file result. The callback must be called for the stream to finish. If a value is passed to the callback, it will be wrapped in a Gulp PluginError and emitted from the stream.
