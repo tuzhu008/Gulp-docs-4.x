@@ -31,6 +31,27 @@ function watchSass() {
 };
 ```
 
+也可以同步编译，如下所示:
+
+```js
+'use strict';
+
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+
+sass.compiler = require('node-sass');
+
+function sassTask() {
+  return gulp.src('./sass/**/*.scss')
+    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(gulp.dest('./css'));
+};
+
+function watchSass() {
+  gulp.watch('./sass/**/*.scss', ['sass']);
+};
+```
+
 ## 选项
 
 全部可用的选项请参见 [LESS 官网 ](http://lesscss.org/#using-less-configuration)。以下是有效的选项列表：
