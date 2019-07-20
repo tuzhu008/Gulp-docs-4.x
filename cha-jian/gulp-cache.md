@@ -31,24 +31,38 @@ function watchTask(){
 }
 
 const defaultTask = series(watchTask, lintTask);
-
 ```
 
 * 用户保存 `files/a.js` 并调用 lint 任务
+
   * 这些文件在缓存中还不存在
   * `files/a.js`  和  `files/b.js` 被 linted
 
 * 用户保存 `files/b.js` 并调用 lint 任务
+
   * 文件的内容与以前的值不同
   * `files/b.js` 被 linted
 
 * 用户保存 `files/a.js` 并调用 lint 任务
+
   * 文件的内容没有与前一个值更改
   * 没有文件被 linted
 
 因此，第一次运行将触发所有下游的项。之后的运行只会在它从最后一个以相同路径通过它的文件更改后才会触发。
 
 请注意，不能与操作文件集的插件一起使用\(例如 [gulp-concat](/cha-jian/gulp-concat.md)\)。
+
+### cache\(cacheName\[, opt\]\)
+
+创建新的缓存散列或使用现有的缓存散列。
+
+缓存 `key = file.path + file.contents`
+
+如果缓存中存在文件，则忽略该文件。
+
+如果一个文件在缓存中不存在，它将按原样传递并添加到缓存中。
+
+此路径的最后一个缓存被清除，因此如果您将文件修改为 a，然后修改为 b，然后再修改回 a，那么所有 3 个缓存都将丢失。
 
 ### 清理缓存
 
