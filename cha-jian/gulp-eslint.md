@@ -105,11 +105,11 @@ gulp.src(['**/*.js','!node_modules/**'])
 
 类型：`Boolean`
 
-When`true`, this option will filter warning messages from ESLint results. This mimics the ESLint CLI[quiet option](https://eslint.org/docs/user-guide/command-line-interface#quiet).
+当为`true` 时，此选项将从 ESLint 结果中筛选警告消息。这模仿 ESLint CLI [quiet 选项](https://eslint.org/docs/user-guide/command-line-interface#quiet).
 
 类型：`function (message, index, list) { return Boolean(); }`
 
-When provided a function, it will be used to filter ESLint result messages, removing any messages that do not return a`true`\(or truthy\) value.
+当提供一个函数时，它将用于过滤 ESLint 结果消息，删除任何不返回 `true` 值\(或不返回值\)的消息。
 
 #### options.envs
 
