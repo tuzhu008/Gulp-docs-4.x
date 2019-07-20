@@ -33,7 +33,7 @@ function lessTask() {
 
 * `plugins`：less 插件的数组\(详细信息\)
 
-`filename` 选项是不必要的，它由本插件自动处理。`compress` 选项不受支持——如果您试图缩小您的 css，请使用 css 压缩器。不支持 `sourceMap` 选项——如果您试图生成 sourceMap，请使用 [gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps)。
+`filename` 选项是不必要的，它由本插件自动处理。`compress` 选项不受支持——如果您试图缩小您的 css，请使用 css 压缩器。不支持 `sourceMap` 选项——如果您试图生成 sourceMap，请使用 [gulp-sourcemaps](/cha-jian/gulp-sourcemaps.md)。
 
 ## 错误
 
