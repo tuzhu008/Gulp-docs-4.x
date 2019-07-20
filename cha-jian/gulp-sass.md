@@ -80,27 +80,25 @@ function watchSass() {
 
 像传递给 [Node Sass](https://github.com/sass/node-sass#options) 选项 一样传递选项；它们将像在使用 Node Sass 一样被传递。除了 gulp-sass 内部使用的 `data` 选项。使用 `file` 选项也是不受支持的，并且会导致未知的行为，这些行为可能在没有通知的情况下发生更改。
 
-## 使用插件
-
-Less 支持插件，可以添加额外的功能。下面是一个如何在 `gulp-less`  使用插件的例子。
+例如：
 
 ```js
-var LessAutoprefix = require('less-plugin-autoprefix');
-var autoprefix = new LessAutoprefix({ browsers: ['last 2 versions'] });
-
-function lessTask() {
-  var LessAutoprefix = require('less-plugin-autoprefix');
-  var autoprefix = new LessAutoprefix({ browsers: ['last 2 versions'] });
-
-  return gulp.src('./less/**/*.less')
-  .pipe(less({
-    plugins: [autoprefix]
-  }))
-  .pipe(gulp.dest('./public/css'));
-}
+function sassTask() {
+ return gulp.src('./sass/**/*.scss')
+   .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+   .pipe(gulp.dest('./css'));
+};
 ```
 
-更多关于 LESS 插件的信息可以在 [http://lesscss.org/usage/\#plugins](http://lesscss.org/usage/#plugins) 找到。
+或同步代码：
+
+```js
+function sassTask() {
+ return gulp.src('./sass/**/*.scss')
+   .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
+   .pipe(gulp.dest('./css'));
+};
+```
 
 ## Source Maps
 
