@@ -24,11 +24,11 @@ function sassTask() {
   return gulp.src('./sass/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./css'));
-};
+}
 
 function watchSass() {
   gulp.watch('./sass/**/*.scss', ['sass']);
-};
+}
 ```
 
 也可以同步编译，如下所示:
@@ -45,11 +45,11 @@ function sassTask() {
   return gulp.src('./sass/**/*.scss')
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(gulp.dest('./css'));
-};
+}
 
 function watchSass() {
   gulp.watch('./sass/**/*.scss', ['sass']);
-};
+}
 ```
 
 通过设置 `sass.compiler` 属性，可以选择使用 [Dart Sass](http://sass-lang.com/dart-sass) 还是 [Node Sass](https://github.com/sass/node-sass)。默认情况下将使用 Node Sass，但强烈建议您显式地将其设置为向前兼容，以防默认值发生更改。
@@ -69,11 +69,11 @@ function sassTask () {
   return gulp.src('./sass/**/*.scss')
     .pipe(sass({fiber: Fiber}).on('error', sass.logError))
     .pipe(gulp.dest('./css'));
-};
+}
 
 function watchSass() {
   gulp.watch('./sass/**/*.scss', ['sass']);
-};
+}
 ```
 
 ## 选项
@@ -87,7 +87,7 @@ function sassTask() {
  return gulp.src('./sass/**/*.scss')
    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
    .pipe(gulp.dest('./css'));
-};
+}
 ```
 
 或同步代码：
@@ -97,7 +97,7 @@ function sassTask() {
  return gulp.src('./sass/**/*.scss')
    .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
    .pipe(gulp.dest('./css'));
-};
+}
 ```
 
 ## Source Maps
@@ -113,7 +113,7 @@ function sassTask() {
   .pipe(sass().on('error', sass.logError))
   .pipe(sourcemaps.write())
   .pipe(gulp.dest('./css'));
-};
+}
 ```
 
 默认情况下，[gulp-sourcemaps](/cha-jian/gulp-sourcemaps.md) 将源映射内联到已编译的 CSS 文件中。要将它们写入单独的文件，请在 `sourcemaps.write()` 函数中指定一个相对文件路径，如下所示:
@@ -127,10 +127,8 @@ function sassTask() {
   .pipe(sass().on('error', sass.logError))
   .pipe(sourcemaps.write('./maps'))
   .pipe(gulp.dest('./css'));
-};
+}
 ```
 
-## 错误处理
 
-默认情况下，当发生错误时，gulp 任务将失败，所有流将停止。要更改此行为，请查看[此处](https://github.com/gulpjs/gulp/blob/master/docs/recipes/combining-streams-to-handle-errors.md)的错误处理文档。
 
