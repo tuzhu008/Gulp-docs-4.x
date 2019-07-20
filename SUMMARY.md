@@ -74,6 +74,6 @@
 * [gulp-rev-outdated](cha-jian/gulp-rev-outdated.md)
 * [gulp-rev-collector](cha-jian/gulp-rev-collector.md)
 * [rev-del](cha-jian/rev-del.md)
-* gulp-rev-delete-original
+* [gulp-rev-delete-original](cha-jian/gulp-rev-delete-original.md)
 * gulp-rev-loader
 
