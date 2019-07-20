@@ -119,14 +119,11 @@ function defaultTask() {
 
 由于流的顺序没有得到保证，所以一些插件\(如 `gulp-concat`\)可能导致最终文件的内容和散列发生更改。若要避免为未更改的源文件生成新的散列，可以:
 
-* 使用 gulp-sort 对流进行排序
+* 使用 [gulp-sort](/cha-jian/gulp-sort.md) 对流进行排序
 
-* 
-用吸管把溪流分类
+* 使用 [gulp-unchanged](https://github.com/sindresorhus/gulp-changed) 过滤未更改的文件
 
-使用gulp- modified过滤未更改的文件
-
-阅读更多关于增量构建的内容
+* 阅读更多关于 [incremental builds](https://github.com/gulpjs/gulp#incremental-builds)
 
 
 
