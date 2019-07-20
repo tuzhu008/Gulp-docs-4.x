@@ -46,13 +46,14 @@
 * [gulp-rename](cha-jian/gulp-rename.md)
 * [gulp-concat](cha-jian/gulp-concat.md)
 * [gulp-clean](cha-jian/gulp-clean.md)
-* [gulp-concat](cha-jian/gulp-concat.md)
+
 * [gulp-imagemin](cha-jian/gulp-imagemin.md)
 * [gulp-babel](cha-jian/gulp-babel.md)
 
 * [gulp-autoprefixer](cha-jian/gulp-autoprefixer.md)
 
 * [wiredep](cha-jian/wiredep.md)
+
 * [gulp-inject](cha-jian/gulp-inject.md)
 * [gulp-useref](cha-jian/gulp-useref.md)
 * [gulp-rev](cha-jian/gulp-rev.md)
