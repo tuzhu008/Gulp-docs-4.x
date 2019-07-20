@@ -39,8 +39,6 @@ Manifest 文件 path
 
 #### options
 
-
-
 | 属性 | 类型 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
 | `base` | string | `process.cwd()` | 覆盖 manifest 文件的 `base`。 |
