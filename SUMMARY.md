@@ -69,7 +69,7 @@
 * [gulp-rev](cha-jian/gulp-rev.md)
 * [gulp-rev-replace](cha-jian/gulp-rev-replace.md)
 * [gulp-rev-format](cha-jian/gulp-rev-format.md)
-* gulp-rev-rewrite
+* [gulp-rev-rewrite](cha-jian/gulp-rev-rewrite.md)
 * [gulp-rev-css-url](cha-jian/gulp-rev-css-url.md)
 * [gulp-rev-outdated](cha-jian/gulp-rev-outdated.md)
 * [gulp-rev-collector](cha-jian/gulp-rev-collector.md)
