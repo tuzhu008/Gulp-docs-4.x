@@ -84,7 +84,7 @@ gulp.src(['**/*.js','!node_modules/**'])
 
 指定要声明的全局变量。
 
-```
+```js
 {
   "globals":[
     "jQuery",
@@ -97,9 +97,9 @@ gulp.src(['**/*.js','!node_modules/**'])
 
 类型：`Boolean`
 
-This option instructs ESLint to try to fix as many issues as possible. The fixes are applied to the gulp stream. The fixed content can be saved to file using`gulp.dest`\(See[example/fix.js](https://github.com/adametry/gulp-eslint/blob/master/example/fix.js)\). Rules that are fixable can be found in ESLint's[rules list](https://eslint.org/docs/rules/).
+这个选项指示 ESLint 尝试修复尽可能多的问题。修复程序应用于 gulp stream。修复后内容可以使用 `gulp.dest`保存到文件中 \(参见 [example/fix.js](https://github.com/adametry/gulp-eslint/blob/master/example/fix.js)\)。可以在 ESLint 的[规则列表](https://eslint.org/docs/rules/)中找到可修复的规则。
 
-When fixes are applied, a "fixed" property is set to`true`on the fixed file's ESLint result.
+当应用修复时，被修复文件的 ESLint 结果上的 `fixed` 属性将被设置为 `true`。
 
 #### options.quiet
 
@@ -141,8 +141,6 @@ When`true`, add a result warning when ESLint ignores a file. This can be used to
 
 When`false`, ESLint will not load[.eslintrc files](https://eslint.org/docs/user-guide/configuring#using-configuration-files).
 
-
-
 ### eslint\(configFilePath\)
 
 类型：`String`
@@ -167,12 +165,12 @@ Call a function for each ESLint file result. No returned value is expected. If a
     !node_modules/**
     '
     ])
-    	.
+        .
     pipe
     (
     eslint
     ())
-    	.
+        .
     pipe
     (
     eslint
@@ -243,7 +241,7 @@ Call a function for each ESLint file result. No returned value is expected. If a
     }
     `
     );
-    	}));
+        }));
 
 类型：`function (result, callback) { callback(error); }`
 
@@ -269,12 +267,12 @@ The results list has a "warningCount" property that is the sum of warnings in al
     !node_modules/**
     '
     ])
-    	.
+        .
     pipe
     (
     eslint
     ())
-    	.
+        .
     pipe
     (
     eslint
@@ -329,7 +327,7 @@ The results list has a "warningCount" property that is the sum of warnings in al
     }
     `
     );
-    	}));
+        }));
 
 类型：`function (results, callback) { callback(error); }`
 
@@ -354,12 +352,12 @@ src
 !node_modules/**
 '
 ])
-	.
+    .
 pipe
 (
 eslint
 ())
-	.
+    .
 pipe
 (
 eslint
@@ -387,12 +385,12 @@ src
 !node_modules/**
 '
 ])
-	.
+    .
 pipe
 (
 eslint
 ())
-	.
+    .
 pipe
 (
 eslint
