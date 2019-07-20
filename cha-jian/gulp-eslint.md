@@ -165,7 +165,7 @@ gulp.src(['**/*.js','!node_modules/**'])
   }));
 ```
 
-类型：function \(result, callback\) { callback\(error\); }
+类型：`function (result, callback) { callback(error); }`
 
 Call an asynchronous function for each ESLint file result. The callback must be called for the stream to finish. If a value is passed to the callback, it will be wrapped in a Gulp PluginError and emitted from the stream.
 
@@ -248,21 +248,21 @@ Format each linted file individually. This should be used in the stream after pi
 
 The arguments for`formatEach`are the same as the arguments for`format`.
 
-## Configuration
+## 配置
 
 ESLint may be configured explicity by using any of the following plugin options:`config`,`rules`,`globals`, or`env`. If the[useEslintrc option](https://github.com/adametry/gulp-eslint#useEslintrc)is not set to`false`, ESLint will attempt to resolve a file by the name of`.eslintrc`within the same directory as the file to be linted. If not found there, parent directories will be searched until`.eslintrc`is found or the directory root is reached.
 
-## Ignore Files
+## 忽略文件
 
-ESLint will ignore files that do not have a`.js`file extension at the point of linting \([some plugins](https://github.com/contra/gulp-coffee)may change file extensions mid-stream\). This avoids unintentional linting of non-JavaScript files.
+ESLint 将忽略在 linting 时没有 `.js` 文件扩展名的文件\([一些插件](https://github.com/gulp-community/gulp-coffee)可能会在中途更改文件扩展名\)。这避免了非 javascript 文件的非故意 linting。
 
-ESLint will also detect an`.eslintignore`file at the cwd or a parent directory. See the[ESLint docs](https://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories)to learn how to construct this file.
+ESLint 还将在 cwd 或父目录中检测 `.eslintignore`。参见 [ESLint ](https://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories) 文档了解如何构造此文件。
 
-## Extensions
+## 扩展
 
-ESLint results are attached as an "eslint" property to the vinyl files that pass through a Gulp.js stream pipeline. This is available to streams that follow the initial`eslint`stream. The[eslint.result](https://github.com/adametry/gulp-eslint#result)and[eslint.results](https://github.com/adametry/gulp-eslint#results)methods are made available to support extensions and custom handling of ESLint results.
+ESLint 结果作为 “eslint” 属性附加到经过 Gulp.js 流管道的 vinyl 文件上。这对于遵循初始 eslint 流的流是可用的。 [eslint.result](https://github.com/adametry/gulp-eslint#result) 和 [eslint.results](https://github.com/adametry/gulp-eslint#results) 方法支持扩展和自定义 ESLint 结果处理。
 
-#### Gulp-Eslint Extensions:
+#### Gulp-Eslint 扩展:
 
 * [gulp-eslint-if-fixed](https://github.com/lukeapage/gulp-eslint-if-fixed)
 * [gulp-eslint-threshold](https://github.com/krmbkt/gulp-eslint-threshold)
