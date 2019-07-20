@@ -2,6 +2,8 @@
 
 基于 [UglifyJS](https://github.com/mishoo/UglifyJS2) 的 gulp 插件，用于对 JavaScript 进行缩小化，压缩、美化。
 
+[github 地址](https://github.com/terinjokes/gulp-uglify)
+
 ## 安装
 
 ```
