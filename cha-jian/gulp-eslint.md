@@ -139,13 +139,13 @@ ESLint 规则配置文件的路径。有关更多信息，请参见 ESLint CLI [
 
 类型：`Boolean`
 
-When`false`, ESLint will not load[.eslintrc files](https://eslint.org/docs/user-guide/configuring#using-configuration-files).
+当为`false` 时，ESLint 将不加载 [.eslintrc 文件](https://eslint.org/docs/user-guide/configuring#using-configuration-files)。
 
 ### eslint\(configFilePath\)
 
 类型：`String`
 
-Shorthand for defining`options.configFile`.
+定义 `options.configFile` 的简写。
 
 ### eslint.result\(action\)
 
@@ -153,97 +153,25 @@ Shorthand for defining`options.configFile`.
 
 Call a function for each ESLint file result. No returned value is expected. If an error is thrown, it will be wrapped in a Gulp PluginError and emitted from the stream.
 
-    gulp
-    .
-    src
-    ([
-    '
-    **/*.js
-    '
-    ,
-    '
-    !node_modules/**
-    '
-    ])
-        .
-    pipe
-    (
-    eslint
-    ())
-        .
-    pipe
-    (
-    eslint
-    .
-    result
-    (
-    result
-    =
-    >
-     {
+```js
+gulp.src(['**/*.js','!node_modules/**'])
+  .pipe(eslint())
+  .pipe(eslint.result(result => {
+      // Called for each ESLint result.
+      console.log(`ESLint result: ${result.filePath}`);
+      console.log(`# Messages: ${result.messages.length}`);
+      console.log(`# Warnings: ${result.warningCount}`);
+      console.log(`# Errors: ${result.errorCount}`);
+  }));
+```
 
-    //
-     Called for each ESLint result.
-    console
-    .
-    log
-    (
-    `
-    ESLint result: 
-    ${
-    result
-    .
-    filePath
-    }
-    `
-    );
+```
 
-    console
-    .
-    log
-    (
-    `
-    # Messages: 
-    ${
-    result
-    .
-    messages
-    .
-    length
-    }
-    `
-    );
+类型：function (result, callback) { callback(error); }
 
-    console
-    .
-    log
-    (
-    `
-    # Warnings: 
-    ${
-    result
-    .
-    warningCount
-    }
-    `
-    );
+```
 
-    console
-    .
-    log
-    (
-    `
-    # Errors: 
-    ${
-    result
-    .
-    errorCount
-    }
-    `
-    );
-        }));
-
-类型：`function (result, callback) { callback(error); }`
+类型：function \(result, callback\) { callback\(error\); }
 
 Call an asynchronous function for each ESLint file result. The callback must be called for the stream to finish. If a value is passed to the callback, it will be wrapped in a Gulp PluginError and emitted from the stream.
 
