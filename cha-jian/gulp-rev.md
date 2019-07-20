@@ -43,10 +43,10 @@ Manifest 文件 path
 
 | 属性 | 类型 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
-| base | string | process.cwd\(\) | 覆盖 manifest 文件的 `base`。 |
-| cwd | string | process.cwd\(\) | 覆盖 manifest 文件的当前工作目录。 |
-| merge | boolean | false | 合并现有  manifest 文件。 |
-| transformer | object | JSON | 具有 parse 和 stringify 方法的对象。这可以用来为 manifest 文件提供自定义转换器，而不是默认的 JSON。 |
+| `base` | string | `process.cwd()` | 覆盖 manifest 文件的 `base`。 |
+| `cwd` | string | `process.cwd()` | 覆盖 manifest 文件的当前工作目录。 |
+| `merge` | boolean | `false` | 合并现有 manifest 文件。 |
+| `transformer` | object | `JSON` | 具有 `parse` 和 `stringify` 方法的对象。这可以用来为 manifest 文件提供自定义转换器，而不是默认的 JSON。 |
 
 
 
