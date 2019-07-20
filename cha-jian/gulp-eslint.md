@@ -151,7 +151,7 @@ ESLint 规则配置文件的路径。有关更多信息，请参见 ESLint CLI [
 
 类型：`function (result) {}`
 
-Call a function for each ESLint file result. No returned value is expected. If an error is thrown, it will be wrapped in a Gulp PluginError and emitted from the stream.
+为每个 ESLint 文件结果调用一个函数。不期望返回值。如果抛出一个错误，它将被封装在一个 Gulp PluginError 中，并从流中发出。
 
 ```js
 gulp.src(['**/*.js','!node_modules/**'])
@@ -167,15 +167,15 @@ gulp.src(['**/*.js','!node_modules/**'])
 
 类型：`function (result, callback) { callback(error); }`
 
-Call an asynchronous function for each ESLint file result. The callback must be called for the stream to finish. If a value is passed to the callback, it will be wrapped in a Gulp PluginError and emitted from the stream.
+为每个 ESLint 文件结果调用异步函数。必须调用回调函数流才能结束。如果一个值被传递给回调函数，它将被封装在一个 Gulp  PluginError 中，并从流中发出。
 
 ### eslint.results\(action\)
 
 类型：`function (results) {}`
 
-Call a function once for all ESLint file results before a stream finishes. No returned value is expected. If an error is thrown, it will be wrapped in a Gulp PluginError and emitted from the stream.
+在流结束之前，为所有 ESLint 文件结果调用一次函数。不期望返回值。如果抛出一个错误，它将被封装在一个 Gulp PluginError 中，并从流中发出。
 
-The results list has a "warningCount" property that is the sum of warnings in all results; likewise, an "errorCount" property is set to the sum of errors in all results.
+结果列表有一个 "warningCount"  属性，它是所有结果中警告的总和；同样，"errorCount"  属性被设置为所有结果中错误的总和。
 
 ```js
 gulp.src(['**/*.js','!node_modules/**'])
@@ -190,7 +190,7 @@ gulp.src(['**/*.js','!node_modules/**'])
 
 类型：`function (results, callback) { callback(error); }`
 
-Call an asynchronous function once for all ESLint file results before a stream finishes. The callback must be called for the stream to finish. If a value is passed to the callback, it will be wrapped in a Gulp PluginError and emitted from the stream.
+在流结束之前，为所有 ESLint 文件结果调用一次异步函数。必须调用回调函数流才能结束。如果一个值被传递给回调函数，它将被封装在一个 Gulp PluginError 中，并从流中发出。
 
 ### eslint.failOnError\(\)
 
@@ -250,7 +250,7 @@ eslint.format('junit', process.stdout)
 
 ## 配置
 
-ESLint 可以通过使用以下插件选项中的任何一个来明确配置：`config`、`rules`、`globals`、或 `env`。如果 [useEslintrc ](https://github.com/adametry/gulp-eslint#useEslintrc)选项没有设置为 `false`，ESLint 将尝试在与要链接的文件相同的目录中解析名为 `.eslintrc `的文件。如果没有找到，将搜索父目录，直到找到 `.eslintrc `或到达根目录为止。
+ESLint 可以通过使用以下插件选项中的任何一个来明确配置：`config`、`rules`、`globals`、或 `env`。如果 [useEslintrc ](https://github.com/adametry/gulp-eslint#useEslintrc)选项没有设置为 `false`，ESLint 将尝试在与要链接的文件相同的目录中解析名为 `.eslintrc`的文件。如果没有找到，将搜索父目录，直到找到 `.eslintrc`或到达根目录为止。
 
 ## 忽略文件
 
