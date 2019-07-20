@@ -70,9 +70,10 @@
 * [gulp-rev-replace](cha-jian/gulp-rev-replace.md)
 * [gulp-rev-format](cha-jian/gulp-rev-format.md)
 * gulp-rev-rewrite
-* gulp-rev-css-url
+* [gulp-rev-css-url](cha-jian/gulp-rev-css-url.md)
 * gulp-rev-outdated
 * gulp-rev-collector
 * rev-del
 * gulp-rev-delete-original
 * gulp-rev-loader
+
