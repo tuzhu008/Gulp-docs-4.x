@@ -47,7 +47,7 @@
 * [gulp-rename](cha-jian/gulp-rename.md)
 * [gulp-concat](cha-jian/gulp-concat.md)
 * [gulp-clean](cha-jian/gulp-clean.md)
-* gulp-sort
+* [gulp-sort](cha-jian/gulp-sort.md)
 * [gulp-imagemin](cha-jian/gulp-imagemin.md)
 * [wiredep](cha-jian/wiredep.md)
 * [gulp-inject](cha-jian/gulp-inject.md)
