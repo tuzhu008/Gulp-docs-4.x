@@ -7,59 +7,52 @@ Gulp 的 CSS 插件，用于为 CSS 添加供应商前缀，内部使用 [Autopr
 ## 安装
 
 ```
-npm install node-sass gulp-clean-css
+npm install node-sass gulp-autoprefixer
+```
+
+## 用法
+
+```js
+const gulp = require('gulp');
+const autoprefixer = require('gulp-autoprefixer');
+
+function defaultTask {
+  return gulp.src('src/app.css')
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
+    .pipe(gulp.dest('dist'))
+}
 ```
 
 ## API
 
-### cleanCSS\(\[_options_\], \[_callback_\]\)
+### autoprefixer\(\[options\]\)
 
 #### options
 
-参见 [`CleanCSS options`](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-api) 。
+类型：`object`
 
-```js
-let gulp = require('gulp');
-let cleanCSS = require('gulp-clean-css');
+请参见 [options](https://github.com/postcss/autoprefixer#options)。
 
-function minifyCSS() {
-  return gulp.src('styles/*.css')
-    .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest('dist'));
-}
-```
-
-#### callback
-
-用于从底层的  [`minify()`](https://github.com/jakubpawlowicz/clean-css#using-api) 调用返回详细信息。一个示例用例可以包括缩小文件的日志 `stats`。除了默认对象之外，`gulp-clean-css` 还提供了用于进一步分析的文件 `name` 和 `path`。
-
-```js
-let gulp = require('gulp');
-let cleanCSS = require('gulp-clean-css');
-
-function minifyCSS() {
-  return gulp.src('styles/*.css')
-    .pipe(cleanCSS({debug: true}, (details) => {
-      console.log(`${details.name}: ${details.stats.originalSize}`);
-      console.log(`${details.name}: ${details.stats.minifiedSize}`);
-    }))
-  .pipe(gulp.dest('dist'));
-}
-```
+## Source Maps
 
 可以使用 [gulp-sourcemaps ](/cha-jian/gulp-sourcemaps.md)生成源映射：
 
 ```js
-let gulp = require('gulp');
-let cleanCSS = require('gulp-clean-css');
-let sourcemaps = require('gulp-sourcemaps');
+const gulp = require('gulp');
+const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
+const concat = require('gulp-concat');
 
-function minifyCSS() {
-  return gulp.src('./src/*.css')
+function defaultTask() {
+  return gulp.src('src/**/*.css')
     .pipe(sourcemaps.init())
-    .pipe(cleanCSS())
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('dist'));
+    .pipe(autoprefixer())
+    .pipe(concat('all.css'))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('dist'))
 }
 ```
 
