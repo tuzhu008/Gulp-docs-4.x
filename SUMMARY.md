@@ -71,7 +71,7 @@
 * [gulp-rev-format](cha-jian/gulp-rev-format.md)
 * gulp-rev-rewrite
 * [gulp-rev-css-url](cha-jian/gulp-rev-css-url.md)
-* gulp-rev-outdated
+* [gulp-rev-outdated](cha-jian/gulp-rev-outdated.md)
 * gulp-rev-collector
 * rev-del
 * gulp-rev-delete-original
