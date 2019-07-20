@@ -52,9 +52,6 @@
 * [wiredep](cha-jian/wiredep.md)
 * [gulp-inject](cha-jian/gulp-inject.md)
 * [gulp-useref](cha-jian/gulp-useref.md)
-* [gulp-rev](cha-jian/gulp-rev.md)
-* [gulp-rev-replace](cha-jian/gulp-rev-replace.md)
-* [gulp-rev-format](cha-jian/gulp-rev-format.md)
 * [gulp-connect](cha-jian/gulp-connect.md)
 * [gulp-jshint](cha-jian/gulp-jshint.md)
 * [gulp-notify](cha-jian/gulp-notify.md)
@@ -69,4 +66,13 @@
 * [gulp-htmlmin](cha-jian/gulp-htmlmin.md)
 * [gulp-unchanged](cha-jian/gulp-unchanged.md)
 * [gulp-buffer](cha-jian/gulp-buffer.md)
-
+* [gulp-rev](cha-jian/gulp-rev.md)
+* [gulp-rev-replace](cha-jian/gulp-rev-replace.md)
+* [gulp-rev-format](cha-jian/gulp-rev-format.md)
+* gulp-rev-rewrite
+* gulp-rev-css-url
+* gulp-rev-outdated
+* gulp-rev-collector
+* rev-del
+* gulp-rev-delete-original
+* gulp-rev-loader
