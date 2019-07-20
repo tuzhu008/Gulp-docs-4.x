@@ -7,30 +7,33 @@ Gulp 的 [LESS](http://lesscss.org/) 插件，用于解析 `.less` 文件。
 ## 安装
 
 ```
-npm install --save-dev gulp-uglify
+npm install --save-dev gulp-less
 ```
 
 ## 用法
 
 ```js
-var gulp = require('gulp');
-var uglify = require('gulp-uglify');
-var pipeline = require('readable-stream').pipeline;
+var less = require('gulp-less');
+var path = require('path');
 
-function compressTask() {
-    return pipeline(
-        gulp.src('lib/*.js'),
-        uglify(),
-        gulp.dest('dist')
-    );
-}
+function lessTask() {
+  return gulp.src('./less/**/*.less')
+    .pipe(less({
+      paths: [ path.join(__dirname, 'less', 'includes') ]
+    }))
+    .pipe(gulp.dest('./public/css'));
+});
 ```
 
 ## 选项
 
-支持 UglifyJS API 的大多数优化选项，但也有几个例外:
+全部可用的选项请参见 [LESS 官网 ](http://lesscss.org/#using-less-configuration)。以下是有效的选项列表：
 
-* 不能设置 `sourceMap` 选项，因为它将根据您的 Gulp 配置自动配置。参见 [Gulp sourcemaps](https://github.com/gulp-sourcemaps/gulp-sourcemaps#usage) 的文档。
+* `paths`：用于 `@import` 指令的路径数组
+
+* `plugins`：less 插件的数组\(详细信息\)
+
+`filename` 选项是不必要的，它由本插件自动处理。`compress` 选项不受支持——如果您试图缩小您的 css，请使用 css 压缩器。不支持 `sourceMap` 选项——如果您试图生成 sourceMap，请使用 [gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps)。
 
 ## 错误
 
