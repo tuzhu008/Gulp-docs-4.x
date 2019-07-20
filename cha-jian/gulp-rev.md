@@ -46,11 +46,7 @@ Manifest 文件 path
 | `merge` | boolean | `false` | 合并现有 manifest 文件。 |
 | `transformer` | object | `JSON` | 具有 `parse` 和 `stringify` 方法的对象。这可以用来为 manifest 文件提供自定义转换器，而不是默认的 JSON。 |
 
-
-
 ### Original path
 
 原始文件路径存储在 file.revorigpath 中。这对于重写对资产的引用之类的事情很有用。
-
-`parse`
 
