@@ -66,6 +66,7 @@
 * [gulp-load-plugins](cha-jian/gulp-load-plugins.md)
 * [gulp-sourcemaps](cha-jian/gulp-sourcemaps.md)
 * [gulp-unchanged](cha-jian/gulp-unchanged.md)
+* gulp-stream
 * [gulp-buffer](cha-jian/gulp-buffer.md)
 * [gulp-rev](cha-jian/gulp-rev.md)
 * [gulp-rev-replace](cha-jian/gulp-rev-replace.md)
