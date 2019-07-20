@@ -1,6 +1,6 @@
 ## 简介
 
-Gulp 的 [Sass](https://www.sass.hk/) 插件，用于解析 `.sass` 文件。
+Gulp 插件，用于压缩 HTML。
 
 [github 地址](https://github.com/jonschlinkert/gulp-htmlmin)
 
