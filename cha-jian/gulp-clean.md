@@ -7,7 +7,7 @@ Gulp 的插件，用于删除指定的文件或者文件夹。
 ## 安装
 
 ```
-npm install node-sass gulp-clean
+npm install --save-dev gulp-clean
 ```
 
 ## 用法
