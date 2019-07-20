@@ -1,16 +1,95 @@
 ## 简介
 
-Gulp 的 [Sass](https://www.sass.hk/) 插件，用于解析 `.sass` 文件。
+Gulp 插件，用于压缩 png 图片。
 
 [github 地址](https://github.com/dlmanning/gulp-sass)
 
 ## 安装
 
 ```
-npm install node-sass gulp-sass --save-dev
+npm install --save-dev imagemin-pngquant
 ```
 
 ## 用法
+
+```js
+const imagemin = require('imagemin');
+const imageminPngquant = require('imagemin-pngquant');
+
+(async () => {
+  await imagemin(['images/*.png'], 'build/images', {
+    plugins: [
+      imageminPngquant()
+    ]
+  });
+
+  console.log('Images optimized');
+})();
+```
+
+## API
+
+### imageminPngquant\(options?\)\(input\)
+
+返回 `Promise<Buffer>`.
+
+#### options
+
+类型：`object`
+
+##### speed
+
+Type:`number`  
+Default:`4`  
+Values:`1`\(brute-force\) to`11`\(fastest\)
+
+Speed`10`has 5% lower quality, but is about 8 times faster than the default. Speed`11`disables dithering and lowers compression level.
+
+##### strip
+
+Type:`boolean`  
+Default:`false`
+
+Remove optional metadata.
+
+##### quality
+
+Type:`Array<min: number, max: number>`  
+Values:`Array<0...1, 0...1>`  
+Example:`[0.3, 0.5]`
+
+Instructs pngquant to use the least amount of colors required to meet or exceed the max quality. If conversion results in quality below the min quality the image won't be saved.
+
+Min and max are numbers in range 0 \(worst\) to 1 \(perfect\), similar to JPEG.
+
+##### dithering
+
+Type:`number | boolean`  
+Default:`1`\(full\)  
+Values:`0...1`
+
+Set the dithering level using a fractional number between 0 \(none\) and 1 \(full\).
+
+Pass in`false`to disable dithering.
+
+##### posterize
+
+Type:`number`
+
+Truncate number of least significant bits of color \(per channel\). Use this when image will be output on low-depth displays \(e.g. 16-bit RGB\). pngquant will make almost-opaque pixels fully opaque and will reduce amount of semi-transparent colors.
+
+##### verbose
+
+Type:`boolean`  
+Default:`false`
+
+Print verbose status messages.
+
+#### input
+
+Type:`Buffer | Stream`
+
+Buffer or stream to optimize.
 
 
 
