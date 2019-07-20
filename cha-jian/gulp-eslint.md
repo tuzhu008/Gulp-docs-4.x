@@ -115,25 +115,25 @@ gulp.src(['**/*.js','!node_modules/**'])
 
 类型：`Array`
 
-Specify a list of[environments](https://eslint.org/docs/user-guide/configuring#specifying-environments)to be applied.
+指定要应用的[环境](https://eslint.org/docs/user-guide/configuring#specifying-environments)列表。
 
 #### options.rulePaths
 
 类型：`Array`
 
-This option allows you to specify additional directories from which to load rules files. This is useful when you have custom rules that aren't suitable for being bundled with ESLint. This option works much like the ESLint CLI's[rulesdir option](https://eslint.org/docs/user-guide/command-line-interface#rulesdir).
+此选项允许您指定用于加载规则文件的其他目录。当您有不适合与 ESLint 绑定的自定义规则时，这是非常有用的。这个选项的工作原理很像 ESLint CLI 的 [rulesdir ](https://eslint.org/docs/user-guide/command-line-interface#rulesdir) 选项。
 
 #### options.configFile
 
 类型：`String`
 
-Path to the ESLint rules configuration file. For more information, see the ESLint CLI[config option](https://eslint.org/docs/user-guide/command-line-interface#c-config)and[Using Configuration Files](https://eslint.org/docs/user-guide/configuring#using-configuration-files).
+ESLint 规则配置文件的路径。有关更多信息，请参见 ESLint CLI [config 选项](https://eslint.org/docs/user-guide/command-line-interface#c-config)和[使用配置文件](https://eslint.org/docs/user-guide/configuring#using-configuration-files)。
 
 #### options.warnFileIgnored
 
 类型：`Boolean`
 
-When`true`, add a result warning when ESLint ignores a file. This can be used to file files that are needlessly being loaded by`gulp.src`. For example, since ESLint automatically ignores "node\_modules" file paths and gulp.src does not, a gulp task may take seconds longer just reading files from the "node\_modules" directory.
+当为 `true` 时，当 ESLint 忽略文件时添加结果警告。这可以用来对由 `gulp.src`加载的不必要的文件进行归档。例如，由于 ESLint 自动忽略 “node\_modules” 文件路径，然而 `gulp.src` 没有这样做，仅仅从 “node\_modules” 目录读取文件就可能要多花几秒钟的时间。
 
 #### options.useEslintrc
 
