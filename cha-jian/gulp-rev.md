@@ -127,5 +127,5 @@ function defaultTask() {
 
 ## Streaming
 
-这个插件不支持 streaming。如果你有来 streaming 源的文件，比如 Browserify，你应该在你的管道中使用 `gulp-rev` 之前使用 gulp-buffer ：
+这个插件不支持 streaming。如果你有来 streaming 源的文件，比如 Browserify，你应该在你的管道中使用 `gulp-rev` 之前使用 [gulp-buffer](/cha-jian/gulp-buffer.md) ：
 
