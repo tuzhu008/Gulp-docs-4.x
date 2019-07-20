@@ -102,18 +102,18 @@ function sassTask() {
 
 ## Source Maps
 
-`gulp-less` 可以与 [gulp-sourcemaps](/cha-jian/gulp-sourcemaps.md) 一起使用，用以为文件生成源映射。您将需要在运行 gulp-less 编译器之前初始化 [gulp-sourcemaps](/cha-jian/gulp-sourcemaps.md)，然后编写源代码映射，如下所示:
+`gulp-sass` 可以与 [gulp-sourcemaps](/cha-jian/gulp-sourcemaps.md) 一起使用，用以为文件生成源映射。您将需要在运行 `gulp-sass` 之前初始化 [gulp-sourcemaps](/cha-jian/gulp-sourcemaps.md)，然后编写源代码映射，如下所示:
 
 ```js
 var sourcemaps = require('gulp-sourcemaps');
 
-function lessTask() {
-  return gulp.src('./less/**/*.less')
-    .pipe(sourcemaps.init())
-    .pipe(less())
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./public/css'));
-}
+function sassTask() {
+ return gulp.src('./sass/**/*.scss')
+  .pipe(sourcemaps.init())
+  .pipe(sass().on('error', sass.logError))
+  .pipe(sourcemaps.write())
+  .pipe(gulp.dest('./css'));
+};
 ```
 
 默认情况下，[gulp-sourcemaps](/cha-jian/gulp-sourcemaps.md) 将源映射内联到已编译的 CSS 文件中。要将它们写入单独的文件，请在 `sourcemaps.write()` 函数中指定一个相对文件路径，如下所示:
