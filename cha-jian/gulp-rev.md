@@ -129,3 +129,28 @@ function defaultTask() {
 
 这个插件不支持 streaming。如果你有来 streaming 源的文件，比如 Browserify，你应该在你的管道中使用 `gulp-rev` 之前使用 [gulp-buffer](/cha-jian/gulp-buffer.md) ：
 
+```js
+const gulp = require('gulp');
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const buffer = require('gulp-buffer');
+const rev = require('gulp-rev');
+
+function defaultTask() {
+  return browserify('src/index.js')
+    .bundle({debug: true})
+    .pipe(source('index.min.js'))
+    .pipe(buffer())
+    .pipe(rev())
+    .pipe(gulp.dest('dist'))
+}
+```
+
+## 集成
+
+有关如何将 `gulp-rev` 集成到应用程序中的更多信息，请参阅[集成指南](https://github.com/sindresorhus/gulp-rev/blob/master/integration.md) 。
+
+
+
+
+
