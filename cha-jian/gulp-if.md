@@ -82,7 +82,7 @@ gulp.task('task', function() {
 
 Run JSHint on everything, remove gulpfile from the stream, then uglify and write everything else.
 
-4: Exclude things from the stream
+4: 把一些东西从流中排除
 
 **Exclude things from entering the stream**
 
