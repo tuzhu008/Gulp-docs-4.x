@@ -165,39 +165,45 @@ function javascriptTask() {
 }
 ```
 
-### Init Options
+### init 选项
 
 * `loadMaps`
 
-  Set to true to load existing maps for source files. Supports the following:
+  设置为 `true` 可加载源文件的现有映射。支持以下:
 
-  * inline source maps
-  * source map files referenced by a
-    `sourceMappingURL=`
-    comment
-  * source map files with the same name \(plus .map\) in the same directory
-
+* * 内联源映射
+  * `sourceMappingURL=` 注释引用的源映射文件
+  * 同一目录中具有相同名称\(plus.map\)的源映射文件
 * `identityMap`
 
-  **This option is deprecated. Upgrade to use our**[`sourcemap.identityMap`](https://github.com/gulp-sourcemaps/gulp-sourcemaps#generate-identity-sourcemap)**API.**
+  **该选项已废弃。升级到 **[`sourcemap.identityMap`](https://github.com/gulp-sourcemaps/gulp-sourcemaps#generate-identity-sourcemap) **API.**
 
-### Write Options
+### Write 选项
 
 * `addComment`
 
-  By default a comment containing / referencing the source map is added. Set this to`false`to disable the comment \(e.g. if you want to load the source maps by header\).
+  默认情况下，添加一个包含/引用源映射的注释。将此设置为 `false` 以禁用注释\(例如，如果您想通过 header 加载源映射\)。
 
-  例如：
+* 例如：
 
   ```js
-
+  function javascriptTask() {
+    return gulp.src('src/**/*.js')
+      .pipe(sourcemaps.init())
+        .pipe(plugin1())
+        .pipe(plugin2())
+      .pipe(sourcemaps.write('../maps', {addComment: false}))
+      .pipe(gulp.dest('dist'));
+  }
   ```
 
 * `includeContent`
 
-  By default the source maps include the source code. Pass`false`to use the original files.
+  默认情况下，源映射包含源代码。设置为 `false` 使用原始文件。
 
-  Including the content is the recommended way, because it "just works". When setting this to`false`you have to host the source files and set the correct`sourceRoot`.
+包含内容是推荐的方式，因为它 "just works"。当将此设置为 `false`时，您必须宿主（host）源文件并正确设置 `sourceRoot`。
+
+
 
 * `sourceRoot`
 
