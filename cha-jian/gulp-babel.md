@@ -6,7 +6,7 @@ Gulp 的 [Sass](https://www.sass.hk/) 插件，用于解析 `.sass` 文件。
 
 ## 安装
 
-Install `gulp-babel` if you want to get the pre-release of the next version of `gulp-babel`.
+如果您想获得下一个版本的 `gulp-babel` 的预发行版，请安装 `gulp-babel`。
 
 ```
 # Babel 7
@@ -16,25 +16,24 @@ $ npm install --save-dev gulp-babel @babel/core @babel/preset-env
 $ npm install --save-dev gulp-babel@7 babel-core babel-preset-env
 ```
 
-## Usage
+## 用法
 
 ```js
 const gulp = require('gulp');
 const babel = require('gulp-babel');
 
 gulp.task('default', () =>
-	gulp.src('src/app.js')
-		.pipe(babel({
-			presets: ['@babel/preset-env']
-		}))
-		.pipe(gulp.dest('dist'))
+    gulp.src('src/app.js')
+        .pipe(babel({
+            presets: ['@babel/preset-env']
+        }))
+        .pipe(gulp.dest('dist'))
 );
 ```
 
-
 ## API
 
-### babel([options])
+### babel\(\[options\]\)
 
 #### options
 
@@ -51,17 +50,16 @@ const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 
 gulp.task('default', () =>
-	gulp.src('src/**/*.js')
-		.pipe(sourcemaps.init())
-		.pipe(babel({
-			presets: ['@babel/preset-env']
-		}))
-		.pipe(concat('all.js'))
-		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest('dist'))
+    gulp.src('src/**/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: ['@babel/preset-env']
+        }))
+        .pipe(concat('all.js'))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('dist'))
 );
 ```
-
 
 ## Babel Metadata
 
@@ -75,26 +73,25 @@ const babel = require('gulp-babel');
 const through = require('through2');
 
 function logBabelMetadata() {
-	return through.obj((file, enc, cb) => {
-		console.log(file.babel.test); // 'metadata'
-		cb(null, file);
-	});
+    return through.obj((file, enc, cb) => {
+        console.log(file.babel.test); // 'metadata'
+        cb(null, file);
+    });
 }
 
 gulp.task('default', () =>
-	gulp.src('src/**/*.js')
-		.pipe(babel({
-			// plugin that sets some metadata
-			plugins: [{
-				post(file) {
-					file.metadata.test = 'metadata';
-				}
-			}]
-		}))
-		.pipe(logBabelMetadata())
+    gulp.src('src/**/*.js')
+        .pipe(babel({
+            // plugin that sets some metadata
+            plugins: [{
+                post(file) {
+                    file.metadata.test = 'metadata';
+                }
+            }]
+        }))
+        .pipe(logBabelMetadata())
 )
 ```
-
 
 ## Runtime
 
@@ -114,15 +111,13 @@ const gulp = require('gulp');
 const babel = require('gulp-babel');
 
 gulp.task('default', () =>
-	gulp.src('src/app.js')
-		.pipe(babel({
-			plugins: ['@babel/transform-runtime']
-		}))
-		.pipe(gulp.dest('dist'))
+    gulp.src('src/app.js')
+        .pipe(babel({
+            plugins: ['@babel/transform-runtime']
+        }))
+        .pipe(gulp.dest('dist'))
 );
 ```
-
-
 
 
 
