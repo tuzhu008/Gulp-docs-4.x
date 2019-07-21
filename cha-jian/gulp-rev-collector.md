@@ -33,9 +33,9 @@ gulp.task('scripts', function () {
         .pipe( rev.manifest() )
         .pipe( gulp.dest( 'rev/js' ) );
 });
+```
 
-···
-
+```js
 var revCollector = require('gulp-rev-collector');
 var minifyHTML   = require('gulp-minify-html');
 
