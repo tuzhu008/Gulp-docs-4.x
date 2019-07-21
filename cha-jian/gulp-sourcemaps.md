@@ -203,8 +203,6 @@ function javascriptTask() {
 
 包含内容是推荐的方式，因为它 "just works"。当将此设置为 `false`时，您必须宿主（host）源文件并正确设置 `sourceRoot`。
 
-
-
 * `sourceRoot`
 
   Set the location where the source files are hosted \(use this when`includeContent`is set to`false`\). This is usually a URL \(or an absolute URL path\), not a local file system path. By default the source root is '' or in case`destPath`is set, the relative path from the source map to the source base directory \(this should work for many dev environments\). If a relative path is used \(empty string or one starting with a`.`\), it is interpreted as a path relative to the destination. The plugin rewrites it to a path relative to each source map.
