@@ -167,7 +167,7 @@ gulp.task('scripts', function () {
 
 [source](https://github.com/robrich/gulp-if/issues/32)
 
-## gulp-if API
+## API
 
 ### gulpif\(condition, stream \[, elseStream, \[, minimatchOptions\]\]\)
 
