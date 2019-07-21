@@ -377,7 +377,7 @@ function javascriptTask() {
   };
   ```
 
-  * **V验证 sourcemaps 正在工作**
+  * **验证 sourcemaps 正在工作**
 
     参见下面的示例或参考：[test/write.js](https://github.com/gulp-sourcemaps/gulp-sourcemaps/blob/master/test/write.js)
 
