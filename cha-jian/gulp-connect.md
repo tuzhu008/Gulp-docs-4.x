@@ -108,9 +108,9 @@ gulp.task('watch', function () {
 gulp.task('default', ['connectDist', 'connectDev', 'watch']);
 ```
 
-#### http2 support
+#### 支持 http2
 
-If the [http2](https://www.npmjs.com/package/http2) package is installed and you use an https connection to gulp connect then http 2 will be used in preference to http 1.
+如果安装了 [http2](https://www.npmjs.com/package/http2) 包，并且使用 https 连接进行 gulp 连接，则首选 http2 而不是 http 1。
 
 ## API
 
