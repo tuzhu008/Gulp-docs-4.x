@@ -101,7 +101,7 @@ gulp.task('task', function() {
 Grab all JavaScript files that aren't in the node\_modules folder, uglify them, and write them.  
 This is fastest because nothing in node\_modules ever leaves `gulp.src()`
 
-## works great with [lazypipe](https://github.com/OverZealous/lazypipe)
+## works great with [lazypipe](/cha-jian/lazypipe.md)
 
 Lazypipe creates a function that initializes the pipe chain on use.  This allows you to create a chain of events inside the gulp-if condition.  This scenario will run jshint analysis and reporter only if the linting flag is true.
 
@@ -131,7 +131,7 @@ gulp.task('scripts', function () {
 
 [source](https://github.com/spenceralger/gulp-jshint/issues/38#issuecomment-40423932)
 
-## works great inside [lazypipe](https://github.com/OverZealous/lazypipe)
+## works great inside [lazypipe](/cha-jian/lazypipe.md)
 
 Lazypipe assumes that all function parameters are static, gulp-if arguments need to be instantiated inside each lazypipe.  This difference can be easily solved by passing a function on the lazypipe step
 
@@ -198,3 +198,4 @@ Optional, Stream for gulp-if to pipe data into when condition is falsey.
 ##### minimatchOptions
 
 Optional, if it's a glob condition, these options are passed to [minimatch](https://github.com/isaacs/minimatch).
+
