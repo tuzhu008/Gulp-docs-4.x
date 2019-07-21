@@ -12,11 +12,11 @@ npm install --save-dev gulp-if
 
 ## 用法
 
-1: Conditionally filter content
+1: 有条件地过滤内容
 
-**Condition**
+**条件**
 
-![][condition]
+![](https://rawgithub.com/robrich/gulp-if/master/img/condition.svg)
 
 ```javascript
 var gulpif = require('gulp-if');
@@ -30,14 +30,14 @@ gulp.task('task', function() {
     .pipe(gulp.dest('./dist/'));
 });
 ```
-Only uglify the content if the condition is true, but send all the files to the dist folder
 
+只有条件为 true 时 uglify 内容，所有的文件都被输出到 dist 文件夹
 
-2: Ternary filter
+2: 三元过滤
 
 **Ternary**
 
-![][ternary]
+![](https://rawgithub.com/robrich/gulp-if/master/img/ternary.svg)
 
 ```javascript
 var gulpif = require('gulp-if');
@@ -58,12 +58,11 @@ gulp.task('task', function() {
 
 If condition returns true, uglify else beautify, then send everything to the dist folder
 
-
-3: Remove things from the stream
+3: 从流中删除内容
 
 **Remove from here on**
 
-![][exclude]
+![](https://rawgithub.com/robrich/gulp-if/master/img/exclude.svg)
 
 ```javascript
 var gulpIgnore = require('gulp-ignore');
@@ -83,12 +82,11 @@ gulp.task('task', function() {
 
 Run JSHint on everything, remove gulpfile from the stream, then uglify and write everything else.
 
-
 4: Exclude things from the stream
 
 **Exclude things from entering the stream**
 
-![][glob]
+![](https://rawgithub.com/robrich/gulp-if/master/img/glob.svg)
 
 ```javascript
 var uglify = require('gulp-uglify');
@@ -100,9 +98,8 @@ gulp.task('task', function() {
 });
 ```
 
-Grab all JavaScript files that aren't in the node_modules folder, uglify them, and write them.
-This is fastest because nothing in node_modules ever leaves `gulp.src()`
-
+Grab all JavaScript files that aren't in the node\_modules folder, uglify them, and write them.  
+This is fastest because nothing in node\_modules ever leaves `gulp.src()`
 
 ## works great with [lazypipe](https://github.com/OverZealous/lazypipe)
 
@@ -131,6 +128,7 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest(paths.scripts.dest));
 });
 ```
+
 [source](https://github.com/spenceralger/gulp-jshint/issues/38#issuecomment-40423932)
 
 ## works great inside [lazypipe](https://github.com/OverZealous/lazypipe)
@@ -171,7 +169,7 @@ gulp.task('scripts', function () {
 
 ## gulp-if API
 
-### gulpif(condition, stream [, elseStream, [, minimatchOptions]])
+### gulpif\(condition, stream \[, elseStream, \[, minimatchOptions\]\]\)
 
 gulp-if will pipe data to `stream` whenever `condition` is truthy.
 
@@ -200,11 +198,4 @@ Optional, Stream for gulp-if to pipe data into when condition is falsey.
 ##### minimatchOptions
 
 Optional, if it's a glob condition, these options are passed to [minimatch](https://github.com/isaacs/minimatch).
-
-
-[condition]: https://rawgithub.com/robrich/gulp-if/master/img/condition.svg
-[ternary]: https://rawgithub.com/robrich/gulp-if/master/img/ternary.svg
-[exclude]: https://rawgithub.com/robrich/gulp-if/master/img/exclude.svg
-[glob]: https://rawgithub.com/robrich/gulp-if/master/img/glob.svg
-
 
