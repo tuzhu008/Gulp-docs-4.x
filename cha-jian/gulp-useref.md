@@ -64,13 +64,10 @@ function htmlTask() {
 <!-- endbuild -->
 ```
 
-* type: either js, css or remove; remove will remove the build block entirely without generating a file
-
-* alternate search path: \(optional\) By default the input files are relative to the treated file. Alternate search path allows one to change that. The path can also contain a sequence of paths processed from right to left, using JSON brace array notation e.g &lt;!-- build:js\({path1,path2}\) js/lib.js --&gt;.
-
-* path: the file path of the optimized file, the target output
-
-* parameters: extra parameters that should be added to the tag
+- **type**: either `js`, `css` or `remove`; `remove` will remove the build block entirely without generating a file
+- **alternate search path**: (optional) By default the input files are relative to the treated file. Alternate search path allows one to change that. The path can also contain a sequence of paths processed from right to left, using JSON brace array notation e.g `<!-- build:js({path1,path2}) js/lib.js -->`.
+- **path**: the file path of the optimized file, the target output
+- **parameters**: extra parameters that should be added to the tag
 
 填妥的表格如下:
 
@@ -106,3 +103,110 @@ function htmlTask() {
 
 参见 [useref](https://github.com/jonkemp/useref) 获取更多信息。
 
+## API
+
+### useref(options [, transformStream1 [, transformStream2 [, ... ]]])
+
+Returns a stream with the asset replaced resulting HTML files as well as the concatenated asset files from the build blocks inside the HTML. Supports all options from [useref](https://github.com/jonkemp/useref).
+
+### Transform Streams
+
+Type: `Stream`  
+Default: `none`
+
+Transform assets before concat. For example, to integrate source maps:
+
+```js
+var gulp = require('gulp'),
+    sourcemaps = require('gulp-sourcemaps'),
+    useref = require('gulp-useref'),
+    lazypipe = require('lazypipe');
+
+gulp.task('default', function () {
+    return gulp.src('index.html')
+        .pipe(useref({}, lazypipe().pipe(sourcemaps.init, { loadMaps: true })))
+        .pipe(sourcemaps.write('maps'))
+        .pipe(gulp.dest('dist'));
+});
+```
+
+### Options
+
+#### options.searchPath
+
+Type: `String` or `Array`  
+Default: `none`  
+
+Specify the location to search for asset files, relative to the current working directory. Can be a string or array of strings.
+
+#### options.base
+
+Type: `String`  
+Default: `process.cwd()`  
+
+Specify the output folder relative to the cwd.
+
+#### options.noAssets
+
+Type: `Boolean`  
+Default: `false`  
+
+Skip assets and only process the HTML files.
+
+#### options.noconcat
+
+Type: `Boolean`  
+Default: `false`  
+
+Skip concatenation and add all assets to the stream instead.
+
+#### options.newLine
+
+Type: `String`  
+Default: `none`
+
+Add a string that should separate the concatenated files.
+
+#### options.additionalStreams
+
+Type: `Array<Stream>`  
+Default: `none`
+
+Use additional streams as sources of assets. Useful for combining gulp-useref with preprocessing tools. For example, to use with TypeScript:
+
+```javascript
+var ts = require('gulp-typescript');
+
+// create stream of virtual files
+var tsStream = gulp.src('src/**/*.ts')
+        .pipe(ts());
+
+gulp.task('default', function () {
+    // use gulp-useref normally
+    return gulp.src('src/index.html')
+        .pipe(useref({ additionalStreams: [tsStream] }))
+        .pipe(gulp.dest('dist'));
+});
+```
+
+#### options.transformPath
+
+Type: `Function`  
+Default: `none`
+
+Add a transformPath function in case the path needs to be modified before search happens.
+
+```js
+var gulp = require('gulp'),
+    useref = require('gulp-useref');
+
+gulp.task('default', function () {
+    return gulp.src('app/*.html')
+        .pipe(useref({
+            transformPath: function(filePath) {
+                return filePath.replace('/rootpath','')
+            }
+        }))
+        .pipe(gulp.dest('dist'));
+});
+```
