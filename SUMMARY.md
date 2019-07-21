@@ -62,7 +62,7 @@
 * [gulp-connect](cha-jian/gulp-connect.md)
 * [gulp-notify](cha-jian/gulp-notify.md)
 * [gulp-livereload](cha-jian/gulp-livereload.md)
-* gulp-filter
+* [gulp-filter](cha-jian/gulp-filter.md)
 * [gulp-if](cha-jian/gulp-if.md)
 * [gulp-ignore](cha-jian/gulp-ignore.md)
 * [gulp-cache](cha-jian/gulp-cache.md)
@@ -85,3 +85,4 @@
 
 * [lazypipe](cha-jian/lazypipe.md)
 * [browser-sync](cha-jian/browser-sync.md)
+
