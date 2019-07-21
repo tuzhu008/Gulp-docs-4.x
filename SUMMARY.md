@@ -65,7 +65,7 @@
 * [browser-sync](cha-jian/browser-sync.md)
 * [gulp-load-plugins](cha-jian/gulp-load-plugins.md)
 * [gulp-sourcemaps](cha-jian/gulp-sourcemaps.md)
-* [gulp-unchanged](cha-jian/gulp-unchanged.md)
+* [gulp-changed ](cha-jian/gulp-unchanged.md)
 * [gulp-stream](cha-jian/gulp-stream.md)
 * [gulp-buffer](cha-jian/gulp-buffer.md)
 * [gulp-rev](cha-jian/gulp-rev.md)
