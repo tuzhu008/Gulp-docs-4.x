@@ -1,6 +1,6 @@
 ## 简介
 
-Gulp 插件，用于有条件地运行任务。
+Gulp 插件，该插件使用 glob 模式过滤原始文件的子集。当您完成并希望返回所有原始文件时，只需`restore` 流;
 
 [github 地址](https://github.com/robrich/gulp-if)
 
