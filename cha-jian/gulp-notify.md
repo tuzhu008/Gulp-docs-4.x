@@ -1,8 +1,8 @@
 ## 简介
 
-Gulp 的 [Sass](https://www.sass.hk/) 插件，用于解析 `.sass` 文件。
+Gulp 插件，用于向操作系统发送消息。
 
-[github 地址](https://github.com/dlmanning/gulp-sass)
+[github 地址](https://github.com/mikaelbr/gulp-notify)
 
 ## 安装
 
