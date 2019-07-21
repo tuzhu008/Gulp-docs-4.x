@@ -43,6 +43,7 @@
 * [gulp-uglify](cha-jian/gulp-uglify.md)
 * [gulp-less](cha-jian/gulp-less.md)
 * [gulp-sass](cha-jian/gulp-sass.md)
+* gulp-stylus
 * [gulp-clean-css](cha-jian/gulp-clean-css.md)
 * [gulp-autoprefixer](cha-jian/gulp-autoprefixer.md)
 * [gulp-imagemin](cha-jian/gulp-imagemin.md)
