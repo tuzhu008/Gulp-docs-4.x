@@ -63,7 +63,7 @@
 * [gulp-livereload](cha-jian/gulp-livereload.md)
 * [gulp-if](cha-jian/gulp-if.md)
 * [gulp-ignore](cha-jian/gulp-ignore.md)
-* lazypipe
+* [lazypipe](cha-jian/lazypipe.md)
 * [gulp-cache](cha-jian/gulp-cache.md)
 * [gulp-reactify](cha-jian/gulp-reactify.md)
 * [react-tools](cha-jian/react-tools.md)
