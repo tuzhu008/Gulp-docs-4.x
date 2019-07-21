@@ -150,7 +150,7 @@ function javascriptTask() {
 
 The exported`identityMap`method allows you to generate a full valid source map encoding no changes \(slower, only for Javascript and CSS\) instead of the default empty source map \(no mappings, fast\).**Use this option if you get missing or incorrect mappings, e.g. when debugging.**
 
-Example:
+例如：
 
 ```
 
@@ -178,7 +178,7 @@ Example:
 
   By default a comment containing / referencing the source map is added. Set this to`false`to disable the comment \(e.g. if you want to load the source maps by header\).
 
-  Example:
+  例如：
 
   ```
 
@@ -194,7 +194,7 @@ Example:
 
   Set the location where the source files are hosted \(use this when`includeContent`is set to`false`\). This is usually a URL \(or an absolute URL path\), not a local file system path. By default the source root is '' or in case`destPath`is set, the relative path from the source map to the source base directory \(this should work for many dev environments\). If a relative path is used \(empty string or one starting with a`.`\), it is interpreted as a path relative to the destination. The plugin rewrites it to a path relative to each source map.
 
-  Example:
+  例如：
 
   ```
 
@@ -222,7 +222,7 @@ Example:
 
   Specify a prefix to be prepended onto the source map URL when writing external source maps. Relative paths will have their leading dots stripped.
 
-  Example:
+  例如：
 
   ```
 
@@ -234,7 +234,7 @@ Example:
 
   If you need full control over the source map URL you can pass a function to this option. The output of the function must be the full URL to the source map \(in function of the output file\).
 
-  Example:
+  例如：
 
   ```
 
@@ -246,7 +246,7 @@ Example:
 
   This option allows to rename the map file. It takes a function that is called for every map and receives the default map path as a parameter.
 
-  Example:
+  例如：
 
   ```
 
@@ -287,7 +287,7 @@ Example:
   * Add your plugin to the
     [wiki page](https://github.com/gulp-sourcemaps/gulp-sourcemaps/wiki/Plugins-with-gulp-sourcemaps-support)
 
-  #### Example:
+  #### 例如：
 
   ```
 
@@ -297,7 +297,7 @@ Example:
 
     See example below or refer to[test/write.js](https://github.com/gulp-sourcemaps/gulp-sourcemaps/blob/master/test/write.js)
 
-  #### Example:
+  #### 例如：
 
   ```
 
