@@ -1,8 +1,8 @@
 ## 简介
 
-Gulp 插件，用于重写已被 gulp-rev 重命名的文件名。
+Gulp 插件，用于重写已被 [gulp-rev](/cha-jian/gulp-rev.md) 重命名的文件名。
 
-[github 地址](https://github.com/dlmanning/gulp-sass)
+[github 地址](https://github.com/jamesknelson/gulp-rev-replace)
 
 ## 安装
 
