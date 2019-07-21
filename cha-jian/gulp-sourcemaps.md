@@ -201,7 +201,7 @@ function javascriptTask() {
 
   默认情况下，源映射包含源代码。设置为 `false` 使用原始文件。
 
-包含内容是推荐的方式，因为它 "just works"。当将此设置为 `false`时，您必须宿主（host）源文件并正确设置 `sourceRoot`。
+  包含内容是推荐的方式，因为它 "just works"。当将此设置为 `false`时，您必须宿主（host）源文件并正确设置 `sourceRoot`。
 
 * `sourceRoot`
 
