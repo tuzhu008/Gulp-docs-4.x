@@ -1,16 +1,307 @@
 ## 简介
 
-Gulp 的 [Sass](https://www.sass.hk/) 插件，用于解析 `.sass` 文件。
+Gulp 插件，为 gulp 提供 Sourcemap 支持。
 
-[github 地址](https://github.com/dlmanning/gulp-sass)
+[github 地址](https://github.com/gulp-sourcemaps/gulp-sourcemaps)
 
 ## 安装
 
 ```
-npm install node-sass gulp-sass --save-dev
+npm install --save-dev gulp-sourcemaps
 ```
 
 ## 用法
+
+#### 内联源映射
+
+内联源映射是指将源映射嵌入到源文件中。
+
+例如：
+
+```js
+var gulp = require('gulp');
+var plugin1 = require('gulp-plugin1');
+var plugin2 = require('gulp-plugin2');
+var sourcemaps = require('gulp-sourcemaps');
+
+function javascriptTask() {
+  return gulp.src('src/**/*.js')
+    .pipe(sourcemaps.init())
+      .pipe(plugin1())
+      .pipe(plugin2())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('dist'));
+})
+```
+
+`sourcemaps.init()` 和 `sourcemaps.write()` 之间的所有插件都需要支持 gulp-sourcemaps。您可以在 [wiki](https://github.com/gulp-sourcemaps/gulp-sourcemaps/wiki/Plugins-with-gulp-sourcemaps-support) 中找到这样的插件列表。
+
+#### 外部源映射
+
+要生成外部源映射文件，请将相对于目标的路径传递给 `sourcemaps.write()`。
+
+例如：
+
+```js
+var gulp = require('gulp');
+var plugin1 = require('gulp-plugin1');
+var plugin2 = require('gulp-plugin2');
+var sourcemaps = require('gulp-sourcemaps');
+
+function javascriptTask() {
+  return gulp.src('src/**/*.js')
+    .pipe(sourcemaps.init())
+      .pipe(plugin1())
+      .pipe(plugin2())
+    .pipe(sourcemaps.write('../maps'))
+    .pipe(gulp.dest('dist'));
+}
+```
+
+#### 加载现有源映射
+
+要加载现有的源映射，请将 `loadMaps: true` 选项传递给 `sourcemaps.init()`。
+
+例如：
+
+```js
+var gulp = require('gulp');
+var plugin1 = require('gulp-plugin1');
+var plugin2 = require('gulp-plugin2');
+var sourcemaps = require('gulp-sourcemaps');
+
+function javascriptTask() {
+  return gulp.src('src/**/*.js')
+    .pipe(sourcemaps.init({loadMaps: true}))
+      .pipe(plugin1())
+      .pipe(plugin2())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('dist'));
+}
+```
+
+#### 处理大文件
+
+要处理大文件，请将选项 `largeFile: true` 传递给 `sourcemaps.init()` 。
+
+例如：
+
+```js
+var gulp = require('gulp');
+var plugin1 = require('gulp-plugin1');
+var plugin2 = require('gulp-plugin2');
+var sourcemaps = require('gulp-sourcemaps');
+
+function javascriptTask() {
+  return gulp.src('src/**/*.js')
+    .pipe(sourcemaps.init({largeFile: true}))
+      .pipe(plugin1())
+      .pipe(plugin2())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('dist'));
+}
+```
+
+#### 处理来自不同目录的源文件
+
+使用 `gulp.src` 上的 `base` 选项，以确保所有文件都相对于公共基本目录。
+
+例如：
+
+```js
+var gulp = require('gulp');
+var plugin1 = require('gulp-plugin1');
+var plugin2 = require('gulp-plugin2');
+var sourcemaps = require('gulp-sourcemaps');
+
+function javascriptTask() {
+  return gulp.src(['src/test.js', 'src/testdir/test2.js'], { base: 'src' })
+    .pipe(sourcemaps.init())
+      .pipe(plugin1())
+      .pipe(plugin2())
+    .pipe(sourcemaps.write('../maps'))
+    .pipe(gulp.dest('dist'));
+}
+```
+
+#### 更改源文件上的 `source` 属性
+
+导出的 `mapSources` 方法可以完全控制源路径。它接受一个函数，该函数为每个源调用，并接收默认源路径和原始 vinyl 文件作为参数。
+
+例如：
+
+```js
+function javascriptTask() {
+  return gulp.src('src/**/*.js')
+    .pipe(sourcemaps.init())
+      .pipe(plugin1())
+      .pipe(plugin2())
+      // be careful with the sources returned otherwise contents might not be loaded properly
+      .pipe(sourcemaps.mapSources(function(sourcePath, file) {
+        // source paths are prefixed with '../src/'
+        return '../src/' + sourcePath;
+      }))
+    .pipe(sourcemaps.write('../maps')
+    .pipe(gulp.dest('public/scripts'));
+}
+```
+
+#### Generate Identity Sourcemap
+
+The exported`identityMap`method allows you to generate a full valid source map encoding no changes \(slower, only for Javascript and CSS\) instead of the default empty source map \(no mappings, fast\).**Use this option if you get missing or incorrect mappings, e.g. when debugging.**
+
+Example:
+
+```
+
+```
+
+### Init Options
+
+* `loadMaps`
+
+  Set to true to load existing maps for source files. Supports the following:
+
+  * inline source maps
+  * source map files referenced by a
+    `sourceMappingURL=`
+    comment
+  * source map files with the same name \(plus .map\) in the same directory
+
+* `identityMap`
+
+  **This option is deprecated. Upgrade to use our**[**`sourcemap.identityMap`**](https://github.com/gulp-sourcemaps/gulp-sourcemaps#generate-identity-sourcemap)**API.**
+
+### Write Options
+
+* `addComment`
+
+  By default a comment containing / referencing the source map is added. Set this to`false`to disable the comment \(e.g. if you want to load the source maps by header\).
+
+  Example:
+
+  ```
+
+  ```
+
+* `includeContent`
+
+  By default the source maps include the source code. Pass`false`to use the original files.
+
+  Including the content is the recommended way, because it "just works". When setting this to`false`you have to host the source files and set the correct`sourceRoot`.
+
+* `sourceRoot`
+
+  Set the location where the source files are hosted \(use this when`includeContent`is set to`false`\). This is usually a URL \(or an absolute URL path\), not a local file system path. By default the source root is '' or in case`destPath`is set, the relative path from the source map to the source base directory \(this should work for many dev environments\). If a relative path is used \(empty string or one starting with a`.`\), it is interpreted as a path relative to the destination. The plugin rewrites it to a path relative to each source map.
+
+  Example:
+
+  ```
+
+  ```
+
+  Example \(using a function\):
+
+  ```
+
+  ```
+
+  Example \(relative path\):
+
+  ```
+
+  ```
+
+  In this case for a file written to`dist/subdir/example.js`, the source map is written to`dist/subdir/example.js.map`and the sourceRoot will be`../../src`\(resulting in the full source path`../../src/subdir/example.js`\).
+
+* `destPath`
+
+  Set the destination path \(the same you pass to`gulp.dest()`\). If the source map destination path is not a sub path of the destination path, this is needed to get the correct path in the`file`property of the source map. In addition, it allows to automatically set a relative`sourceRoot`if none is set explicitly.
+
+* `sourceMappingURLPrefix`
+
+  Specify a prefix to be prepended onto the source map URL when writing external source maps. Relative paths will have their leading dots stripped.
+
+  Example:
+
+  ```
+
+  ```
+
+  This will result in a source mapping URL comment like`sourceMappingURL=https://asset-host.example.com/assets/maps/helloworld.js.map`.
+
+* `sourceMappingURL`
+
+  If you need full control over the source map URL you can pass a function to this option. The output of the function must be the full URL to the source map \(in function of the output file\).
+
+  Example:
+
+  ```
+
+  ```
+
+  This will result in a source mapping URL comment like`sourceMappingURL=https://asset-host.example.com/helloworld.js.map`.
+
+* `mapFile`
+
+  This option allows to rename the map file. It takes a function that is called for every map and receives the default map path as a parameter.
+
+  Example:
+
+  ```
+
+  ```
+
+* `mapSources`
+
+  **This option is deprecated. Upgrade to use our**[**`sourcemap.mapSources`**](https://github.com/gulp-sourcemaps/gulp-sourcemaps#alter-sources-property-on-sourcemaps)**API.**
+
+* `charset`
+
+  Sets the charset for inline source maps. Default:`utf8`
+
+* `clone`
+
+  Clones the original file for creation of the map file. Could be important if file history is important. See[file.clone\(\)](https://github.com/gulpjs/vinyl#filecloneoptions)for possible options. Default:`{deep:false, contents:false}`
+
+### Plugin developers only:
+
+* **How to add source map support to plugins**
+
+  * Generate a source map for the transformation the plugin is applying
+  * **Important**
+    : Make sure the paths in the generated source map \(
+    `file`
+    and
+    `sources`
+    \) are relative to
+    `file.base`
+    \(e.g. use
+    `file.relative`
+    \).
+  * Apply this source map to the vinyl
+    `file`
+    . E.g. by using
+    [vinyl-sourcemaps-apply](https://github.com/gulp-sourcemaps/vinyl-sourcemaps-apply)
+    . This combines the source map of this plugin with the source maps coming from plugins further up the chain.
+  * Add your plugin to the
+    [wiki page](https://github.com/gulp-sourcemaps/gulp-sourcemaps/wiki/Plugins-with-gulp-sourcemaps-support)
+
+  #### Example:
+
+  ```
+
+  ```
+
+  * **Verify sourcemaps are working**
+
+    See example below or refer to[test/write.js](https://github.com/gulp-sourcemaps/gulp-sourcemaps/blob/master/test/write.js)
+
+  #### Example:
+
+  ```
+
+  ```
 
 
 
