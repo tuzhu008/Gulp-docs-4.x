@@ -1,6 +1,6 @@
 ## 简介
 
-Gulp 的 [Sass](https://www.sass.hk/) 插件，用于解析 `.sass` 文件。
+Gulp 插件，用于重写已被 gulp-rev 重命名的文件名。
 
 [github 地址](https://github.com/dlmanning/gulp-sass)
 
