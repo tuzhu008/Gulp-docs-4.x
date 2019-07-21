@@ -201,202 +201,119 @@ function javascriptTask() {
 
   默认情况下，源映射包含源代码。设置为 `false` 使用原始文件。
 
-  包含内容是推荐的方式，因为它 "just works"。当将此设置为 `false`时，您必须托管源文件并正确设置 `sourceRoot`。
+  包含内容是推荐的方式，因为它 "just works"。当将此设置为 `false`时，您必须宿主（host）源文件并正确设置 `sourceRoot`。
 
 * `sourceRoot`
 
- 设置源文件托管的位置(当 `includeContent` 被设置为 `false` 时使用此设置)。这通常是一个 URL(或绝对 UR路径)，而不是本地文件系统路径。默认情况下，源根目录是 '' 或者在设置了 `destPath` 的情况下，从源映射到源根目录的相对路径(这应该适用于许多开发环境)。如果使用相对路径(空字符串或以 `.` 开头的字符串)，则将其解释为相对于目标的路径。插件将其重写为相对于每个源映射的路径。
+  Set the location where the source files are hosted \(use this when`includeContent`is set to`false`\). This is usually a URL \(or an absolute URL path\), not a local file system path. By default the source root is '' or in case`destPath`is set, the relative path from the source map to the source base directory \(this should work for many dev environments\). If a relative path is used \(empty string or one starting with a`.`\), it is interpreted as a path relative to the destination. The plugin rewrites it to a path relative to each source map.
 
   例如：
 
-  ```js
-  function javascriptTask() {
-    return gulp.src('src/**/*.js')
-      .pipe(sourcemaps.init())
-        .pipe(plugin1())
-        .pipe(plugin2())
-      .pipe(sourcemaps.write({includeContent: false, sourceRoot: '/src'}))
-      .pipe(gulp.dest('dist'));
-  }
   ```
 
-  例如 \(使用函数\):
-
-  ```js
-  function javascriptTask() {
-    return gulp.src('src/**/*.js')
-      .pipe(sourcemaps.init())
-        .pipe(plugin1())
-        .pipe(plugin2())
-      .pipe(sourcemaps.write({
-        includeContent: false,
-        sourceRoot: function(file) {
-          return '/src';
-        }
-      }))
-      .pipe(gulp.dest('dist'));
-  }
   ```
 
-  例如 \(相对路径\):
+  Example \(using a function\):
 
-  ```js
-  function javascriptTask() {
-    return gulp.src('src/**/*.js')
-      .pipe(sourcemaps.init())
-        .pipe(plugin1())
-        .pipe(plugin2())
-      .pipe(sourcemaps.write('.', {includeContent: false, sourceRoot: '../src'}))
-      .pipe(gulp.dest('dist'));
-  }
   ```
 
-  在本例中，为写入 `dist/subdir/example.js` 的文件，其源映射被写到 `dist/subdir/example.js.map`，其 sourceRoot 将是 `../../src`  (会生成完整的源路径 `../../src/subdir/example.js`)。
+  ```
+
+  Example \(relative path\):
+
+  ```
+
+  ```
+
+  In this case for a file written to`dist/subdir/example.js`, the source map is written to`dist/subdir/example.js.map`and the sourceRoot will be`../../src`\(resulting in the full source path`../../src/subdir/example.js`\).
 
 * `destPath`
 
-  设置目标路径\(与传递给 `gulp.dest()` 的路径相同)。如果源映射目标路径不是目标路径的子路径，则需要在源映射的 `file` 属性中获得正确的路径。此外，如果没有显式设置相关的 `sourceRoot`，则允许自动设置。
+  Set the destination path \(the same you pass to`gulp.dest()`\). If the source map destination path is not a sub path of the destination path, this is needed to get the correct path in the`file`property of the source map. In addition, it allows to automatically set a relative`sourceRoot`if none is set explicitly.
 
 * `sourceMappingURLPrefix`
 
-  在编写外部源映射时，指定一个前缀作为源映射 URL 的前缀。相对路径的前导点（`.`）将被剥离。
+  Specify a prefix to be prepended onto the source map URL when writing external source maps. Relative paths will have their leading dots stripped.
 
   例如：
 
   ```js
-  function javascriptTask() {
-    return gulp.src('src/**/*.js')
-      .pipe(sourcemaps.init())
-        .pipe(plugin1())
-        .pipe(plugin2())
-      .pipe(sourcemaps.write('../maps', {
-        sourceMappingURLPrefix: 'https://asset-host.example.com/assets'
-      }))
-      .pipe(gulp.dest('public/scripts'));
-  }
+
   ```
 
-  这将生成如下源映射 URL 注释：`sourceMappingURL=https://asset-host.example.com/assets/maps/helloworld.js.map`
+  This will result in a source mapping URL comment like`sourceMappingURL=https://asset-host.example.com/assets/maps/helloworld.js.map`.
 
 * `sourceMappingURL`
 
-  如果需要完全控制源映射 URL，可以将函数传递给该选项。函数的输出必须是源映射的完整 URL(在输出文件的函数中)。
+  If you need full control over the source map URL you can pass a function to this option. The output of the function must be the full URL to the source map \(in function of the output file\).
 
   例如：
 
   ```js
-  function javascriptTask() {
-    return gulp.src('src/**/*.js')
-      .pipe(sourcemaps.init())
-        .pipe(plugin1())
-        .pipe(plugin2())
-      .pipe(sourcemaps.write('../maps', {
-        sourceMappingURL: function(file) {
-          return 'https://asset-host.example.com/' + file.relative + '.map';
-        }
-      }))
-      .pipe(gulp.dest('public/scripts'));
-  }
+
   ```
 
-  这将生成如下源映射 URL 注释：`sourceMappingURL=https://asset-host.example.com/helloworld.js.map`.
+  This will result in a source mapping URL comment like`sourceMappingURL=https://asset-host.example.com/helloworld.js.map`.
 
 * `mapFile`
 
-  此选项允许重命名映射文件。它接受为每个映射调用的函数，并接收默认映射路径作为参数。
+  This option allows to rename the map file. It takes a function that is called for every map and receives the default map path as a parameter.
 
   例如：
 
   ```js
-  function javascriptTask() {
-    return gulp.src('src/**/*.js')
-      .pipe(sourcemaps.init())
-        .pipe(plugin1())
-        .pipe(plugin2())
-      .pipe(sourcemaps.write('../maps', {
-        mapFile: function(mapFilePath) {
-          // source map files are named *.map instead of *.js.map
-          return mapFilePath.replace('.js.map', '.map');
-        }
-      }))
-      .pipe(gulp.dest('public/scripts'));
-  }
+
   ```
 
 * `mapSources`
 
-  **该选项已废弃。升级到**[`sourcemap.mapSources`](https://github.com/gulp-sourcemaps/gulp-sourcemaps#alter-sources-property-on-sourcemaps) **API.**
+  **This option is deprecated. Upgrade to use our**[`sourcemap.mapSources`](https://github.com/gulp-sourcemaps/gulp-sourcemaps#alter-sources-property-on-sourcemaps)**API.**
 
 * `charset`
 
-  为内联源映射设置字符集。默认为：`utf8`
+  Sets the charset for inline source maps. Default:`utf8`
 
 * `clone`
 
-  克隆原始文件以创建映射文件。如果文件历史记录很重要，那么它可能很重要。参见 [file.clone\(\)](https://github.com/gulpjs/vinyl#filecloneoptions) 获取可能的选项。 默认为：`{deep:false, contents:false}`
+  Clones the original file for creation of the map file. Could be important if file history is important. See[file.clone\(\)](https://github.com/gulpjs/vinyl#filecloneoptions)for possible options. Default:`{deep:false, contents:false}`
 
-### 插件开发者：
+### Plugin developers only:
 
-* **如何向插件添加源映射支持**
+* **How to add source map support to plugins**
 
-  * 为正在应用的插件的转换生成源映射
-  * 重要提示:确保生成的源映射(`file` 和 `sources`)中的路径是相对于 `file.base` 的(例如，使用`file.relative`)。
-  * 将此源映射应用到 vinyl 文件。例如，使用 [vinyl-sourcemaps-apply](https://github.com/gulp-sourcemaps/vinyl-sourcemaps-apply)。这将此插件的源映射与来自更高层插件的源映射相组合。
-  * 将插件添加到
+  * Generate a source map for the transformation the plugin is applying
+  * **Important**
+    : Make sure the paths in the generated source map \(
+    `file`
+    and
+    `sources`
+    \) are relative to
+    `file.base`
+    \(e.g. use
+    `file.relative`
+    \).
+  * Apply this source map to the vinyl
+    `file`
+    . E.g. by using
+    [vinyl-sourcemaps-apply](https://github.com/gulp-sourcemaps/vinyl-sourcemaps-apply)
+    . This combines the source map of this plugin with the source maps coming from plugins further up the chain.
+  * Add your plugin to the
     [wiki page](https://github.com/gulp-sourcemaps/gulp-sourcemaps/wiki/Plugins-with-gulp-sourcemaps-support)
 
   #### 例如：
 
   ```js
-  var through = require('through2');
-  var applySourceMap = require('vinyl-sourcemaps-apply');
-  var myTransform = require('myTransform');
 
-  module.exports = function(options) {
-
-    function transform(file, encoding, callback) {
-      // generate source maps if plugin source-map present
-      if (file.sourceMap) {
-        options.makeSourceMaps = true;
-      }
-
-      // do normal plugin logic
-      var result = myTransform(file.contents, options);
-      file.contents = new Buffer(result.code);
-
-      // apply source map to the chain
-      if (file.sourceMap) {
-        applySourceMap(file, result.map);
-      }
-
-      this.push(file);
-      callback();
-    }
-
-    return through.obj(transform);
-  };
   ```
 
-  * **V验证 sourcemaps 正在工作**
+  * **Verify sourcemaps are working**
 
-    参见下面的示例或参考：[test/write.js](https://github.com/gulp-sourcemaps/gulp-sourcemaps/blob/master/test/write.js)
+    See example below or refer to[test/write.js](https://github.com/gulp-sourcemaps/gulp-sourcemaps/blob/master/test/write.js)
 
   #### 例如：
 
   ```js
-  var stream = plugin();
-  var init = sourcemaps.init();
-  var write = sourcemaps.write();
 
-  init.pipe(stream).pipe(write);
-
-  write.on('data', function (file) {
-    assert(...);
-    cb();
-  });
-
-  init.write(new gutil.File(...));
-  init.end();
   ```
 
 
