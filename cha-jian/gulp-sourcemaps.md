@@ -148,12 +148,21 @@ function javascriptTask() {
 
 #### Generate Identity Sourcemap
 
-The exported`identityMap`method allows you to generate a full valid source map encoding no changes \(slower, only for Javascript and CSS\) instead of the default empty source map \(no mappings, fast\).**Use this option if you get missing or incorrect mappings, e.g. when debugging.**
+导出的 `identityMap` 方法允许您生成一个完整的有效源映射，该映射不进行任何更改\(只对 Javascript 和 CSS 进行较慢的编码\)，而不是默认的空源映射\(无映射，快速\)。**如果您获取丢失或不正确的映射，请使用此选项，例如当 debugging 时。**
 
 例如：
 
-```
-
+```js
+function javascriptTask() {
+  return gulp.src('src/**/*.js')
+    .pipe(sourcemaps.init())
+      // An identity sourcemap will be generated at this step
+      .pipe(sourcemaps.identityMap())
+      .pipe(plugin1())
+      .pipe(plugin2())
+    .pipe(sourcemaps.write('../maps')
+    .pipe(gulp.dest('public/scripts'));
+}
 ```
 
 ### Init Options
@@ -170,7 +179,7 @@ The exported`identityMap`method allows you to generate a full valid source map e
 
 * `identityMap`
 
-  **This option is deprecated. Upgrade to use our**[**`sourcemap.identityMap`**](https://github.com/gulp-sourcemaps/gulp-sourcemaps#generate-identity-sourcemap)**API.**
+  **This option is deprecated. Upgrade to use our**[`sourcemap.identityMap`](https://github.com/gulp-sourcemaps/gulp-sourcemaps#generate-identity-sourcemap)**API.**
 
 ### Write Options
 
@@ -180,7 +189,7 @@ The exported`identityMap`method allows you to generate a full valid source map e
 
   例如：
 
-  ```
+  ```js
 
   ```
 
@@ -224,7 +233,7 @@ The exported`identityMap`method allows you to generate a full valid source map e
 
   例如：
 
-  ```
+  ```js
 
   ```
 
@@ -236,7 +245,7 @@ The exported`identityMap`method allows you to generate a full valid source map e
 
   例如：
 
-  ```
+  ```js
 
   ```
 
@@ -248,13 +257,13 @@ The exported`identityMap`method allows you to generate a full valid source map e
 
   例如：
 
-  ```
+  ```js
 
   ```
 
 * `mapSources`
 
-  **This option is deprecated. Upgrade to use our**[**`sourcemap.mapSources`**](https://github.com/gulp-sourcemaps/gulp-sourcemaps#alter-sources-property-on-sourcemaps)**API.**
+  **This option is deprecated. Upgrade to use our**[`sourcemap.mapSources`](https://github.com/gulp-sourcemaps/gulp-sourcemaps#alter-sources-property-on-sourcemaps)**API.**
 
 * `charset`
 
@@ -289,7 +298,7 @@ The exported`identityMap`method allows you to generate a full valid source map e
 
   #### 例如：
 
-  ```
+  ```js
 
   ```
 
@@ -299,7 +308,7 @@ The exported`identityMap`method allows you to generate a full valid source map e
 
   #### 例如：
 
-  ```
+  ```js
 
   ```
 
