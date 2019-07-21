@@ -24,6 +24,7 @@ gulp.task('default', ['connect']);
 ```
 
 #### LiveReload
+
 ```js
 var gulp = require('gulp');
 var connect = require('gulp-connect');
@@ -48,8 +49,7 @@ gulp.task('watch', function () {
 gulp.task('default', ['connect', 'watch']);
 ```
 
-
-#### Start and stop server
+#### 启动和停止服务器
 
 ```js
 gulp.task('jenkins-tests', function() {
@@ -62,8 +62,7 @@ gulp.task('jenkins-tests', function() {
 });
 ```
 
-
-#### Multiple server
+#### 多个服务器
 
 ```js
 var gulp = require('gulp');
@@ -117,76 +116,76 @@ If the [http2](https://www.npmjs.com/package/http2) package is installed and you
 
 #### options.root
 
-Type: `Array or String`
+Type: `Array or String`  
 Default: `Directory with gulpfile`
 
 The root path
 
 #### options.port
 
-Type: `Number`
+Type: `Number`  
 Default: `8080`
 
 The connect webserver port
 
 #### options.host
 
-Type: `String`
+Type: `String`  
 Default: `localhost`
 
 #### options.name
 
-Type: `String`
+Type: `String`  
 Default: `Server`
 
 The name that will be output when the server starts/stops.
 
 #### options.https
 
-Type: `Object`
+Type: `Object`  
 Default: `false`
 
-Can be any options documented at https://nodejs.org/api/https.html#https_https_createserver_options_requestlistener
+Can be any options documented at [https://nodejs.org/api/https.html\#https\_https\_createserver\_options\_requestlistener](https://nodejs.org/api/https.html#https_https_createserver_options_requestlistener)
 
-When https is just set to `true` (boolean), then internally some defaults will be used.
+When https is just set to `true` \(boolean\), then internally some defaults will be used.
 
 #### options.livereload
 
-Type: `Object or Boolean`
+Type: `Object or Boolean`  
 Default: `false`
 
 #### options.livereload.port
 
-Type: `Number`
+Type: `Number`  
 Default: `35729`
 
 Overrides the hostname of the script livereload injects in index.html
 
 #### options.livereload.hostname
 
-Type: `String`
+Type: `String`  
 Default: 'undefined'
 
 #### options.fallback
 
-Type: `String`
+Type: `String`  
 Default: `undefined`
 
-Fallback file (e.g. `index.html`)
+Fallback file \(e.g. `index.html`\)
 
 #### options.middleware
 
-Type: `Function`
+Type: `Function`  
 Default: `[]`
 
 #### options.debug
 
-Type: `Boolean`
+Type: `Boolean`  
 Default: `false`
 
 #### options.index
 
-Type: `Boolean or String of a new index pass or Array of new indexes in preferred order`
+Type: `Boolean or String of a new index pass or Array of new indexes in preferred order`  
 Default: `true`
 
 ```js
