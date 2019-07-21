@@ -12,7 +12,7 @@ $ npm install --save gulp-rev-collector
 
 ## 用法
 
-We can use [gulp-rev](https://github.com/sindresorhus/gulp-rev) to cache-bust several assets and generate manifest files for them. Then using gulp-rev-collector we can collect data from several manifest files and replace links to assets in html templates.
+We can use [gulp-rev](/cha-jian/gulp-rev.md) to cache-bust several assets and generate manifest files for them. Then using gulp-rev-collector we can collect data from several manifest files and replace links to assets in html templates.
 
 ```js
 var gulp = require('gulp');
@@ -89,23 +89,26 @@ Specifies a directories replacement set. [gulp-rev](https://github.com/sindresor
 
 Type : `String`
 
-It is pattern for define reved files suffixes. Default value is '-[0-9a-f]{8,10}-?'. This is necessary in case of e.c. [gulp-rename](https://github.com/hparra/gulp-rename) usage. If reved filenames had different from default mask.
+It is pattern for define reved files suffixes. Default value is '-\[0-9a-f\]{8,10}-?'. This is necessary in case of e.c. [gulp-rename](https://github.com/hparra/gulp-rename) usage. If reved filenames had different from default mask.
 
 #### extMap
 
 Type : `Object`
 
-If You use some methods to modify the rev_manifest.json after use [gulp-rev](https://github.com/sindresorhus/gulp-rev) and get a result like this:
+If You use some methods to modify the rev\_manifest.json after use [gulp-rev](https://github.com/sindresorhus/gulp-rev) and get a result like this:
+
 ```
 {
     "assets/less/common.less": "assets/css/common-2c0d21e40c.css"
 }
 ```
-It means that keys and values in the rev_manifest.json have different ext : less & css.
+
+It means that keys and values in the rev\_manifest.json have different ext : less & css.
 
 You can define extentions maping rules for correct manifest file processing.
 
 Default value is:
+
 ```
 {
     '.scss': '.css',
@@ -116,7 +119,7 @@ Default value is:
 
 ### Works with gulp-rev-collector
 
-- [gulp-rev](https://github.com/sindresorhus/gulp-rev)
+* [gulp-rev](https://github.com/sindresorhus/gulp-rev)
 
 
 
