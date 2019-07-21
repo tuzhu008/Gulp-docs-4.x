@@ -15,7 +15,7 @@ $ npm install --save-dev gulp-filter
 
 ### Filter only
 
-You may want to just filter the stream content:
+只过滤流内容：
 
 ```js
 const gulp = require('gulp');
@@ -25,7 +25,7 @@ const filter = require('gulp-filter');
 gulp.task('default', () => {
 	// Create filter instance inside task function
 	const f = filter(['**', '!*src/vendor']);
-
+	
 	return gulp.src('src/**/*.js')
 		// Filter a subset of the files
 		.pipe(f)
@@ -35,7 +35,7 @@ gulp.task('default', () => {
 });
 ```
 
-### Restoring filtered files
+### 恢复被过滤的文件
 
 ```js
 const gulp = require('gulp');
@@ -57,7 +57,7 @@ gulp.task('default', () => {
 });
 ```
 
-### Multiple filters
+### 多过滤器
 
 By combining and restoring different filters you can process different sets of files with a single pipeline.
 
@@ -82,7 +82,7 @@ gulp.task('default', () => {
 });
 ```
 
-### Restore as a file source
+### 还原为文件源
 
 You can restore filtered files in a different place and use it as a standalone source of files (ReadableStream). Setting the `passthrough` option to `false` allows you to do so.
 
