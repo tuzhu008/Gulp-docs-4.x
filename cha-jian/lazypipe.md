@@ -1,13 +1,13 @@
 ## 简介
 
-Gulp 的 [Sass](https://www.sass.hk/) 插件，用于 livereload，与  [livereload chrome 扩展](http://livereload.com/extensions/)或者 [livereload 中间件](https://github.com/intesso/connect-livereload)搭配使用.。
+懒惰地用可重用组件创建管道。可用于 Gulp。
 
-[github 地址](https://github.com/vohof/gulp-livereload)
+[github 地址](https://github.com/OverZealous/lazypipe)
 
 ## 安装
 
 ```
-npm install --save-dev gulp-livereload
+npm install --save-dev lazypipe
 ```
 
 ## 用法
