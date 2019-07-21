@@ -7,98 +7,119 @@ Gulp 插件，用于向操作系统发送消息。
 ## 安装
 
 ```
-npm install node-sass gulp-sass --save-dev
+npm install --save-dev gulp-notify
 ```
 
 ## 用法
 
+```js
+var notify = require("gulp-notify");
+gulp.src("./src/test.ext")
+  .pipe(notify("Hello Gulp!"));
+```
+
+编写模板：
+
+```js
+var notify = require("gulp-notify");
+gulp.src("./src/test.ext")
+  .pipe(notify("Found file: <%= file.relative %>!"));
+```
 
 ## API
 
-### notify(String)
+### notify\(String\)
 
-A message to notify per data on stream.
-The string can be a lodash template as
+A message to notify per data on stream.  
+The string can be a lodash template as  
 it is passed through [gulp-util.template](https://github.com/gulpjs/gulp-util#templatestring-data).
 
-### notify(Function)
+### notify\(Function\)
+
 Type: `function(VinylFile)`
 
 Vinyl File from gulp stream passed in as argument.
 
-The result of the function can be a string used as the message or an options object (see below).
-If the returned value is a string, it can be a lodash template as
+The result of the function can be a string used as the message or an options object \(see below\).  
+If the returned value is a string, it can be a lodash template as  
 it is passed through [gulp-util.template](https://github.com/gulpjs/gulp-util#templatestring-data).
 
 If `false` is returned from the function the notification won't run.
 
-### notify(options)
+### notify\(options\)
 
-*Options are passed onto the reporter, so on Windows, you can define
+\*Options are passed onto the reporter, so on Windows, you can define  
 Growl host, on Mac you can pass in contentImage, and so on.
 
-See [node-notifier](https://github.com/mikaelbr/node-notifier)
-for all options*
+See [node-notifier](https://github.com/mikaelbr/node-notifier)  
+for all options\*
 
 Default notification values:
- - Gulp logo on regular notification
- - Inverted Gulp logo on error
- - Frog sound on error on Mac.
+
+* Gulp logo on regular notification
+* Inverted Gulp logo on error
+* Frog sound on error on Mac.
 
 See also the [advanced example](examples/gulpfile.js).
 
 #### options.onLast
-Type: `Boolean`
+
+Type: `Boolean`  
 Default: `false`
 
-If the notification should only happen on the last file
-of the stream. Per default a notification is triggered
+If the notification should only happen on the last file  
+of the stream. Per default a notification is triggered  
 on each file.
 
 #### options.emitError
-Type: `Boolean`
+
+Type: `Boolean`  
 Default: `false`
 
-If the returned stream should emit an error or not.
-If `emitError` is true, you have to handle `.on('error')`
-manually in case the notifier (gulp-notify) fails. If
-the default `false` is set, the error will not be emitted
+If the returned stream should emit an error or not.  
+If `emitError` is true, you have to handle `.on('error')`  
+manually in case the notifier \(gulp-notify\) fails. If  
+the default `false` is set, the error will not be emitted  
 but simply printed to the console.
 
-This means you can run the notifier on a CI system without
+This means you can run the notifier on a CI system without  
 opting it out but simply letting it fail gracefully.
 
-
 #### options.message
-Type: `String`
+
+Type: `String`  
 Default: File path in stream
 
-The message you wish to attach to file. The string can be a
+The message you wish to attach to file. The string can be a  
 lodash template as it is passed through [gulp-util.template](https://github.com/gulpjs/gulp-util#templatestring-data).
 
 Example: `Created <%= file.relative %>`.
 
 ##### as function
+
 Type: `Function(vinylFile)`
 
 See `notify(Function)`.
 
 #### options.title
-Type: `String`
+
+Type: `String`  
 Default: "Gulp Notification"
 
-The title of the notification. The string can be a
+The title of the notification. The string can be a  
 lodash template as it is passed through [gulp-util.template](https://github.com/gulpjs/gulp-util#templatestring-data).
 
 Example: `Created <%= file.relative %>`.
 
 ##### as function
+
 Type: `Function(vinylFile)`
 
 See `notify(Function)`.
 
 #### options.templateOptions
-Type: `Object`
+
+Type: `Object`  
 Default: {}
 
 Object passed to the `lodash` template, for additional properties passed to the template.
@@ -116,23 +137,23 @@ gulp.src("../test/fixtures/*")
 ```
 
 #### options.notifier
-Type: `Function(options, callback)`
+
+Type: `Function(options, callback)`  
 Default: node-notifier module
 
-Swap out the notifier by passing in an function.
+Swap out the notifier by passing in an function.  
 The function expects two arguments: options and callback.
 
-The callback must be called when the notification is finished. Options
+The callback must be called when the notification is finished. Options  
 will contain both title and message.
 
-*See `notify.withReporter` for syntactic sugar.*
+_See _`notify.withReporter`_ for syntactic sugar._
 
+### notify.on\(event, function \(notificationOptions\)\) - Events
 
-### notify.on(event, function (notificationOptions)) - Events
-
-**If the `wait` option is set to `true`**, the notifier will trigger
-events `click` or `timeout`, whether the user clicks the notification or it
-times out. You listen to these events on the main notify object, not the
+**If the **`wait`** option is set to **`true`, the notifier will trigger  
+events `click` or `timeout`, whether the user clicks the notification or it  
+times out. You listen to these events on the main notify object, not the  
 produces stream.
 
 ```js
@@ -152,10 +173,11 @@ gulp.task("click", function () {
 });
 ```
 
-### notify.withReporter(Function)
+### notify.withReporter\(Function\)
+
 Type: `Reporter`
 
-Wraps `options.notifier` to return a new notify-function only using
+Wraps `options.notifier` to return a new notify-function only using  
 the passed in reporter.
 
 Example:
@@ -169,13 +191,11 @@ var custom = notify.withReporter(function (options, callback) {
 
 gulp.src("../test/fixtures/1.txt")
     .pipe(custom("This is a message."));
-
 ```
 
 This will be the same as
 
 ```javascript
-
 gulp.src("../test/fixtures/1.txt")
     .pipe(notify({
       message: "This is a message."
@@ -189,10 +209,9 @@ gulp.src("../test/fixtures/1.txt")
 
 But much, much prettier.
 
+### notify.onError\(\)
 
-### notify.onError()
-
-The exact same API as using `notify()`, but where a `vinyl File`
+The exact same API as using `notify()`, but where a `vinyl File`  
 is passed, the error object is passed instead.
 
 Example:
@@ -230,21 +249,22 @@ gulp.src("../test/fixtures/*")
 
 The `onError()` end point does support `lodash.template`.
 
-**`onError()` will automatically end the stream for you. Making it easer for watching.**
+`onError()`** will automatically end the stream for you. Making it easer for watching.**
 
-### notify.logLevel(level)
-Type: `Integer`
+### notify.logLevel\(level\)
+
+Type: `Integer`  
 Default: `2`
 
-Set if logger should be used or not. If log level is set to 0,
-no logging will be used. If no new log level is passed, the
+Set if logger should be used or not. If log level is set to 0,  
+no logging will be used. If no new log level is passed, the  
 current log level is returned.
 
 * `0`: No logging
 * `1`: Log on error
 * `2`: Log both on error and regular notification.
 
-If logging is set to `> 0`, the title and
+If logging is set to `> 0`, the title and  
 message passed to `gulp-notify` will be logged like so:
 
 ```sh
@@ -258,8 +278,8 @@ message passed to `gulp-notify` will be logged like so:
 
 ## Disable `gulp-notify`
 
-If you are running on a system that handles notifications poorly or you simply
-do not wish to use `gulp-notify` but your project does? You can disable `gulp-notify`
+If you are running on a system that handles notifications poorly or you simply  
+do not wish to use `gulp-notify` but your project does? You can disable `gulp-notify`  
 by using enviroment variable `DISABLE_NOTIFIER`.
 
 ```
@@ -292,6 +312,7 @@ $ gulp --gulpfile examples/gulpfile.js --tasks
 ```
 
 To run an example:
+
 ```shell
 $ gulp --gulpfile examples/gulpfile.js multiple
 [gulp] Using file /Users/example/gulp-notify/examples/gulpfile.js
@@ -302,8 +323,8 @@ $ gulp --gulpfile examples/gulpfile.js multiple
 
 ### As jshint reporter
 
-`gulp-notify` can easily be used as jshint reporter.
-As jshint exposes the result on the vinyl file we can
+`gulp-notify` can easily be used as jshint reporter.  
+As jshint exposes the result on the vinyl file we can  
 use them in a function like so:
 
 ```javascript
@@ -327,10 +348,8 @@ gulp.task('lint', function() {
 });
 ```
 
-If you use a function for message in `gulp-notify`, the message won't be shown.
+If you use a function for message in `gulp-notify`, the message won't be shown.  
 This is true for both direct use of function and `{ message: function () {}}`.
 
-[![NPM downloads][npm-downloads]][npm-url]
-
-
+\[!\[NPM downloads\]\[npm-downloads\]\]\[npm-url\]
 
