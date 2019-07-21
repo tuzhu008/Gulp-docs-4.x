@@ -1,13 +1,13 @@
 ## 简介
 
-Gulp 插件，用于解析 HTML 文件中的构建块，以替换对非优化脚本或样式表的引用。。
+Gulp 插件，用于有条件地运行任务。
 
-[github 地址](https://github.com/jonkemp/gulp-useref)
+[github 地址](https://github.com/robrich/gulp-if)
 
 ## 安装
 
 ```
-npm install --save-dev gulp-useref
+npm install --save-dev gulp-if
 ```
 
 ## 用法
