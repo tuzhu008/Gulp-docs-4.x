@@ -2,7 +2,7 @@
 
 Gulp 插件，该插件使用 glob 模式过滤原始文件的子集。当您完成并希望返回所有原始文件时，只需`restore` 流;
 
-[github 地址](https://github.com/robrich/gulp-if)
+[github 地址](https://github.com/sindresorhus/gulp-filter)
 
 ## 安装
 
