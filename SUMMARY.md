@@ -64,9 +64,7 @@
 * [gulp-livereload](cha-jian/gulp-livereload.md)
 * [gulp-if](cha-jian/gulp-if.md)
 * [gulp-ignore](cha-jian/gulp-ignore.md)
-* [lazypipe](cha-jian/lazypipe.md)
 * [gulp-cache](cha-jian/gulp-cache.md)
-* [browser-sync](cha-jian/browser-sync.md)
 * [gulp-load-plugins](cha-jian/gulp-load-plugins.md)
 * [gulp-changed ](cha-jian/gulp-unchanged.md)
 * [gulp-stream](cha-jian/gulp-stream.md)
@@ -84,3 +82,5 @@
 
 ## 其他
 
+* [lazypipe](cha-jian/lazypipe.md)
+* [browser-sync](cha-jian/browser-sync.md)
