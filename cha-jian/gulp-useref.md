@@ -12,7 +12,7 @@ npm install --save-dev gulp-useref
 
 ## 用法
 
-下面的示例将解析 HTML 中的构建块，替换它们并传递这些文件。构建块中的资产也将被连接起来并在流中传递。
+下面的示例将解析 HTML 中的构建块，替换它们并传递这些文件。构建块中的资源也将被连接起来并在流中传递。
 
 ```js
 var gulp = require('gulp');
@@ -38,7 +38,7 @@ function defaultTask() {
 }
 ```
 
-如果希望缩小资产规模或执行其他一些修改，可以使用 gulp-if 有条件地处理特定类型的资产。
+如果希望压缩资源或执行其他一些修改，可以使用[ gulp-if ](/cha-jian/gulp-if.md)有条件地处理特定类型的资源。
 
 ```js
 var gulp = require('gulp');
