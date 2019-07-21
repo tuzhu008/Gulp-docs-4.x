@@ -202,4 +202,9 @@ Optional, Stream for gulp-if to pipe data into when condition is falsey.
 Optional, if it's a glob condition, these options are passed to [minimatch](https://github.com/isaacs/minimatch).
 
 
+[condition]: https://rawgithub.com/robrich/gulp-if/master/img/condition.svg
+[ternary]: https://rawgithub.com/robrich/gulp-if/master/img/ternary.svg
+[exclude]: https://rawgithub.com/robrich/gulp-if/master/img/exclude.svg
+[glob]: https://rawgithub.com/robrich/gulp-if/master/img/glob.svg
+
 
