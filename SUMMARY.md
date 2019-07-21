@@ -41,7 +41,7 @@
 
 * [gulp-htmlmin](cha-jian/gulp-htmlmin.md)
 * [gulp-uglify](cha-jian/gulp-uglify.md)
-* gulp-babel
+* [gulp-babel](cha-jian/gulp-babel.md)
 * [gulp-less](cha-jian/gulp-less.md)
 * [gulp-sass](cha-jian/gulp-sass.md)
 * [gulp-stylus](cha-jian/gulp-stylus.md)
