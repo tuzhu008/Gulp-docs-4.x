@@ -6,18 +6,15 @@ Gulp 插件，用于重写已被 gulp-rev 重命名的文件名。
 
 ## 安装
 
-## Install
-
 ```bash
 $ npm install --save-dev gulp-rev-replace
 ```
-
 
 ## Usage
 
 Pipe through a stream which has both the files you want to be updated, as well as the files which have been renamed.
 
-For example, we can use [gulp-useref](https://github.com/jonkemp/gulp-useref) to concatenate assets in an index.html,
+For example, we can use [gulp-useref](https://github.com/jonkemp/gulp-useref) to concatenate assets in an index.html,  
 and then use [gulp-rev](https://github.com/sindresorhus/gulp-rev) and gulp-rev-replace to cache-bust them.
 
 ```js
@@ -72,20 +69,21 @@ gulp.task("revreplace", ["revision"], function(){
 });
 ```
 
-
 ## API
 
-### revReplace(options)
+### revReplace\(options\)
 
 #### options.canonicalUris
+
 Type: `boolean`
 
 Default: `true`
 
-Use canonical Uris when replacing filePaths, i.e. when working with filepaths
-with non forward slash (`/`) path separators we replace them with forward slash.
+Use canonical Uris when replacing filePaths, i.e. when working with filepaths  
+with non forward slash \(`/`\) path separators we replace them with forward slash.
 
 #### options.replaceInExtensions
+
 Type: `Array`
 
 Default: `['.js', '.css', '.html', '.hbs']`
@@ -93,22 +91,25 @@ Default: `['.js', '.css', '.html', '.hbs']`
 Only substitute in new filenames in files of these types.
 
 #### options.prefix
+
 Type: `string`
 
-Default: ``
+Default: \`\`
 
 Add the prefix string to each replacement.
 
 #### options.manifest
-Type: `Stream` (e.g., `gulp.src()`)
 
-Read JSON manifests written out by `rev`. Allows replacing filenames that were
+Type: `Stream` \(e.g., `gulp.src()`\)
+
+Read JSON manifests written out by `rev`. Allows replacing filenames that were  
 `rev`ed prior to the current task.
 
 #### options.modifyUnreved, options.modifyReved
+
 Type: `Function`
 
-Modify the name of the unreved/reved files before using them. The filename is
+Modify the name of the unreved/reved files before using them. The filename is  
 passed to the function as the first argument.
 
 For example, if in your manifest you have:
@@ -117,8 +118,8 @@ For example, if in your manifest you have:
 {"js/app.js.map": "js/app-98adc164.js.map"}
 ```
 
-If you wanted to get rid of the `js/` path just for `.map` files (because they
-are sourcemaps and the references to them are relative, not absolute) you could
+If you wanted to get rid of the `js/` path just for `.map` files \(because they  
+are sourcemaps and the references to them are relative, not absolute\) you could  
 do the following:
 
 ```js
@@ -137,5 +138,6 @@ return gulp.src(opt.distFolder + '**/*.js')
     }))
     .pipe(gulp.dest(opt.distFolder));
 ```
+
 
 
