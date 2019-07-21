@@ -6,11 +6,9 @@ Gulp 的 [Sass](https://www.sass.hk/) 插件，用于解析 `.sass` 文件。
 
 ## 安装
 
-```
-npm install node-sass gulp-sass --save-dev
-```
 
-## 用法
+
+
 
 
 
