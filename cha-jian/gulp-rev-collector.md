@@ -12,7 +12,7 @@ $ npm install --save gulp-rev-collector
 
 ## 用法
 
-We can use [gulp-rev](/cha-jian/gulp-rev.md) to cache-bust several assets and generate manifest files for them. Then using gulp-rev-collector we can collect data from several manifest files and replace links to assets in html templates.
+我们可以使用 [gulp-rev](/cha-jian/gulp-rev.md) 来 cache-bust  一些资源，并为它们生成清单文件。然后使用 `gulp-rev-collector`，我们可以从几个清单文件收集数据，并替换到 html 模板中的资源的链接。
 
 ```js
 var gulp = require('gulp');
@@ -59,7 +59,7 @@ gulp.task('rev', function () {
 });
 ```
 
-### Options
+### 选项
 
 #### collectedManifest
 
