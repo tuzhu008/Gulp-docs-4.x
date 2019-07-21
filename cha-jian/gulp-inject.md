@@ -12,7 +12,7 @@ $ npm install --save-dev gulp-inject
 
 ## 用法
 
-目标文件** `src/index.html`:**
+目标文件** **`src/index.html`**:**
 
 每对注释都是注入占位符\(即. 标签，参见[`options.starttag`](https://github.com/klei/gulp-inject#optionsstarttag) 和 [`options.endtag`](https://github.com/klei/gulp-inject#optionsendtag) \)。
 
@@ -32,7 +32,7 @@ $ npm install --save-dev gulp-inject
 </html>
 ```
 
-**`gulpfile.js` 文件：**
+`gulpfile.js`** 文件：**
 
 ```js
 var gulp = require('gulp');
@@ -72,9 +72,9 @@ function indexTask() {
 
 ## 更多例子
 
-### Injecting files relative to target files
+### 相对于目标文件注入文件
 
-By default the injected file paths are relative to each source file's `cwd` (see [`options.ignorePath`](#optionsignorepath)). If `options.relative` is set to `true` each injected path will be relative to each target file's directory instead.
+By default the injected file paths are relative to each source file's `cwd` \(see [`options.ignorePath`](#optionsignorepath)\). If `options.relative` is set to `true` each injected path will be relative to each target file's directory instead.
 
 **Project structure:**
 
@@ -88,7 +88,7 @@ By default the injected file paths are relative to each source file's `cwd` (see
         └── index.html
 ```
 
-**`src/app/index.html`:**
+`src/app/index.html`**:**
 
 ```html
 <!DOCTYPE html>
@@ -104,7 +104,7 @@ By default the injected file paths are relative to each source file's `cwd` (see
 </html>
 ```
 
-**`src/module/module.html`:**
+`src/module/module.html`**:**
 
 ```html
 <!DOCTYPE html>
@@ -120,7 +120,7 @@ By default the injected file paths are relative to each source file's `cwd` (see
 </html>
 ```
 
-**`gulpfile.js`:**
+`gulpfile.js`**:**
 
 ```javascript
 var inject = require('gulp-inject');
@@ -130,7 +130,7 @@ gulp.src('./src/**/*.html')
   .pipe(gulp.dest('./src'));
 ```
 
-**Resulting `src/app/index.html`:**
+**Resulting **`src/app/index.html`**:**
 
 ```html
 <!DOCTYPE html>
@@ -148,7 +148,7 @@ gulp.src('./src/**/*.html')
 </html>
 ```
 
-**Resulting `src/module/module.html`:**
+**Resulting **`src/module/module.html`**:**
 
 ```html
 <!DOCTYPE html>
@@ -166,7 +166,7 @@ gulp.src('./src/**/*.html')
 </html>
 ```
 
-### Injecting files from multiple source streams
+### 从多个源流注入文件
 
 This example demonstrates how to inject files from multiple different streams into the same injection placeholder.
 
@@ -219,7 +219,7 @@ gulp.src('./src/index.html')
 
 #### Method 1: Use `gulp-inject`'s `starttag` option.
 
-**`gulpfile.js`:**
+`gulpfile.js`**:**
 
 ```javascript
 var inject = require('gulp-inject');
@@ -230,7 +230,7 @@ gulp.src('./src/index.html')
   .pipe(gulp.dest('./dist'));
 ```
 
-**And in your `./src/index.html`:**
+**And in your **`./src/index.html`**:**
 
 ```html
 <!DOCTYPE html>
@@ -252,7 +252,7 @@ gulp.src('./src/index.html')
 
 #### Method 2: Use `gulp-inject`'s `name` option.
 
-**`gulpfile.js`:**
+`gulpfile.js`**:**
 
 ```javascript
 var inject = require('gulp-inject');
@@ -263,7 +263,7 @@ gulp.src('./src/index.html')
   .pipe(gulp.dest('./dist'));
 ```
 
-**And in your `./src/index.html`:**
+**And in your **`./src/index.html`**:**
 
 ```html
 <!DOCTYPE html>
@@ -283,12 +283,11 @@ gulp.src('./src/index.html')
 </html>
 ```
 
-
 ### Injecting all files for development
 
 If you use [Bower](http://bower.io/) for frontend dependencies I recommend using [`main-bower-files`](https://www.npmjs.org/package/main-bower-files) and injecting them as well.
 
-**`gulpfile.js`:**
+`gulpfile.js`**:**
 
 ```javascript
 var bowerFiles = require('main-bower-files'),
@@ -309,7 +308,7 @@ gulp.src('./src/index.html')
   .pipe(gulp.dest('./build'));
 ```
 
-**`src/index.html`:**
+`src/index.html`**:**
 
 ```html
 <!DOCTYPE html>
@@ -392,7 +391,7 @@ The [default `transform`](#injecttransform) function is available to use e.g. as
 
 Used here to inject Word documents as `<a>` tags below:
 
-**`index.html`:**
+`index.html`**:**
 
 ```html
 <!DOCTYPE html>
@@ -412,7 +411,7 @@ Used here to inject Word documents as `<a>` tags below:
 </html>
 ```
 
-**`gulpfile.js`:**
+`gulpfile.js`**:**
 
 ```javascript
 var inject = require('gulp-inject');
@@ -432,7 +431,7 @@ gulp.src('./index.html')
   .pipe(gulp.dest('./'));
 ```
 
-**Resulting `index.html`:**
+**Resulting **`index.html`**:**
 
 ```html
 <!DOCTYPE html>
@@ -492,7 +491,7 @@ gulp.src('./karma.conf.js')
 
 In order to inject files contents you have to provide custom `transform` function, that will return file contents as string. You also have to omit `{read: false}` option of `gulp.src` in this case. Example below shows how to inject contents of html partials into head of `index.html`:
 
-***Code:***
+_**Code:**_
 
 ```javascript
 gulp.src('./src/index.html')
@@ -524,9 +523,9 @@ And in your `./src/index.html`:
 
 ### Injecting files contents based on file path
 
-In order to inject files based on file path you have to provide custom `starttag` which includes `{{path}}`. Additionally, in order to inject file contents include `transform` function, that will return file contents as string. You also have to omit `{read: false}` option of `gulp.src` in this case. Path can be either absolute, or relative in which case you should set [`options.relative`] to true. Example below shows how to inject contents of html partials into `index.html`:
+In order to inject files based on file path you have to provide custom `starttag` which includes `{{path}}`. Additionally, in order to inject file contents include `transform` function, that will return file contents as string. You also have to omit `{read: false}` option of `gulp.src` in this case. Path can be either absolute, or relative in which case you should set \[`options.relative`\] to true. Example below shows how to inject contents of html partials into `index.html`:
 
-***Code:***
+_**Code:**_
 
 ```javascript
 gulp.src('./src/index.html')
@@ -559,13 +558,12 @@ And in your `./src/index.html`:
 
 ## API
 
-### inject(sources, options)
+### inject\(sources, options\)
 
 Parameter: `sources`  
 Type: `Stream`
 
 Provide a Vinyl File Stream as input to `inject`, see examples above.
-
 
 Parameter: `options`  
 Type: `Object`
@@ -575,88 +573,86 @@ For available options see [Options](#options)
 ### Options
 
 #### options.ignorePath
+
 Type: `String` or `Array`
 
 Default: `NULL`
 
-
 A path or paths that should be removed from each injected file path.
 
-This could also be solved by setting the `cwd` option for your `gulp.src` streams, each source file's `cwd` is automatically removed from its path before injection (if not [`options.relative`](#optionsrelative) is set to `true`, see below).
-
+This could also be solved by setting the `cwd` option for your `gulp.src` streams, each source file's `cwd` is automatically removed from its path before injection \(if not [`options.relative`](#optionsrelative) is set to `true`, see below\).
 
 #### options.relative
+
 Type: `Boolean`
 
 Default: `false`
 
-
 If set to `true` paths for the injected files will be relative to each target file, this also means that each source file's `cwd` is not necessary to remove from its path.
 
-
 #### options.addPrefix
+
 Type: `String`
 
 Default: `NULL`
-
 
 A path that should be prefixed to each injected file path.
 
 #### options.addSuffix
+
 Type: `String`
 
 Default: `NULL`
 
-
 A path that should be suffixed to each injected file path.
 
 #### options.addRootSlash
+
 Type: `Boolean`
 
 Default: [`!options.relative`](#optionsrelative)
 
-
-The root slash is automatically added at the beginning of the path ('/'), or removed if set to `false`.
+The root slash is automatically added at the beginning of the path \('/'\), or removed if set to `false`.
 
 #### options.name
+
 Type: `String`
 
 Default: `"inject"`
 
-
 Used in the default [start](#optionsstarttag) and [end](#optionsendtag) tags below.
 
 #### options.removeTags
+
 Type: `Boolean`
 
 Default: `false`
-
 
 When `true` the start and end tags will be removed when injecting files.
 
 #### options.empty
+
 Type: `Boolean`
 
 Default: `false`
-
 
 When `true` all tags without corresponding files will be emptied.
 
 [**Warning** this has the potential issue of emptying more than expected.](https://github.com/klei/gulp-inject/issues/135)
 
-
 #### options.starttag
 
-**Type:** `String`|`Function(targetExt, sourceExt)`
+**Type:** `String`\|`Function(targetExt, sourceExt)`
 
-**Params (if function):**
-  - `targetExt` - The file extension of the target file
-  - `sourceExt` - The file extension of source file
+**Params \(if function\):**
+
+* `targetExt` - The file extension of the target file
+* `sourceExt` - The file extension of source file
 
 **Purpose:**
 
-Used to dynamically set starting placeholder tag depending on file extensions.
-In the provided string, or the string returned from the given function, the string `{{ext}}` is replaced with the source file extension name, e.g. "css", "js" or "html". `{{name}}` will be replaced by [`options.name`](#optionsname). `{{path}}` will be replaced by path to source file (when used together with [`options.relative`] it will allow relative path to source file.
+Used to dynamically set starting placeholder tag depending on file extensions.  
+In the provided string, or the string returned from the given function, the string `{{ext}}` is replaced with the source file extension name, e.g. "css", "js" or "html". `{{name}}` will be replaced by [`options.name`](#optionsname). `{{path}}` will be replaced by path to source file \(when used together with \[`options.relative`\] it will allow relative path to source file.
 
 ##### Default:
 
@@ -673,15 +669,16 @@ A function dependent on target file type and source file type that returns:
 
 #### options.endtag
 
-**Type:** `String`|`Function(targetExt, sourceExt)`
+**Type:** `String`\|`Function(targetExt, sourceExt)`
 
-**Params (if function):**
-  - `targetExt` - The file extension of the target file
-  - `sourceExt` - The file extension of source file
+**Params \(if function\):**
+
+* `targetExt` - The file extension of the target file
+* `sourceExt` - The file extension of source file
 
 **Purpose:**
 
-Used to dynamically set ending placeholder tag depending on file extensions.
+Used to dynamically set ending placeholder tag depending on file extensions.  
 In the provided string, or the string returned from the given function, the string `{{ext}}` is replaced with the source file extension name, e.g. "css", "js" or "html". `{{name}}` will be replaced by [`options.name`](#optionsname). `{{path}}` will be replaced by path to source file.
 
 ##### Default:
@@ -702,11 +699,12 @@ A function dependent on target file type and source file type that returns:
 **Type**: `Function(filepath, file, index, length, targetFile)`
 
 **Params:**
-  - `filepath` - The "unixified" path to the file with any `ignorePath`'s removed, `addPrefix` and `addSuffix` added
-  - `file` - The [File object](https://github.com/wearefractal/vinyl) to inject given from `gulp.src`
-  - `index` - 0-based file index
-  - `length` - Total number of files to inject for the current file extension
-  - `targetFile` - The target [file](https://github.com/wearefractal/vinyl) to inject into
+
+* `filepath` - The "unixified" path to the file with any `ignorePath`'s removed, `addPrefix` and `addSuffix` added
+* `file` - The [File object](https://github.com/wearefractal/vinyl) to inject given from `gulp.src`
+* `index` - 0-based file index
+* `length` - Total number of files to inject for the current file extension
+* `targetFile` - The target [file](https://github.com/wearefractal/vinyl) to inject into
 
 **Purpose:**
 
@@ -716,7 +714,7 @@ Used to generate the content to inject for each file.
 
 [A function](#injecttransform) dependent on target file type and source file type that returns:
 
-**Injecting into `html`**
+**Injecting into **`html`
 
 * css files: `<link rel="stylesheet" href="<filename>.css">`
 * js files: `<script src="<filename>.js"></script>`
@@ -729,11 +727,11 @@ Used to generate the content to inject for each file.
 
 If `options.selfClosingTag` is `true` the default transformer above will make the `<link>` and `<img>` tags self close, i.e: `<link ... />` and `<img ... />` respectively.
 
-**Injecting into `jsx`**
+**Injecting into **`jsx`
 
 The same as for injecting into `html` above with [`options.selfClosingTag`](#optionsselfclosingtag) set to `true`.
 
-**Injecting into `jade`**
+**Injecting into **`jade`
 
 * css files: `link(rel="stylesheet", href="<filename>.css")`
 * js files: `script(src="<filename>.js")`
@@ -744,7 +742,7 @@ The same as for injecting into `html` above with [`options.selfClosingTag`](#opt
 * jpg files: `img(src="<filename>.jpg")`
 * jpeg files: `img(src="<filename>.jpeg")`
 
-**Injecting into `pug`**
+**Injecting into **`pug`
 
 * css files: `link(rel="stylesheet", href="<filename>.css")`
 * js files: `script(src="<filename>.js")`
@@ -755,7 +753,7 @@ The same as for injecting into `html` above with [`options.selfClosingTag`](#opt
 * jpg files: `img(src="<filename>.jpg")`
 * jpeg files: `img(src="<filename>.jpeg")`
 
-**Injecting into `slm`**
+**Injecting into **`slm`
 
 * css files: `link rel="stylesheet" href="<filename>.css"`
 * js files: `script src="<filename>.js"`
@@ -766,7 +764,7 @@ The same as for injecting into `html` above with [`options.selfClosingTag`](#opt
 * jpg files: `img src="<filename>.jpg"`
 * jpeg files: `img src="<filename>.jpeg"`
 
-**Injecting into `haml`**
+**Injecting into **`haml`
 
 * css files: `%link{rel:"stylesheet", href:"<filename>.css"}`
 * js files: `%script{src:"<filename>.js"}`
@@ -777,44 +775,44 @@ The same as for injecting into `html` above with [`options.selfClosingTag`](#opt
 * jpg files: `%img{src:"<filename>.jpg"}`
 * jpeg files: `%img{src:"<filename>.jpeg"}`
 
-**Injecting into `less`**
+**Injecting into **`less`
 
 * css files: `@import "<filename>.css";`
 * less files: `@import "<filename>.less";`
 
-**Injecting into `scss`**
+**Injecting into **`scss`
 
 * css files: `@import "<filename>.css";`
 * scss files: `@import "<filename>.scss";`
 * sass files: `@import "<filename>.sass";`
 
-**Injecting into `sass`**
+**Injecting into **`sass`
 
 * css files: `@import "<filename>.css"`
 * sass files: `@import "<filename>.sass"`
 * scss files: `@import "<filename>.scss"`
 
 #### options.selfClosingTag
+
 Type: `Boolean`
 
 Default: `false`
 
 Affects the default `options.transform` function, see above.
 
-
 #### options.quiet
+
 Type: `Boolean`
 
 Default: `false`
 
 Lower the verbosity by setting this to true, suppressing the logging of successful injections.
 
-
 #### ~~options.templateString~~
 
-***DEPRECATED!***
+_**DEPRECATED!**_
 
-*Deprecated since `v.1.0`. Use [`gulp-file`](https://www.npmjs.org/package/gulp-file) instead:*
+_Deprecated since _`v.1.0`_. Use _[`gulp-file`](https://www.npmjs.org/package/gulp-file)_ instead:_
 
 ```javascript
 var gulp = require('gulp');
@@ -831,9 +829,9 @@ file('index.html', '<html><head></head></html>')
 
 #### ~~options.sort~~
 
-***DEPRECATED!***
+_**DEPRECATED!**_
 
-*Deprecated since `v.1.0`. Use [`sort-stream`](https://www.npmjs.org/package/sort-stream) instead:*
+_Deprecated since _`v.1.0`_. Use _[`sort-stream`](https://www.npmjs.org/package/sort-stream)_ instead:_
 
 ```javascript
 var gulp = require('gulp');
@@ -893,19 +891,4 @@ The default transform function for files into `sass`.
 The default transform function for files into `scss`.
 
 
-## License
-
-[MIT](http://en.wikipedia.org/wiki/MIT_License) © [Joakim Carlstein](http://joakim.beng.se)
-
-[npm-url]: https://npmjs.org/package/gulp-inject
-[npm-image]: https://badge.fury.io/js/gulp-inject.svg
-
-[travis-url]: http://travis-ci.org/klei/gulp-inject
-[travis-image]: https://secure.travis-ci.org/klei/gulp-inject.svg?branch=master
-
-[depstat-url]: https://david-dm.org/klei/gulp-inject
-[depstat-image]: https://david-dm.org/klei/gulp-inject.svg
-
-[codestyle-url]: https://github.com/sindresorhus/xo
-[codestyle-image]: https://img.shields.io/badge/code%20style-XO-5ed9c7.svg?style=flat
 
