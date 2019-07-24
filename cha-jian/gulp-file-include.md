@@ -10,7 +10,7 @@ Gulp 的插件，用于组装模块化的文件。
 npm install --save-dev gulp-file-include
 ```
 
-## options
+## 选项
 
 * options - type: `string`, just as prefix, default `@@`, and basepath is default `@file`
 
@@ -19,17 +19,19 @@ fileinclude('@@')
 ```
 
 * options - type: `object`
-  - prefix: `string`, default `@@`
-  - suffix: `string`, default `''`
-  - basepath: `string`, default `@file`, it could be `@root`, `@file`, `your-basepath`
-  - filters: `object`, filters of include content
-  - context: `object`, context of `if` statement
-  - indent: `boolean`, default `false`
+
+  * prefix: `string`, default `@@`
+  * suffix: `string`, default `''`
+  * basepath: `string`, default `@file`, it could be `@root`, `@file`, `your-basepath`
+  * filters: `object`, filters of include content
+  * context: `object`, context of `if` statement
+  * indent: `boolean`, default `false`
 
 * options.basepath - type: `string`, it could be
-  - `@root`, include file relative to the dir where `gulp` running in
-  - `@file`, include file relative to the dir where `file` in [example](example)
-  - `your-basepath` include file relative to the basepath you give
+
+  * `@root`, include file relative to the dir where `gulp` running in
+  * `@file`, include file relative to the dir where `file` in [example](example)
+  * `your-basepath` include file relative to the basepath you give
 
 ```js
 fileinclude({
@@ -50,6 +52,7 @@ fileinclude({
 * @@include options - type: `JSON`
 
 index.html
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -68,11 +71,13 @@ index.html
 ```
 
 view.html
+
 ```html
 <h1>view</h1>
 ```
 
 var.html
+
 ```html
 <label>@@name</label>
 <label>@@age</label>
@@ -81,6 +86,7 @@ var.html
 ```
 
 gulpfile.js
+
 ```js
 var fileinclude = require('gulp-file-include'),
   gulp = require('gulp');
@@ -96,6 +102,7 @@ gulp.task('fileinclude', function() {
 ```
 
 and the result is:
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -125,6 +132,7 @@ and the result is:
 ```
 
 view.md
+
 ```html
 view
 ====
@@ -218,16 +226,16 @@ data.json
 ```
 
 * loop-article.html
-```html
-<body>
+  ```html
+  <body>
   @@loop("loop-article.html", "data.json")
-</body>
-```
+  </body>
+  ```
 
 ### `webRoot` built-in context variable
 
-The `webRoot` field of the context contains the relative path from the source document to
-the source root (unless the value is already set in the context options).
+The `webRoot` field of the context contains the relative path from the source document to  
+the source root \(unless the value is already set in the context options\).
 
 ### example
 
@@ -263,15 +271,5 @@ and the result is:
 </html>
 ```
 
-[npm-img]: https://img.shields.io/npm/v/gulp-file-include.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/gulp-file-include
-[travis-img]: https://img.shields.io/travis/coderhaoxin/gulp-file-include.svg?style=flat-square
-[travis-url]: https://travis-ci.org/coderhaoxin/gulp-file-include
-[coveralls-img]: https://img.shields.io/coveralls/coderhaoxin/gulp-file-include.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/coderhaoxin/gulp-file-include?branch=master
-[license-img]: http://img.shields.io/badge/license-MIT-green.svg?style=flat-square
-[license-url]: http://opensource.org/licenses/MIT
-[david-img]: https://img.shields.io/david/coderhaoxin/gulp-file-include.svg?style=flat-square
-[david-url]: https://david-dm.org/coderhaoxin/gulp-file-include
-[gitter-img]: https://badges.gitter.im/Join%20Chat.svg
-[gitter-url]: https://gitter.im/coderhaoxin/gulp-file-include?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
+
+
