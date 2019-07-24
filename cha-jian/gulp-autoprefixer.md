@@ -7,7 +7,7 @@ Gulp 的 CSS 插件，用于为 CSS 添加供应商前缀，内部使用 [Autopr
 ## 安装
 
 ```
-npm install node-sass gulp-autoprefixer
+npm install --save-dev gulp-autoprefixer
 ```
 
 ## 用法

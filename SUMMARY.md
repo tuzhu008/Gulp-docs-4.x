@@ -90,9 +90,12 @@
 * [rev-del](cha-jian/rev-del.md)
 * [gulp-rev-delete-original](cha-jian/gulp-rev-delete-original.md)
 * [gulp-rev-loader](cha-jian/gulp-rev-loader.md)
+* gulp-file-include
 
 ## 其他
 
 * [lazypipe](cha-jian/lazypipe.md)
 * [browser-sync](cha-jian/browser-sync.md)
+
+
 
