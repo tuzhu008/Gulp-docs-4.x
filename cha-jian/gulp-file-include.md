@@ -154,7 +154,7 @@ gulp.task('fileinclude', function() {
 });
 ```
 
-### `if` statement
+### `if` 语句
 
 ```js
 fileinclude({
@@ -172,7 +172,7 @@ fileinclude({
 }
 ```
 
-### `for` statement
+### `for` 语句
 
 ```js
 fileinclude({
@@ -190,7 +190,7 @@ fileinclude({
 </ul>
 ```
 
-### `loop` statement
+### `loop` 语句
 
 * index.html
 
@@ -213,7 +213,7 @@ fileinclude({
 </article>
 ```
 
-### `loop` statement + data.json
+### `loop` 语句 + data.json
 
 data.json
 
@@ -232,12 +232,12 @@ data.json
   </body>
   ```
 
-### `webRoot` built-in context variable
+### `webRoot` 内置的上下文变量
 
 The `webRoot` field of the context contains the relative path from the source document to  
 the source root \(unless the value is already set in the context options\).
 
-### example
+### 示例
 
 support/contact/index.html
 
