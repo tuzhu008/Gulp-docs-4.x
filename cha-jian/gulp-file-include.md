@@ -47,7 +47,7 @@ fileinclude({
 })
 ```
 
-## example
+## 示例
 
 * @@include options - type: `JSON`
 
