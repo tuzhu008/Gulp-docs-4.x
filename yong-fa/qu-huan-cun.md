@@ -32,8 +32,6 @@ function cssTask() {
 }
 ```
 
-
-
 处理 html 文件：
 
 ```js
@@ -50,12 +48,33 @@ function htmlTask() {
               }
           }
       }))
-      .pipe( minifyHTML({
-          empty:true,
-          spare:true
-      }) )
+      // 压缩
+      // .pipe( minifyHTML({
+      //     empty:true,
+      //     spare:true
+      // }) )
       .pipe( gulp.dest('dist/pages') );
 }
+```
+
+结果：
+
+```js
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="/dist/css/main-351bdd8531.min.css">
+<link rel="stylesheet" href="/dist//dist/css/app-333e486def.min.css">
+</head>
+
+<body>
+   <p class="app">哈哈哈</p>
+   <p class="main">嘿嘿</p>
+</body>
+</html>
+
 ```
 
 
