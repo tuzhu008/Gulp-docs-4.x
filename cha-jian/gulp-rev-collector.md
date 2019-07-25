@@ -35,14 +35,12 @@ gulp.task('scripts', function () {
 });
 ```
 
-
-
 ```js
 var revCollector = require('gulp-rev-collector');
 var minifyHTML   = require('gulp-minify-html');
 
 function revTask() {
-  return gulp.src(['dist/**/*.json', 'src/pages/**/*.html'])
+  return gulp.src(['rev/**/*.json', 'src/pages/**/*.html'])
     .pipe(revCollector({
       replaceReved: true,
       dirReplacements: {
