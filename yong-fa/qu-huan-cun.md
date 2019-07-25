@@ -32,6 +32,8 @@ function cssTask() {
 }
 
 // js
+
+// 图片
 ```
 
 处理 html 文件：
