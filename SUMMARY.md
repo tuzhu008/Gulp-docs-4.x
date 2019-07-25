@@ -37,7 +37,7 @@
 * [Sass](yong-fa/sass-bian-yi.md)
 * [Css](yong-fa/css.md)
 * [Js](yong-fa/js.md)
-* 图片压缩
+* [图片压缩](yong-fa/tu-pian-ya-suo.md)
 * Css Js 合并
 * Css Js 内联
 * Html 的 include 功能
