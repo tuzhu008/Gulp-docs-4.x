@@ -44,8 +44,7 @@ gulp.task('rev', function () {
         .pipe( revCollector({
             replaceReved: true,
             dirReplacements: {
-                'css': '/dist/css',
-                '/js/': '/dist/js/',
+                dirReplacements
                 'cdn/': function(manifest_value) {
                     return '//cdn' + (Math.floor(Math.random() * 9) + 1) + '.' + 'exsample.dot' + '/img/' + manifest_value;
                 }
@@ -77,7 +76,7 @@ You set a flag, replaceReved, which will replace alredy replaced links in templa
 
 Type : `Object`
 
-Specifies a directories replacement set. [gulp-rev](https://github.com/sindresorhus/gulp-rev) creates manifest files without any info about directories. E.c. if you use dirReplacements param from [Usage](#usage) example, you get next replacement:
+指定目录替换集。[gulp-rev](/cha-jian/gulp-rev.md) 创建不包含任何目录信息的清单文件。如果你使用 `dirreplacement` 参数的例子，将得到如下替换:
 
 ```
 "/css/style.css" => "/dist/css/style-1d87bebe.css"
