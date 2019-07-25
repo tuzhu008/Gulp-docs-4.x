@@ -30,7 +30,32 @@ function cssTask() {
     .pipe(rename({suffix: '.css'}))
     .pipe(gulp.dest('dist/rev/'))
 }
+```
 
+
+
+处理 html 文件：
+
+```js
+function htmlTask() {
+    return gulp.src(['dist/rev/**/*.json', 'src/**/*.html'])
+      .pipe( revCollector({
+          replaceReved: true,
+          revSuffix: '-[0-9a-f]{8,10}-?.min',
+          dirReplacements: {
+              'css': '/dist/css',
+              '/js/': '/dist/js/',
+              'cdn/': function(manifest_value) {
+                  return '//cdn' + (Math.floor(Math.random() * 9) + 1) + '.' + 'exsample.dot' + '/img/' + manifest_value;
+              }
+          }
+      }))
+      .pipe( minifyHTML({
+          empty:true,
+          spare:true
+      }) )
+      .pipe( gulp.dest('dist/pages') );
+}
 ```
 
 
