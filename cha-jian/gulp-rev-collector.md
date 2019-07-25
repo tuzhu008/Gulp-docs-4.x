@@ -84,7 +84,34 @@ Type : `Object`
 
 Type : `String`
 
-它是定义 reved 文件后缀的模式。默认值是 '-\[0-9a-f\]{8,10}-?'。在使用 [gulp-rename](/cha-jian/gulp-rename.md) 时，这是必要的。如果重新生成的文件名与默认掩码不同。
+它是定义 reved 文件后缀的模式。默认值是 '-\[0-9a-f\]{8,10}-?'。在使用 [gulp-rename](/cha-jian/gulp-rename.md) 时，这是必要的。
+
+如果重新生成的文件名与默认掩码不同，`revSuffix` 是文件名和带点的文件扩展中间的部分。
+
+`revSuffix` 参数会被初始化为一个正则表达式， 而是否进行替换是使用这个正则将 mainfest 里面的匹配的值替换为空字符后剩余部分与 mainfest 的键的数组做比对来判断的。如：
+
+先看源码:
+
+```js
+var cleanReplacement =  path.basename(json[key]).replace(new RegExp( opts.revSuffix ), '' );
+```
+
+示例：
+
+```js
+// mainfest.json
+{
+  "main.css": "main-351bdd8531.min.css"
+}
+```
+
+默认替换后的字符串：`main.min.css`，它与 key 没有匹配的，因此不会替换。
+
+要解决这个问题需要传入 `revSuffix` 参数，从源码处可以看到，这个参数直接被使用了，因此，如果需要替换上面的文件名，就需要传入 `-[0-9a-f]{8,10}-?.min` ，而不是只传入 `.min` 或 `min`
+
+
+
+
 
 #### extMap
 
