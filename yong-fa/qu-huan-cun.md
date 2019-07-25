@@ -30,6 +30,8 @@ function cssTask() {
     .pipe(rename({suffix: '.css'}))
     .pipe(gulp.dest('dist/rev/'))
 }
+
+// js
 ```
 
 处理 html 文件：
