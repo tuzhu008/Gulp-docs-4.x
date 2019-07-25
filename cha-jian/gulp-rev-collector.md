@@ -90,7 +90,7 @@ Type : `String`
 
 Type : `Object`
 
-If You use some methods to modify the rev\_manifest.json after use [gulp-rev](https://github.com/sindresorhus/gulp-rev) and get a result like this:
+如果你使用一些方法修改 rev\_manifest.json 后，使用 [gulp-rev](/cha-jian/gulp-rev.md) ，得到这样的结果:
 
 ```
 {
