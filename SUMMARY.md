@@ -34,7 +34,7 @@
 
 ## 用法
 
-* Sass 编译
+* [Sass 编译](yong-fa/sass-bian-yi.md)
 * Css Js 图片压缩
 * Css Js 合并
 * Css Js 内联
