@@ -39,9 +39,9 @@
 * [Js](yong-fa/js.md)
 * [图片压缩](yong-fa/tu-pian-ya-suo.md)
 * [Css Js 内联](yong-fa/css-js-nei-lian.md)
-* Html 的 include 功能
+* [Html 的 include 功能](yong-fa/html-de-include-gong-neng.md)
 * [自动刷新](yong-fa/zi-dong-shua-xin.md)
-* 去缓存
+* [去缓存](yong-fa/qu-huan-cun.md)
 * Handlebars 模板文件的预编译
 * 雪碧图
 * ESLint
