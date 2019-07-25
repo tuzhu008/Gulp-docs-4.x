@@ -35,9 +35,7 @@
 ## 用法
 
 * [Sass](yong-fa/sass-bian-yi.md)
-
-* Css
-
+* [Css](yong-fa/css.md)
 * Js
 * 图片压缩
 * Css Js 合并
@@ -100,6 +98,4 @@
 
 * [lazypipe](cha-jian/lazypipe.md)
 * [browser-sync](cha-jian/browser-sync.md)
-
-
 
