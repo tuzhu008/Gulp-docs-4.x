@@ -84,7 +84,7 @@ Type : `Object`
 
 Type : `String`
 
-It is pattern for define reved files suffixes. Default value is '-\[0-9a-f\]{8,10}-?'. This is necessary in case of e.c. [gulp-rename](https://github.com/hparra/gulp-rename) usage. If reved filenames had different from default mask.
+它是定义 reved 文件后缀的模式。默认值是 '-\[0-9a-f\]{8,10}-?'。在使用 [gulp-rename](/cha-jian/gulp-rename.md) 时，这是必要的。如果重新生成的文件名与默认掩码不同。
 
 #### extMap
 
