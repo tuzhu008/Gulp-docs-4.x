@@ -98,11 +98,11 @@ Type : `Object`
 }
 ```
 
-It means that keys and values in the rev\_manifest.json have different ext : less & css.
+这意味着 rev\_manifest.json 中的键和值有不同的 ext: less 和 css。
 
-You can define extentions maping rules for correct manifest file processing.
+您可以定义扩展映射规则，以正确地处理清单文件。
 
-Default value is:
+默认值是:
 
 ```
 {
