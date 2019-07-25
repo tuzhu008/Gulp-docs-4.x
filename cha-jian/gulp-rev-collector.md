@@ -64,7 +64,7 @@ gulp.task('rev', function () {
 
 Type : `String`
 
-It is a filename for collecded and merged manifest data in `json` format.
+它是一个 `json` 格式的用于收集和合并清单数据的文件名。
 
 #### replaceReved
 
