@@ -70,7 +70,7 @@ It is a filename for collecded and merged manifest data in `json` format.
 
 Type : `Boolean`
 
-You set a flag, replaceReved, which will replace alredy replaced links in template's files. Default value is `false`.
+设置一个 `replaceReved`  标志，它将替换模板文件中的准备被替换的链接。默认值为 `false`。
 
 #### dirReplacements
 
