@@ -83,6 +83,7 @@
 * [gulp-stream](cha-jian/gulp-stream.md)
 * [gulp-buffer](cha-jian/gulp-buffer.md)
 * [gulp-rev](cha-jian/gulp-rev.md)
+* gulp-rev-all
 * [gulp-rev-replace](cha-jian/gulp-rev-replace.md)
 * [gulp-rev-collector](cha-jian/gulp-rev-collector.md)
 * [gulp-rev-format](cha-jian/gulp-rev-format.md)
