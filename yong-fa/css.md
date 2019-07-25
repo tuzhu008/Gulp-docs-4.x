@@ -8,8 +8,6 @@ var cached = require('gulp-cached'); // 缓存当前任务中的文件，只让�
 var rename = require('gulp-rename'); // 重命名
 var cleanCSS = require('gulp-clean-css');// CSS 压缩
 
-
-
 // css （拷贝 *.min.css，常规 CSS 则输出压缩与未压缩两个版本）
 function cssTask() {
   return gulp.src('src/css/**/*.css')
