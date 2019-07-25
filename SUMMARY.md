@@ -61,6 +61,7 @@
 * [gulp-autoprefixer](cha-jian/gulp-autoprefixer.md)
 * [gulp-imagemin](cha-jian/gulp-imagemin.md)
 * [imagemin-pngquant](cha-jian/imagemin-pngquant.md)
+* gulp-svgmin
 * [gulp-jshint](cha-jian/gulp-jshint.md)
 * [gulp-eslint](cha-jian/gulp-eslint.md)
 * [gulp-rename](cha-jian/gulp-rename.md)
