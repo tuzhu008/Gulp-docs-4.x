@@ -99,7 +99,7 @@ var cleanReplacement =  path.basename(json[key]).replace(new RegExp( opts.revSuf
 示例：
 
 ```js
-// mainfest.json
+// mainfest.json 
 {
   "main.css": "main-351bdd8531.min.css"
 }
@@ -108,10 +108,6 @@ var cleanReplacement =  path.basename(json[key]).replace(new RegExp( opts.revSuf
 默认替换后的字符串：`main.min.css`，它与 key 没有匹配的，因此不会替换。
 
 要解决这个问题需要传入 `revSuffix` 参数，从源码处可以看到，这个参数直接被使用了，因此，如果需要替换上面的文件名，就需要传入 `-[0-9a-f]{8,10}-?.min` ，而不是只传入 `.min` 或 `min`
-
-
-
-
 
 #### extMap
 
