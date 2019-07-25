@@ -38,10 +38,9 @@
 * [Css](yong-fa/css.md)
 * [Js](yong-fa/js.md)
 * [图片压缩](yong-fa/tu-pian-ya-suo.md)
-* [Css Js 合并](yong-fa/css-js-he-bing.md)
-* Css Js 内联
+* [Css Js 内联](yong-fa/css-js-nei-lian.md)
 * Html 的 include 功能
-* 自动刷新
+* [自动刷新](yong-fa/zi-dong-shua-xin.md)
 * 去缓存
 * Handlebars 模板文件的预编译
 * 雪碧图
