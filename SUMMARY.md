@@ -36,7 +36,7 @@
 
 * [Sass](yong-fa/sass-bian-yi.md)
 * [Css](yong-fa/css.md)
-* Js
+* [Js](yong-fa/js.md)
 * 图片压缩
 * Css Js 合并
 * Css Js 内联
