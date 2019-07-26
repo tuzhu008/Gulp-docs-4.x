@@ -61,6 +61,7 @@
 * [gulp-autoprefixer](cha-jian/gulp-autoprefixer.md)
 * [gulp-imagemin](cha-jian/gulp-imagemin.md)
 * [imagemin-pngquant](cha-jian/imagemin-pngquant.md)
+* gulp.spritesmith
 * gulp-svgmin
 * [gulp-jshint](cha-jian/gulp-jshint.md)
 * [gulp-eslint](cha-jian/gulp-eslint.md)
@@ -100,4 +101,6 @@
 
 * [lazypipe](cha-jian/lazypipe.md)
 * [browser-sync](cha-jian/browser-sync.md)
+
+
 
