@@ -15,5 +15,19 @@ function imageTask() {
 }
 ```
 
+压缩 jpeg、png 等的时候可能需要添加插件：
+
+```js
+// image
+function imageTask() {
+  return gulp.src('src/img/**/*.{jpg,jpeg,png,gif}')
+    .pipe(cached('image'))
+    .pipe([
+      imagemin.jpegtran({progressive: true}) // 插件
+    ], imagemin({optimizationLevel: 3, progressive: true, interlaced: true, multipass: true}))
+    .pipe(gulp.dest('dist/img'))
+}
+```
+
 
 
