@@ -7,21 +7,24 @@ Gulp 插件，用于将一组图像转换为雪碧图和 CSS 变量。
 ## 安装
 
 ```
-npm install --save-dev jshint gulp-jshint
+npm install --save-dev gulp.spritesmith
 ```
 
 ## 用法
 
 ```js
-const jshint = require('gulp-jshint');
-const gulp   = require('gulp');
+var gulp = require('gulp');
+var spritesmith = require('gulp.spritesmith');
 
-function lintTask()  {
-  return gulp.src('./lib/*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('YOUR_REPORTER_HERE'));
+function spriteTask() {
+  return gulp.src('images/*.png')
+    .pipe(spritesmith({
+      imgName: 'sprite.png',
+      cssName: 'sprite.css'
+    }))
+    .pipe(gulp.dest('path/to/output/'));
 }
 ```
 
-更多请参考 [github](#)
+
 
