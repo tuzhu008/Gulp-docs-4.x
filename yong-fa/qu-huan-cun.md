@@ -34,6 +34,21 @@ function cssTask() {
 // js
 
 // 图片
+function imageTask() {
+  return gulp.src('src/img/**/*.{jpg,jpeg,png,gif}')
+    .pipe(cached('image'))
+    .pipe(rev())
+    .pipe(rename({suffix: '.min'})) // 对应 revCollector revSuffix 
+    // .pipe(imagemin({optimizationLevel: 7, progressive: true, interlaced: true, multipass: true}))
+    .pipe(imagemin([
+      imagemin.jpegtran({progressive: true}),
+    ], {optimizationLevel: 3}))
+    // 取值范围：0-7（优化等级）,是否无损压缩jpg图片，是否隔行扫描gif进行渲染，是否多次优化svg直到完全优化
+    .pipe(gulp.dest('dist/img'))
+    .pipe(rev.manifest()) // 生成 mainfest
+    .pipe(rename({suffix: '.img'}))
+    .pipe(gulp.dest('dist/rev/'))
+}
 ```
 
 处理 html 文件：
