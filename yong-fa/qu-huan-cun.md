@@ -76,7 +76,7 @@ function htmlTask() {
       .pipe( revCollector({
           replaceReved: true,
           revSuffix: '-[0-9a-f]{8,10}-?.min',
-          dirReplacements: {
+          dirReplacements: { // 大多数情况需要注释掉
               'css': '/dist/css',
               '/js/': '/dist/js/',
               'cdn/': function(manifest_value) {
