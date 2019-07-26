@@ -43,7 +43,7 @@
 * [自动刷新](yong-fa/zi-dong-shua-xin.md)
 * [去缓存](yong-fa/qu-huan-cun.md)
 * Handlebars 模板文件的预编译
-* 雪碧图
+* [雪碧图](yong-fa/xue-bi-tu.md)
 * ESLint
 * rem移动端适配方案
 
@@ -100,6 +100,4 @@
 
 * [lazypipe](cha-jian/lazypipe.md)
 * [browser-sync](cha-jian/browser-sync.md)
-
-
 
