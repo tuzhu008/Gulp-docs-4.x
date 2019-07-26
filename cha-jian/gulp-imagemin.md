@@ -7,7 +7,7 @@ Gulp 插件，用于对 PNG、JPEG、GIF 和 SVG 图片进行压缩，内部使�
 ## 安装
 
 ```
-npm install node-sass gulp-imagemin
+npm install --save-dev gulp-imagemin
 ```
 
 ## 用法
@@ -111,7 +111,7 @@ function defaultTask() {
 
 默认值: `false`
 
-启用此功能将记录每一个传递给 `gulp-imagemin`  的图像的信息: 
+启用此功能将记录每一个传递给 `gulp-imagemin`  的图像的信息:
 
 ```
 gulp-imagemin: ✔ image1.png (already optimized)
