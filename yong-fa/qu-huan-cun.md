@@ -45,8 +45,8 @@ function htmlTask() {
           replaceReved: true,
           revSuffix: '-[0-9a-f]{8,10}-?.min',
           dirReplacements: {
-              'css/sss': '/dist/css',
-              '/js/sss': '/dist/js/',
+              'css': '/dist/css',
+              '/js/': '/dist/js/',
               'cdn/': function(manifest_value) {
                   return '//cdn' + (Math.floor(Math.random() * 9) + 1) + '.' + 'exsample.dot' + '/img/' + manifest_value;
               }
