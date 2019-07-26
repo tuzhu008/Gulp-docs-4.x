@@ -95,19 +95,23 @@ function htmlTask() {
 
 结果：
 
-```js
-<!doctype html>
+```html
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
-<link rel="stylesheet" href="/dist/css/main-351bdd8531.min.css">
-<link rel="stylesheet" href="/dist/css/app-333e486def.min.css">
-</head>
+<meta charset="utf-8" />
+<title>嘿嘿嘿</title>
+<link rel="stylesheet" type="text/css" href="css/sss/index-0594909b41.min.css" />
+<link rel="stylesheet" type="text/css" href="/js/sss/main-e15cc6a480.min.css" />
 
+<script src="/js/main-99a0d9d23e.min.js" charset="utf-8"></script>
+
+<img src="/sss/test-9789944dcd.min.jpeg" alt="">
+<img src="/sss/test2-4b54300c8e.min.jpeg" alt="">
+</head>
 <body>
-   <p class="app">哈哈哈</p>
-   <p class="main">嘿嘿</p>
+
+<div class="wrap">内容</div>
 </body>
 </html>
 ```
