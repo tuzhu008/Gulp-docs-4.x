@@ -82,10 +82,10 @@ function defaultTask() {
 
 使用捆绑的**无损压缩器：**
 
-* [gifsicle](https://github.com/imagemin/imagemin-gifsicle) — Compress GIF images
-* [jpegtran](https://github.com/imagemin/imagemin-jpegtran) — Compress JPEG images
-* [optipng](https://github.com/imagemin/imagemin-optipng) — Compress PNG images
-* [svgo](https://github.com/imagemin/imagemin-svgo) — Compress SVG images
+* [gifsicle](https://github.com/imagemin/imagemin-gifsicle) — 压缩 GIF 图片
+* [jpegtran](https://github.com/imagemin/imagemin-jpegtran) — 压缩 JPEG 图片
+* [optipng](https://github.com/imagemin/imagemin-optipng) — 压缩 PNG 图片
+* [svgo](https://github.com/imagemin/imagemin-svgo) — 压缩 SVG 图片
 
 这些是为了方便而捆绑的，大多数用户不需要其他任何东西。
 
