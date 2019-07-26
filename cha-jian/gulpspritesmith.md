@@ -25,8 +25,6 @@ function spriteTask() {
 }
 ```
 
-
-
 ```js
 var gulp = require('gulp');
 var buffer = require('vinyl-buffer');
