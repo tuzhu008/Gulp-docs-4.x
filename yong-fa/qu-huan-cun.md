@@ -31,7 +31,6 @@ function cssTask() {
     .pipe(gulp.dest('dist/rev/'))
 }
 
-// js
 // script （拷贝 *.min.js，常规 js 则输出压缩与未压缩两个版本）
 function scriptTask() {
   return gulp.src(['src/js/**/*.js'])
