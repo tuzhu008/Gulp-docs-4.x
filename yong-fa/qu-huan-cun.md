@@ -32,6 +32,24 @@ function cssTask() {
 }
 
 // js
+// script （拷贝 *.min.js，常规 js 则输出压缩与未压缩两个版本）
+function scriptTask() {
+  return gulp.src(['src/js/**/*.js'])
+    .pipe(cached('script'))
+    .pipe(rev())
+    .pipe(gulp.dest('dist/js'))
+    .pipe(filter(['**/*', '!**/*.min.js'])) // 筛选出管道中的非 *.min.js 文件
+    // .pipe(jshint('.jshintrc')) // js的校验与合并，根据需要开启
+    // .pipe(jshint.reporter('default'))
+    // .pipe(concat('main.js'))
+    // .pipe(gulp.dest('dist/js'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/js'))
+    .pipe(rev.manifest())
+    .pipe(rename({suffix: '.js'}))
+    .pipe(gulp.dest('dist/rev/'))
+}
 
 // 图片
 function imageTask() {
