@@ -101,7 +101,5 @@
 
 * [lazypipe](cha-jian/lazypipe.md)
 * [browser-sync](cha-jian/browser-sync.md)
-* del
-
-
+* [del](cha-jian/del.md)
 
