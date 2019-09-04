@@ -12,65 +12,88 @@ npm install --save-dev gulp-preprocess
 
 ## 用法
 
-```js
-var gulp = require('gulp');
-var uglify = require('gulp-uglify');
-var pipeline = require('readable-stream').pipeline;
-
-function compressTask() {
-    return pipeline(
-        gulp.src('lib/*.js'),
-        uglify(),
-        gulp.dest('dist')
-    );
-}
-```
-
-## 选项
-
-支持 UglifyJS API 的大多数优化选项，但也有几个例外:
-
-* 不能设置 `sourceMap` 选项，因为它将根据您的 Gulp 配置自动配置。参见 [Gulp sourcemaps](https://github.com/gulp-sourcemaps/gulp-sourcemaps#usage) 的文档。
-
-## 错误
-
-如果无法优化特定文件，`gulp-uglify` 将发出一个 `error` 事件。GulpUglifyError 构造函数由这个插件导出，用于 `instanceof` 检查。它包含以下属性:
-
-* `fileName`：正在优化的文件的完整文件路径。
-
-* `cause`：原始的 UglifyJS 错误，如果可用的话。
-
-大多数 UglifyJS 错误消息都有以下属性:
-
-* `message`（or `msg`\)
-* `filename`
-* `line`
-
-## 使用不同版本的 UglifyJS
-
-默认情况下，`gulp-uglify` 使用作为其依赖安装的 `UglifyJS` ,但也可以使用不同版本的 `UglifyJS`：
+### Gulpfile
 
 ```js
-var uglifyjs = require('uglify-js'); // can be a git checkout
-                                     // or another module (such as `uglify-es` for ES6 support)
-var composer = require('gulp-uglify/composer');
-var pump = require('pump');
+var preprocess = require("gulp-preprocess");
 
-var minify = composer(uglifyjs, console);
+gulp.task("html", function() {
+  gulp
+    .src("./app/*.html")
+    .pipe(preprocess({ context: { NODE_ENV: "production", DEBUG: true } })) // To set environment variables in-line
+    .pipe(gulp.dest("./dist/"));
+});
 
-function compressTask(cb) {
-  // the same options as described above
-  var options = {};
-
-  pump([
-      gulp.src('lib/*.js'),
-      minify(options),
-      gulp.dest('dist')
-    ],
-    cb
-  );
-}
+gulp.task("scripts", function() {
+  gulp
+    .src(["./app/*.js"])
+    .pipe(preprocess())
+    .pipe(gulp.dest("./dist/"));
+});
 ```
+
+### 示例 HTML 文件
+
+```html
+<head>
+  <title>Your App
+
+  <!-- @if NODE_ENV='production' -->
+  <script src="some/production/lib/like/analytics.js"></script>
+  <!-- @endif -->
+
+</head>
+<body>
+  <!-- @ifdef DEBUG -->
+  <h1>Debugging mode - <!-- @echo RELEASE_TAG --> </h1>
+  <!-- @endif -->
+  <p>
+  <!-- @include welcome_message.txt -->
+  </p>
+</body>
+```
+
+### 示例 JavaScript 文件
+
+```js
+var configValue = "/* @echo FOO */" || "default value";
+
+// @if NODE_ENV='production'
+const name = 'AAA';
+// @endif
+
+// @ifdef DEBUG
+someDebuggingCall();
+// @endif
+```
+
+### 更多示例
+
+更多示例请参考 preprocess 的 [README](https://github.com/jsoverson/preprocess#directive-syntax)。
+
+## API
+
+### preprocess\(options\)
+
+#### options.context
+
+类型：`Object`
+
+默认值：`{}`
+
+Context for directives used in your preprocessed files. The default context consists of the current user environment variables. Custom context is merged with`process.env`.
+
+#### options.includeBase
+
+类型：`String`
+
+Base directory for included files. By default, the path to included files is relative to the file currently being processed.
+
+#### options.extension
+
+类型：`String`
+
+Override the file extension. This determines what[regular expressions are used for comments](https://github.com/jsoverson/preprocess/blob/master/lib/regexrules.js). You may wish to do this if you are using a custom extension or need to force a particular comment syntax \(for example, to allow HTML-style comments in`.php`files\).
 
 
 
